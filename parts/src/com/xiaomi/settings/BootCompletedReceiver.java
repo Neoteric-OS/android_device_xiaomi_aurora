@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Paranoid Android
+ * Copyright (C) 2023-2024 Paranoid Android
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -34,12 +34,18 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(final Context context, Intent intent) {
-        if (!intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
-            return;
+        if (DEBUG) Log.i(TAG, "Received intent: " + intent.getAction());
+        switch (intent.getAction()) {
+            case Intent.ACTION_LOCKED_BOOT_COMPLETED:
+                onLockedBootCompleted(context);
+                break;
+            case Intent.ACTION_BOOT_COMPLETED:
+                onBootCompleted(context);
+                break;
         }
-        if (DEBUG)
-            Log.d(TAG, "Received boot completed intent");
+    }
 
+    private static void onLockedBootCompleted(Context context) {
         // Display
         context.startServiceAsUser(new Intent(context, ColorModeService.class),
                 UserHandle.CURRENT);
@@ -91,5 +97,8 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         } catch (Exception e) {
             Log.e(TAG, "Failed to update Tap to Wake status", e);
         }
+    }
+
+    private static void onBootCompleted(Context context) {
     }
 }
