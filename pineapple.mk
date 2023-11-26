@@ -468,6 +468,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     CarrierConfig \
     FrameworksRes \
+    MiuiCameraOverlay \
     SecureElementResTarget \
     SettingsRes \
     SystemUIRes \
