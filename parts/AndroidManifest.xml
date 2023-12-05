@@ -59,5 +59,10 @@
             android:exported="true">
         </service>
 
+        <service
+            android:name=".touch.TouchOrientationService"
+            android:exported="true">
+        </service>
+
     </application>
 </manifest>

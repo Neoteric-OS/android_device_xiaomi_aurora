@@ -23,6 +23,7 @@ import vendor.xiaomi.hw.touchfeature.ITouchFeature;
 
 import com.xiaomi.settings.display.ColorModeService;
 import com.xiaomi.settings.edgesuppression.EdgeSuppressionService;
+import com.xiaomi.settings.touch.TouchOrientationService;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
     private static final String TAG = "XiaomiParts";
@@ -60,6 +61,8 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         context.getContentResolver().registerContentObserver(
                 Settings.Secure.getUriFor(Settings.Secure.DOUBLE_TAP_TO_WAKE), true, observer);
         context.startServiceAsUser(new Intent(context, EdgeSuppressionService.class),
+                UserHandle.CURRENT);
+        context.startServiceAsUser(new Intent(context, TouchOrientationService.class),
                 UserHandle.CURRENT);
 
         updateTapToWakeStatus(context);
