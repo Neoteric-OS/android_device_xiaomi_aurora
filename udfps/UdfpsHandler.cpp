@@ -183,7 +183,6 @@ class XiaomiSM8650UdfpsHandler : public UdfpsHandler {
 
     void cancel() {
         LOG(DEBUG) << __func__;
-        setFingerDown(false);
         setFodStatus(FOD_STATUS_OFF);
     }
 
