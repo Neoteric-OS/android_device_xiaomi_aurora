@@ -9,4 +9,10 @@
     <string name="edgesuppression_name">Edge rejection</string>
     <string name="edgesuppression_summary">Set ignore accidental touch area for curved edges</string>
     <string name="edgesuppression_enable_name">Enable edge rejection</string>
+
+     <!-- Thermal Profile -->
+    <string name="thermalprofile_title">Thermal profile</string>
+    <string name="thermalprofile_default">Default</string>
+    <string name="thermalprofile_game">Game</string>
+    <string name="thermalprofile_unknown">Unknown</string>
 </resources>
