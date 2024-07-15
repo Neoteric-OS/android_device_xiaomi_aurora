@@ -3580,11 +3580,11 @@ vendor/lib64/vendor.qti.hardware.trustedui@1.2.so
 vendor/app/TrustZoneAccessService/TrustZoneAccessService.apk
 
 # Vibrator Feature
-odm/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service
-odm/etc/init/vendor.xiaomi.hardware.vibratorfeature.service.rc
-odm/etc/permissions/vendor.hardware.vibratorfeature-permission.xml
-odm/etc/vintf/manifest/vendor.xiaomi.hardware.vibratorfeature.service.xml
-odm/lib64/libmihapticv1.so
+odm/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service:vendor/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service
+odm/etc/init/vendor.xiaomi.hardware.vibratorfeature.service.rc:vendor/etc/init/vendor.xiaomi.hardware.vibratorfeature.service.rc
+odm/etc/permissions/vendor.hardware.vibratorfeature-permission.xml:vendor/etc/permissions/vendor.hardware.vibratorfeature-permission.xml
+odm/etc/vintf/manifest/vendor.xiaomi.hardware.vibratorfeature.service.xml:vendor/etc/vintf/manifest/vendor.xiaomi.hardware.vibratorfeature.service.xml
+odm/lib64/libmihapticv1.so:vendor/lib64/libmihapticv1.so
 vendor/etc/Hapticsconfig.xml
 vendor/lib64/android.hardware.vibrator-V1-ndk_platform.so
 vendor/lib64/libvibratorutils.so

@@ -92,6 +92,10 @@ function blob_fixup() {
         vendor/lib64/libqcodec2_core.so)
             grep -q "libcodec2_shim.so" "${2}" || "${PATCHELF}" --add-needed "libcodec2_shim.so" "${2}"
             ;;
+        vendor/etc/init/vendor.xiaomi.hardware.vibratorfeature.service.rc)
+            sed -i "s/\/odm\/bin\//\/vendor\/bin\//g" "${2}"
+            sed -i "s/\/odm\/etc\//\/vendor\/etc\//g" "${2}"
+            ;;
     esac
 }
 
