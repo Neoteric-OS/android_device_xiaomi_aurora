@@ -1877,7 +1877,6 @@ vendor/firmware/CAMERA_ICP.mdt
 vendor/firmware/CAMERA_ICP_170.elf
 
 # Camera (MIUI)
-odm/lib64/libmialgo_ai_vision.so:system/lib64/libmialgo_ai_vision.so
 -product/overlay/MiuiCameraOverlayLeicaed/MiuiCameraOverlayLeicaed.apk
 -product/priv-app/MiuiCamera/MiuiCamera.apk:system/priv-app/MiuiCamera/MiuiCamera.apk;OVERRIDES=Snap,Camera2,GoogleCameraGo,Aperture
 system/etc/public.libraries-xiaomi.txt
