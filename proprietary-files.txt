@@ -2204,6 +2204,10 @@ vendor/etc/snapdragon_color_libs_config.xml
 vendor/etc/spr_cfg_xiaomi_n11u_42_02_0a_cmd_mode_dsc_dsi_panel.xml
 vendor/etc/spr_cfg_xiaomi_n3_42_0d_0a_cmd_mode_dsc_dsi_panel.xml
 
+# Display Gralloc
+vendor/lib64/libgralloccore.so
+vendor/lib64/libgrallocutils.so
+
 # Display HDR
 vendor/lib64/libhdr_backlight_adapter.so
 vendor/lib64/libhdr_tm.so
