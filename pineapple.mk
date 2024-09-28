@@ -155,6 +155,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider-V2-ndk.vendor \
     vendor.qti.hardware.camera.aon-V1-ndk.vendor \
     vendor.qti.hardware.camera.offlinecamera-V1-ndk.vendor \
+    vendor.qti.hardware.camera.offlinecamera-V2-ndk.vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor
 
 PRODUCT_PACKAGES += \
