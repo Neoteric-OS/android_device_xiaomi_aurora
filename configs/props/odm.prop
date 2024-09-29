@@ -1,12 +1,63 @@
+# Audio
+persist.vendor.audio.effectimplenter=dolby
+persist.vendor.audio.spatializer.enable=false
+ro.vendor.audio.camera.loopback.support=true
+ro.vendor.audio.dolby.spatial.profile=dynamic
+ro.vendor.audio.record.customized.support=true
+vendor.audio.compress_capture.aac.cut_off_freq=24000
+vendor.audio.cpu.sched.cpus=8
+vendor.audio.cpu.sched.cpuset.af=248
+vendor.audio.cpu.sched.cpuset.at=248
+vendor.audio.cpu.sched.cpuset.hb=254
+vendor.audio.cpu.sched.cpuset.he=248
+vendor.audio.cpu.sched.cpuset.hso=248
+vendor.audio.cpu.sched=31
+vendor.audio.mic.status=off
+vendor.audio.rt.mode.onlyfast=false
+vendor.audio.rt.mode=19
+
 # Bluetooth
 bluetooth.device.default_name=Xiaomi 14 Ultra
 
 # Display
 ro.vendor.touchfeature.type=183
-persist.sys.sf.color_mode=0
+
+# Displayfeature
+persist.vendor.dc_backlight.enable=false
+ro.vendor.all_modes.colorpick_adjust=true
+ro.vendor.bcbc.enable=true
+ro.vendor.colorpick_adjust=true
+ro.vendor.display.ai_disp.enable=true
+ro.vendor.display.mi_calib.enable=true
+ro.vendor.display.nature_mode.enable=true
+ro.vendor.display.standard_d75_enable=true
+ro.vendor.display.touch.idle.enable=true
+ro.vendor.display.type=oled
+ro.vendor.fps.switch.default=true
+ro.vendor.fps.switch.thermal=true
+ro.vendor.gcp.enable=1
+ro.vendor.histogram.enable=true
+ro.vendor.localhbm.enable=true
+ro.vendor.soft_backlight.enable=true
+ro.vendor.sre.enable=true
+ro.vendor.standard.video.enable=true
+ro.vendor.video_box.version=2
+sys.displayfeature.entry.enable=true
+vendor.display.use_layer_ext=0
 
 # DRM
 vendor.wv.oemcrypto.debug.enable_prov40=true
+
+# Fingerprint
+persist.vendor.sys.fp.expolevel=0x88
+persist.vendor.sys.fp.fod.location.X_Y=597,2406
+persist.vendor.sys.fp.fod.size.width_height=246,246
+ro.hardware.fp.fod.location=low
+ro.hardware.fp.fod.lowlight.brightness.threshold=411
+ro.hardware.fp.fod.lowlight.lux.threshold=3
+ro.hardware.fp.fod.touch.ctl.version=2.0
+ro.hardware.fp.fod=true
+ro.hardware.fp.mievent=true
 
 # Marketname
 ro.product.marketname=Xiaomi 14 Ultra

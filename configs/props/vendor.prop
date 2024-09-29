@@ -120,69 +120,40 @@ ro.vendor.beluga.c=0x4800
 ro.vendor.beluga.p=0x3
 ro.vendor.beluga.s=0x900
 ro.vendor.beluga.t=0x240
-persist.vendor.dc_backlight.enable=false
-persist.vendor.dc_backlight.threshold=0
-ro.vendor.all_modes.colorpick_adjust=true
 ro.vendor.bcbc.enable=true
-ro.vendor.cabc.enable=fasle
 ro.vendor.colorpick_adjust=true
-ro.vendor.dfps.enable=false
-ro.vendor.display.ai_disp.enable=true
-ro.vendor.display.default_fps=60
-ro.vendor.display.mi_calib.enable=true
-ro.vendor.display.nature_mode.enable=true
-ro.vendor.display.standard_d75_enable=true
-ro.vendor.display.touch.idle.enable=true
-ro.vendor.display.type=oled
 ro.vendor.displayfeature.dump=true
-ro.vendor.fps.switch.default=true
-ro.vendor.fps.switch.thermal=true
-ro.vendor.gcp.enable=1
-ro.vendor.hbm_backlight.enable=true
-ro.vendor.histogram.enable=true
-ro.vendor.localhbm.enable=true
-ro.vendor.soft_backlight.enable=true
-ro.vendor.sre.enable=true
-ro.vendor.standard.video.enable=true
-ro.vendor.thermal.dimming.enable=true
-ro.vendor.video_box.version=2
-ro.vendor.whitepoint_calibration_enable=false
-ro.vendor.xiaomi.bl.poll=true
-sys.displayfeature_hidl=false
-sys.displayfeature.entry.enable=true
 vendor.display.use_layer_ext=0
 
 # DPM
 persist.vendor.dpm.vndr.idletimer.mode=default
 persist.vendor.dpm.vndr.halservice.enable=1
-persist.vendor.dpm.vndr.feature=11
+persist.vendor.dpm.vndr.feature=1
 
 # DRM
 drm.service.enabled=true
 vendor.wv.oemcrypto.debug.enable_hlos_data_path=true
 
-# Fingerprint
-persist.vendor.sys.fp.expolevel=0x88
-persist.vendor.sys.fp.fod.location.X_Y=597,2406
-persist.vendor.sys.fp.fod.size.width_height=246,246
-ro.hardware.fp.fod.location=low
-ro.hardware.fp.fod.lowlight.brightness.threshold=411
-ro.hardware.fp.fod.lowlight.lux.threshold=3
-ro.hardware.fp.fod.touch.ctl.version=2.0
-ro.hardware.fp.fod=true
-ro.hardware.fp.mievent=true
+# FRP
+ro.frp.pst=/dev/block/bootdevice/by-name/frp
+
+# FUSE
+persist.sys.fuse.passthrough.enable=true
 
 # Gatekeeper
 vendor.gatekeeper.disable_spu=true
 vendor.gatekeeper.is_security_level_spu=0
 
+# GNSS
+persist.backup.ntpServer=0.pool.ntp.org
+
 # Graphics
 debug.egl.hw=0
+debug.sf.auto_latch_unsignaled=0
 debug.sf.disable_client_composition_cache=1
 debug.sf.enable_advanced_sf_phase_offset=1
 debug.sf.use_phase_offsets_as_durations=1
 debug.sf.enable_gl_backpressure=1
-debug.sf.enable_hwc_vds=0
 debug.sf.late.app.duration=13666666
 debug.sf.early.app.duration=13666666
 debug.sf.earlyGl.app.duration=13666666
@@ -191,7 +162,6 @@ debug.sf.earlyGl.sf.duration=10500000
 debug.sf.late.sf.duration=10500000
 debug.sf.hw=0
 debug.sf.predict_hwc_composition_strategy=0
-debug.sf.set_idle_timer_ms=1100
 debug.sf.treat_170m_as_sRGB=1
 graphics.gpu.profiler.support=true
 persist.sys.sf.color_mode=0
