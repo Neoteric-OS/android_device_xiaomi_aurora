@@ -683,6 +683,7 @@ PRODUCT_PACKAGES += \
     libcld80211 \
     libkeystore-engine-wifi-hidl \
     libkeystore-wifi-hidl \
+    libpasn \
     libwifi-hal \
     libwifi-hal-ctrl \
     libwifi-hal-qcom \
