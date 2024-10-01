@@ -66,6 +66,9 @@ function blob_fixup() {
             apktool b -q "$tmp_dir" -o "$2"
             rm -rf "$tmp_dir"
             ;;
+        vendor/etc/audio/sku_pineapple/audio_effects.xml)
+            sed -i 's|<library name="misoundfx" path="libmisoundfx.so"/>|<library name="misoundfx" path="libmisoundfx_ext.so"/>|' "${2}"
+            ;;
         vendor/etc/media_codecs_pineapple.xml|vendor/etc/media_codecs_pineapple_vendor.xml)
             sed -i "/vp9.decoder/,/<\/MediaCodec>/d" "${2}"
             sed -i "/av1.decoder/,/<\/MediaCodec>/d" "${2}"
