@@ -59,6 +59,13 @@ function blob_fixup() {
         odm/etc/camera/enhance_motiontuning.xml | odm/etc/camera/night_motiontuning.xml | odm/etc/camera/motiontuning.xml | odm/etc/camera/night_enhance_motiontuning.xml)
             sed -i 's/<?xml=/<?xml /g' "${2}"
             ;;
+        system/priv-app/MiuiCamera/MiuiCamera.apk)
+            tmp_dir="${EXTRACT_TMP_DIR}/MiuiCamera"
+            apktool d -q "$2" -o "$tmp_dir" -f
+            grep -rl "com.miui.gallery" "$tmp_dir" | xargs sed -i 's|"com.miui.gallery"|"com.google.android.apps.photos"|g'
+            apktool b -q "$tmp_dir" -o "$2"
+            rm -rf "$tmp_dir"
+            ;;
         vendor/etc/media_codecs_pineapple.xml|vendor/etc/media_codecs_pineapple_vendor.xml)
             sed -i "/vp9.decoder/,/<\/MediaCodec>/d" "${2}"
             sed -i "/av1.decoder/,/<\/MediaCodec>/d" "${2}"
