@@ -349,6 +349,7 @@ PRODUCT_PACKAGES += \
 # Init
 PRODUCT_PACKAGES += \
     fstab.qcom \
+    init.aurora.rc \
     init.recovery.qcom.rc \
     init.target.rc \
     ueventd.odm.rc \
