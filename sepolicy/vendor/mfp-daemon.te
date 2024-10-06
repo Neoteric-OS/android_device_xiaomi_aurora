@@ -6,7 +6,6 @@ allow vendor_mfp-daemon system_server:binder transfer;
 allow vendor_mfp-daemon tee_device:chr_file rw_file_perms;
 allow vendor_mfp-daemon vendor_hal_perf_hwservice:hwservice_manager find;
 allow vendor_mfp-daemon vendor_hal_perf_default:binder call;
-allow vendor_mfp-daemon vendor_miev_device:chr_file rw_file_perms;
 allow vendor_mfp-daemon mnt_vendor_file:dir write;
 allow vendor_mfp-daemon mnt_vendor_file:dir add_name;
 allow vendor_mfp-daemon mnt_vendor_file:dir search;
@@ -48,6 +47,10 @@ allow vendor_mfp-daemon servicemanager:binder { call transfer };
 allow vendor_mfp-daemon fwk_sensor_hwservice:hwservice_manager find;
 allow vendor_mfp-daemon unlabeled:filesystem getattr;
 allow vendor_mfp-daemon unlabeled:lnk_file read;
+allow vendor_mfp-daemon vendor_data_file:dir rw_dir_perms;
+allow vendor_mfp-daemon vendor_data_file:file { open read write create };
+allow vendor_mfp-daemon sysfs_touch_hostprocess:file { read };
+allow vendor_mfp-daemon vendor_data_file:file { append };
 init_daemon_domain(vendor_mfp-daemon)
 r_dir_file(vendor_mfp-daemon, firmware_file)
 r_dir_file(vendor_mfp-daemon, mnt_vendor_file)
@@ -55,6 +58,7 @@ r_dir_file(vendor_mfp-daemon, vendor_persist_qti_fp_file)
 get_prop(vendor_mfp-daemon, vendor_panel_info_prop)
 get_prop(vendor_mfp-daemon, vendor_spcomlib_prop)
 get_prop(vendor_mfp-daemon, vendor_tee_listener_prop)
+get_prop(vendor_mfp-daemon, vendor_camera_prop)
 set_prop(vendor_mfp-daemon, vendor_fp_prop)
 set_prop(vendor_mfp-daemon, vendor_fp_info_prop)
 hal_server_domain(vendor_mfp-daemon, hal_fingerprint)
