@@ -367,7 +367,8 @@ PRODUCT_PACKAGES += \
 
 # Keymint
 PRODUCT_PACKAGES += \
-    android.hardware.authsecret-service.nxp
+    android.hardware.authsecret-service.nxp \
+    android.hardware.weaver-service.nxp
 
 PRODUCT_PACKAGES += \
     android.hardware.authsecret@1.0.vendor \
@@ -453,6 +454,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.nxp.nxpese@1.0.vendor \
     vendor.nxp.nxpnfc_aidl-V1-ndk.vendor
+
+PRODUCT_PACKAGES += \
+    android.se.omapi-V1-ndk.vendor \
+    libcppbor_external.vendor
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/android.hardware.nfc.ese.xml \
