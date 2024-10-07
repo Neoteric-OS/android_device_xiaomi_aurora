@@ -2625,6 +2625,7 @@ vendor/lib64/libqtikeymint.so
 
 # Keymint NXP
 vendor/bin/hw/android.hardware.security.keymint-service.strongbox-nxp
+vendor/etc/init/android.hardware.security.keymint-service.strongbox-nxp.rc
 vendor/lib64/libjc_keymint_nxp.so
 vendor/lib64/libjc_keymint_transport_nxp.so
 
@@ -3801,6 +3802,9 @@ vendor/firmware/vpu30_2v.mbn
 vendor/firmware/vpu30_2v_unsigned.mbn
 vendor/firmware/vpu33_4v.mbn
 vendor/firmware/vpu33_4v_unsigned.mbn
+
+# Weaver
+vendor/lib64/ese_weaver.so
 
 # Widevine DRM
 odm/lib64/libwvkeybox.so
