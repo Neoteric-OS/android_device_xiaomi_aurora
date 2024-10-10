@@ -69,6 +69,9 @@ function blob_fixup() {
             apktool b -q "$tmp_dir" -o "$2"
             rm -rf "$tmp_dir"
             ;;
+        vendor/bin/hw/vendor.qti.media.c2@1.0-service | vendor/bin/hw/vendor.dolby.media.c2@1.0-service | vendor/bin/hw/vendor.qti.media.c2audio@1.0-service)
+            "${PATCHELF}" --add-needed "lib-mediac2.so" "${2}"
+            ;;
         vendor/etc/audio/sku_pineapple/audio_effects.xml)
             sed -i 's|<library name="misoundfx" path="libmisoundfx.so"/>|<library name="misoundfx" path="libmisoundfx_ext.so"/>|' "${2}"
             ;;
