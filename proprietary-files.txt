@@ -2626,6 +2626,13 @@ vendor/lib64/libqtikeymint.so
 # Keymint NXP
 vendor/bin/hw/android.hardware.security.keymint-service.strongbox-nxp
 vendor/etc/init/android.hardware.security.keymint-service.strongbox-nxp.rc
+vendor/etc/permissions/android.hardware.hardware_keystore.jc-strongbox-keymint3-nxp.xml
+vendor/etc/vintf/manifest/android.hardware.security.keymint3-service.strongbox-nxp.xml
+vendor/etc/vintf/manifest/android.hardware.security.sharedsecret3-service.strongbox-nxp.xml
+vendor/etc/hal_uuid_map_aurora.xml
+vendor/etc/hal_uuid_map_aurorain.xml
+vendor/etc/hal_uuid_map_aurorapro.xml
+vendor/etc/hal_uuid_map_config.xml
 vendor/lib64/libjc_keymint_nxp.so
 vendor/lib64/libjc_keymint_transport_nxp.so
 
@@ -3810,6 +3817,7 @@ vendor/firmware/vpu33_4v.mbn
 vendor/firmware/vpu33_4v_unsigned.mbn
 
 # Weaver
+vendor/etc/vintf/manifest/android.hardware.weaver-service.nxp.xml
 vendor/lib64/ese_weaver.so
 
 # Widevine DRM
