@@ -59,6 +59,9 @@ function blob_fixup() {
         odm/etc/camera/enhance_motiontuning.xml | odm/etc/camera/night_motiontuning.xml | odm/etc/camera/motiontuning.xml | odm/etc/camera/night_enhance_motiontuning.xml)
             sed -i 's/<?xml=/<?xml /g' "${2}"
             ;;
+        system_ext/etc/vintf/manifest/vendor.qti.qesdsys.service.xml)
+            sed -i '/\/\*\*/,/\*\//c\<!--\n * Copyright (c) 2021 Qualcomm Technologies, Inc.\n * All Rights Reserved.\n * Confidential and Proprietary - Qualcomm Technologies, Inc.\n-->' "${2}"
+            ;;
         system/priv-app/MiuiCamera/MiuiCamera.apk)
             tmp_dir="${EXTRACT_TMP_DIR}/MiuiCamera"
             apktool d -q "$2" -o "$tmp_dir" -f

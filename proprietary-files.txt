@@ -3046,6 +3046,12 @@ odm/firmware/s701e_bl_1st.bin
 odm/firmware/water_check.tflite
 
 # QESDK
+system_ext/app/QesdkSysService/QesdkSysService.apk
+system_ext/etc/vintf/manifest/vendor.qti.qesdsys.service.xml
+system_ext/lib64/libqesdk_ndk_platform.qti.so
+system_ext/lib64/vendor.qti.qesdhal@1.0.so
+system_ext/lib64/vendor.qti.qesdhal@1.1.so
+system_ext/lib64/vendor.qti.qesdhal@1.2.so
 vendor/bin/qesdk-manager
 vendor/etc/init/qesdk-manager.rc
 vendor/etc/init/qesdk-secmanager.rc
