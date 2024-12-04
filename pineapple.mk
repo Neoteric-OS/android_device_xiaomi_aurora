@@ -497,9 +497,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.powershare@1.0-service.aurora
 
-# Qualcomm
-$(call inherit-product, hardware/qcom-caf/common/common.mk)
-
 # QMI
 PRODUCT_PACKAGES += \
     libcurl.vendor \
