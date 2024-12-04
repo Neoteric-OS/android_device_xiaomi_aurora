@@ -4,22 +4,15 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit from the Neoteric configuration.
+$(call inherit-product, vendor/neoteric/target/product/neoteric-target.mk)
 
 # Inherit from aurora device.
 $(call inherit-product, device/xiaomi/aurora/pineapple.mk)
 
-# Gapps
-$(call inherit-product-if-exists, vendor/gms/products/gms.mk)
-
-# Vendor extra
-$(call inherit-product-if-exists, vendor/extra/product.mk)
-TARGET_FACE_UNLOCK_SUPPORTED := true
-
 # Device identifier
 PRODUCT_DEVICE := aurora
-PRODUCT_NAME := lineage_aurora
+PRODUCT_NAME := aurora
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := 24031PN0DC
 PRODUCT_MANUFACTURER := Xiaomi

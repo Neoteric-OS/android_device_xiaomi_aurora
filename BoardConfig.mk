@@ -57,16 +57,9 @@ SOONG_CONFIG_NAMESPACES += ufsbsg
 SOONG_CONFIG_ufsbsg += ufsframework
 SOONG_CONFIG_ufsbsg_ufsframework := bsg
 
-# Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := pineapple
-TARGET_NO_BOOTLOADER := true
-
 # Build
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
-
-# Config_FS
-TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config.fs
 
 # Display
 TARGET_SCREEN_DENSITY := 560
@@ -76,9 +69,7 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
-    $(DEVICE_PATH)/configs/vintf/compatibility_matrix.device.xml \
-    hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
-    vendor/lineage/config/device_framework_matrix.xml
+    $(DEVICE_PATH)/configs/vintf/compatibility_matrix.device.xml
 
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/vintf/compatibility_matrix.xml
 
@@ -99,9 +90,9 @@ BOARD_BOOTCONFIG := \
     androidboot.console=0
 
 BOARD_KERNEL_CMDLINE := \
-    bootinfo.fingerprint=$(LINEAGE_VERSION) \
+    bootinfo.fingerprint=$(AOSPA_VERSION) \
     disable_dma32=on \
-    mtdoops.fingerprint=$(LINEAGE_VERSION) \
+    mtdoops.fingerprint=$(AOSPA_VERSION) \
     video=vfb:640x400,bpp=32,memsize=3072000
 
 BOARD_KERNEL_BASE := 0x00000000
@@ -114,8 +105,7 @@ TARGET_NEEDS_DTBOIMAGE := true
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOT_HEADER_VERSION)
 
-TARGET_NO_KERNEL_OVERRIDE := true
-TARGET_KERNEL_SOURCE := device/xiaomi/aurora-kernel/kernel-headers
+include $(DEVICE_PATH)/kernel/kernel-platform.mk
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
@@ -149,7 +139,6 @@ BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
-TARGET_BOARD_PLATFORM := pineapple
 
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/configs/props/odm.prop

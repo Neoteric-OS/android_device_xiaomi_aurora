@@ -145,6 +145,10 @@ PRODUCT_PACKAGES += \
 # Board
 TARGET_BOARD_PLATFORM := pineapple
 
+# Bootloader
+TARGET_BOOTLOADER_BOARD_NAME := pineapple
+TARGET_NO_BOOTLOADER := true
+
 # Camera
 PRODUCT_PACKAGES += \
     android.frameworks.cameraservice.service-V1-ndk \
@@ -357,9 +361,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/init/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
-
-# Kernel
-include $(DEVICE_PATH)/kernel/kernel-platform.mk
 
 # Keymaster
 PRODUCT_PACKAGES += \
@@ -645,6 +646,8 @@ PRODUCT_PACKAGES += \
     update_verifier
 
 # USB
+PRODUCT_HAS_GADGET_HAL := true
+
 PRODUCT_PACKAGES += \
     android.hardware.usb-service.qti \
     android.hardware.usb.gadget-service.qti
