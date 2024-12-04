@@ -437,18 +437,13 @@ PRODUCT_PACKAGES += \
 
 # Network
 PRODUCT_PACKAGES += \
-    android.system.net.netd-V1-ndk.vendor \
-    android.hardware.tetheroffload-V1-ndk.vendor
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.software.ipsec_tunnels.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.ipsec_tunnels.xml
+    android.system.net.netd-V1-ndk.vendor
 
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc-V1-ndk.vendor \
     android.hardware.nfc@1.2.vendor \
-    android.hardware.secure_element-V1-ndk.vendor \
-    android.hardware.secure_element@1.2.vendor
+    android.hardware.secure_element-V1-ndk.vendor
 
 PRODUCT_PACKAGES += \
     vendor.nxp.nxpese@1.0.vendor \
@@ -508,7 +503,6 @@ $(call inherit-product, hardware/qcom-caf/common/common.mk)
 # QMI
 PRODUCT_PACKAGES += \
     libcurl.vendor \
-    libjson \
     libjsoncpp.vendor \
     libqti_vndfwk_detect.vendor \
     libqti_vndfwk_detect_vendor \
@@ -518,24 +512,14 @@ PRODUCT_PACKAGES += \
 
 # QTI Components
 TARGET_COMMON_QTI_COMPONENTS := \
-    perf
+    perf \
+    telephony
 
 # Radio
 PRODUCT_PACKAGES += \
-    android.hardware.radio-V2-ndk.vendor \
-    android.hardware.radio.config-V2-ndk.vendor \
-    android.hardware.radio.data-V2-ndk.vendor \
-    android.hardware.radio.messaging-V2-ndk.vendor \
-    android.hardware.radio.modem-V2-ndk.vendor \
-    android.hardware.radio.network-V2-ndk.vendor \
-    android.hardware.radio.sap-V1-ndk.vendor \
-    android.hardware.radio.sim-V2-ndk.vendor \
-    android.hardware.radio.voice-V2-ndk.vendor \
-    android.hardware.radio@1.6.vendor
-
-PRODUCT_PACKAGES += \
     libandroid_runtime_lazy.vendor \
     libprotobuf-cpp-full \
+    libnetutils.vendor \
     librmnetctl
 
 # RenderScript
@@ -581,41 +565,6 @@ PRODUCT_COPY_FILES += \
 # Shipping API level
 BOARD_SHIPPING_API_LEVEL := 34
 PRODUCT_SHIPPING_API_LEVEL := 34
-
-# Telephony
-PRODUCT_PACKAGES += \
-    extphonelib \
-    extphonelib-product \
-    extphonelib.xml \
-    extphonelib_product.xml \
-    ims-ext-common \
-    ims_ext_common.xml \
-    qti-telephony-hidl-wrapper \
-    qti-telephony-hidl-wrapper-prd \
-    qti_telephony_hidl_wrapper.xml \
-    qti_telephony_hidl_wrapper_prd.xml \
-    qti-telephony-utils \
-    qti-telephony-utils-prd \
-    qti_telephony_utils.xml \
-    qti_telephony_utils_prd.xml \
-    telephony-ext
-
-PRODUCT_PACKAGES += \
-    xiaomi-telephony-stub
-
-PRODUCT_PACKAGES += \
-    framework-permission-aidl-cpp.vendor
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext \
-    xiaomi-telephony-stub
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.cdma.xml \
-    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.gsm.xml \
-    frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.xml \
-    frameworks/native/data/etc/android.hardware.telephony.mbms.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.mbms.xml \
-    frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml
 
 # Touchscreen
 PRODUCT_COPY_FILES += \
@@ -676,7 +625,6 @@ PRODUCT_PACKAGES += \
 # WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
-    android.hardware.wifi.hostapd@1.0.vendor \
     hostapd \
     hostapd_cli \
     libcld80211 \
