@@ -155,7 +155,18 @@ vendor/lib64/libagmmixer.so
 vendor/lib64/vendor.qti.hardware.AGMIPC@1.0.so
 
 # Audio
+odm/etc/audio/mis_head.bin
+odm/etc/audio/mis_head_spatial.bin
 odm/etc/audio/mis_spk.bin
+odm/etc/audio/mis_spk_spatial.bin
+odm/etc/audio/mis_spk_spatial_alt1.bin
+odm/etc/audio/misound_karaoke_res.bin
+odm/etc/audio/misound_karaokemix_res.bin
+odm/etc/audio/misound_res_spk_power_game.bin
+odm/etc/audio/misound_res_spk_power_sva.bin
+odm/etc/audio/misound_res_spk_power_video.bin
+odm/etc/audio/misoundsa_spk_config.bin
+odm/etc/audio/misoundsa_spk_config_tt.bin
 odm/etc/audio/silent-3sec.wav
 odm/lib64/libaudioroute_ext.so
 odm/lib64/libcrussp.so
@@ -177,6 +188,7 @@ vendor/lib64/libarmemlog.so
 vendor/lib64/libaudio_log_utils.so
 vendor/lib64/libaudiochargerlistener.so
 vendor/lib64/libaudiocloudctrl.so
+vendor/lib64/libaudiofeaturestats.so
 vendor/lib64/libcapiv2svacnnvendor.so
 vendor/lib64/libcapiv2svarnnvendor.so
 vendor/lib64/libcapiv2udk7vendor.so
@@ -206,6 +218,7 @@ vendor/lib64/vendor.qti.hardware.pal@1.0.so
 vendor/lib64/vendor.qti.voiceprint@1.0.so
 
 # Audio (Config)
+odm/etc/audio/sku_pineapple/adsp_sleep_monitor.conf
 odm/etc/audio/sku_pineapple/mixer_paths_overlay_dynamic.xml
 odm/etc/audio/sku_pineapple/mixer_paths_overlay_static.xml
 odm/etc/audio/sku_pineapple/mixer_paths_pineapple_mtp.xml
