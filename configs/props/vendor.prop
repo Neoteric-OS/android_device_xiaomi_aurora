@@ -265,6 +265,9 @@ vendor.usb.use_gadget_hal=1
 persist.vendor.vcb.ability=true
 persist.vendor.vcb.enable=false
 
+# Vibrator
+ro.vendor.mm.vibrator.sys_path=/sys/class/qcom-haptics
+
 # WiFi
 ro.vendor.net.enable_dual_wifi=1
 ro.vendor.net.enable_passpoint_r1=1
