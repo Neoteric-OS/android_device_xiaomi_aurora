@@ -22,6 +22,7 @@ import android.view.Display.HdrCapabilities;
 import vendor.xiaomi.hw.touchfeature.ITouchFeature;
 
 import com.xiaomi.settings.display.ColorModeService;
+import com.xiaomi.settings.display.DcDimmingService;
 import com.xiaomi.settings.edgesuppression.EdgeSuppressionService;
 import com.xiaomi.settings.touch.TouchOrientationService;
 
@@ -80,7 +81,9 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         resolver.registerContentObserver(
                 Settings.Secure.getUriFor(Settings.Secure.DOUBLE_TAP_TO_WAKE), true, observer);
 
-        // Start EdgeSuppressionService and TouchOrientationService
+        // Start DcDimmingService, EdgeSuppressionService and TouchOrientationService
+        context.startServiceAsUser(new Intent(context, DcDimmingService.class),
+                UserHandle.CURRENT);
         context.startServiceAsUser(new Intent(context, EdgeSuppressionService.class),
                 UserHandle.CURRENT);
         context.startServiceAsUser(new Intent(context, TouchOrientationService.class),
