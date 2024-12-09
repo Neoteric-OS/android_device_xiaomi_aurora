@@ -51,6 +51,11 @@
         </activity>
 
         <service
+            android:name=".display.DcDimmingService"
+            android:exported="true">
+        </service>
+
+        <service
             android:name=".display.ColorModeService"
             android:permission="ColorModeService">
         </service>
