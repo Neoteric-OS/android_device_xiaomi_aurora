@@ -197,6 +197,10 @@
 /sys/devices/virtual/mi_memory/mi_memory_device/ufshcd0/dump_health_desc u:object_r:ufs_sysfs:s0
 /sys/devices/virtual/mi_memory/mi_memory_device/ufshcd0/dump_string_desc_serial u:object_r:ufs_sysfs:s0
 
+# Vibrator
+/(odm|vendor/odm)/bin/hw/vibratorfeature-wrapper u:object_r:hal_vibrator_default_exec:s0
+/(odm|system/odm|vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hardware\.vibratorfeature\.service u:object_r:hal_vibrator_default_exec:s0
+
 # Wifi
 /data/vendor/mac_addr(/.*)? u:object_r:vendor_mac_vendor_data_file:s0
 /vendor/bin/nv_mac u:object_r:vendor_wcnss_service_exec:s0
