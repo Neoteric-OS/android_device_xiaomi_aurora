@@ -63,9 +63,6 @@
 # Modem
 /data/vendor/modem(/.*)?                                u:object_r:vendor_modem_data_file:s0
 
-# Powershare
-/vendor/bin/hw/vendor\.lineage\.powershare@1\.0-service\.aurora                          u:object_r:hal_lineage_powershare_default_exec:s0
-
 # Ril
 /dev/smd8                                         u:object_r:vendor_radio_smd_device:s0
 

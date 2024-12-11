@@ -495,7 +495,7 @@ PRODUCT_COPY_FILES += \
 
 # PowerShare
 PRODUCT_PACKAGES += \
-    vendor.lineage.powershare@1.0-service.aurora
+    vendor.lineage.powershare-service
 
 # QMI
 PRODUCT_PACKAGES += \

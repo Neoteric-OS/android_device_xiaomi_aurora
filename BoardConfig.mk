@@ -140,6 +140,9 @@ BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
 
+# PowerShare
+TARGET_POWERSHARE_NODE := /sys/class/qcom-battery/reverse_chg_mode
+
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/configs/props/odm.prop
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/configs/props/product.prop
