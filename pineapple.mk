@@ -79,15 +79,22 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default \
     audioadsprpcd \
+    libagm_compress_plugin \
+    libagm_mixer_plugin \
+    libagm_pcm_plugin \
+    libagmclient \
+    libaudiochargerlistener \
     libaudioroute.vendor \
     libbatterylistener \
+    libfmpal \
+    libhfp_pal \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libsndcardparser \
     libtinycompress \
     libvolumelistener \
-    libhfp_pal
+    vendor.qti.hardware.pal@1.0.vendor
 
 PRODUCT_PACKAGES += \
     android.hardware.audio.common-V1-ndk
