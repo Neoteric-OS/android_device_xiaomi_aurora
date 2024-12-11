@@ -1,0 +1,1 @@
+allow netd system_file:dir { add_name };

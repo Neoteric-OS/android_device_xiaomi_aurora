@@ -48,6 +48,7 @@ hal_client_domain(platform_app, hal_quickcamera)
 # Displayfeature
 allow platform_app vendor_hal_displayfeature_xiaomi_service:service_manager find;
 allow platform_app vendor_hal_displayfeature_xiaomi_default:binder call;
+allow platform_app vendor_hal_displayfeature_xiaomi_hwservice:hwservice_manager find;
 get_prop(platform_app, vendor_displayfeature_prop)
 
 # Dolby
@@ -73,3 +74,4 @@ hal_client_domain(platform_app, vendor_hal_soter);
 
 # Touchfeature
 allow platform_app hal_touchfeature_xiaomi_service:service_manager find;
+binder_call(platform_app, hal_touchfeature_xiaomi_default)

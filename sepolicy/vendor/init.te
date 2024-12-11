@@ -38,3 +38,6 @@ set_prop(vendor_init, vendor_touchfeature_prop)
 
 allow init same_process_hal_file:file { execute };
 allow init self:qipcrtr_socket { create getattr setopt write read };
+
+# Vibrator
+allow init vendor_sysfs_vibrator:file create_file_perms;
