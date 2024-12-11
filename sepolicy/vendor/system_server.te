@@ -2,6 +2,7 @@
 allow system_server vendor_audio_prop:file { getattr open read };
 allow system_server vendor_audio_prop:file map;
 allow system_server audioserver:file write;
+allow system_server audioserver_tmpfs:file { write };
 allow system_server sound_device:chr_file rw_file_perms;
 
 # Camera

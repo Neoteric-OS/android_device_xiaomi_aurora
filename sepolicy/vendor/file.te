@@ -42,6 +42,9 @@ type touchreport_data_file, data_file_type, file_type;
 # UFS
 type ufs_sysfs, fs_type, sysfs_type;
 
+# Vibrator
+type vendor_sysfs_vibrator, fs_type, sysfs_type;
+
 # Wifi
 type vendor_mac_vendor_data_file, data_file_type, file_type, mlstrustedobject;
 
