@@ -11,6 +11,7 @@ vendor.audio.cpu.sched.cpuset.at=248
 vendor.audio.cpu.sched.cpuset.hb=254
 vendor.audio.cpu.sched.cpuset.he=248
 vendor.audio.cpu.sched.cpuset.hso=248
+vendor.audio.cpu.sched.onlyfast=false
 vendor.audio.cpu.sched=31
 vendor.audio.mic.status=off
 vendor.audio.rt.mode.onlyfast=false
