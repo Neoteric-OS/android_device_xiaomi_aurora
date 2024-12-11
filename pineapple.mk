@@ -375,7 +375,6 @@ PRODUCT_PACKAGES += \
 
 # Keymint
 PRODUCT_PACKAGES += \
-    android.hardware.authsecret-service.nxp \
     android.hardware.weaver-service.nxp
 
 PRODUCT_PACKAGES += \

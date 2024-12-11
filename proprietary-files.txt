@@ -287,6 +287,11 @@ vendor/lib64/soundfx/libswvqe.so
 vendor/lib64/soundfx/libvisualizer.so
 vendor/lib64/libmisoundfx_ext.so
 
+# Authsecret
+vendor/bin/hw/android.hardware.authsecret-service.nxp
+vendor/etc/init/android.hardware.authsecret-service.nxp.rc
+vendor/etc/vintf/manifest/android.hardware.authsecret-service.nxp.xml
+
 # AV Enhancements
 system_ext/lib64/libavenhancements.so
 
