@@ -82,6 +82,10 @@ function blob_fixup() {
         vendor/etc/seccomp_policy/atfwd@2.0.policy | vendor/etc/seccomp_policy/wfdhdcphalservice.policy | vendor/etc/seccomp_policy/qsap_sensors.policy | vendor/etc/seccomp_policy/gnss@2.0-qsap-location.policy)
             grep -q "gettid: 1" "${2}" || echo -e "\ngettid: 1" >> "${2}"
             ;;
+        vendor/etc/seccomp_policy/c2audio.vendor.ext-arm64.policy)
+            [ "$2" = "" ] && return 0
+            grep -q "setsockopt: 1" "${2}" || echo "setsockopt: 1" >> "${2}"
+            ;;
         vendor/lib64/vendor.libdpmframework.so)
             grep -q libhidlbase_shim.so "$2" || "$PATCHELF" --add-needed libhidlbase_shim.so "$2"
             ;;
