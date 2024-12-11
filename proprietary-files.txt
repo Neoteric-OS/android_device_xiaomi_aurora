@@ -812,7 +812,6 @@ vendor/lib64/libmis_platform.so
 vendor/lib64/libmis_plugin_dummy.so
 vendor/lib64/libmis_plugin_gme.so
 vendor/lib64/libmis_plugin_his.so
-vendor/lib64/libmis_plugin_his.so
 vendor/lib64/libmis_plugin_qisv2.so
 vendor/lib64/libmis_plugin_qisv3.so
 vendor/lib64/libmmcamera_bestats.so
@@ -2295,6 +2294,7 @@ vendor/lib64/libgralloc.qti.so
 vendor/lib64/libintervmipc.so
 vendor/lib64/libqdMetaData.so
 vendor/lib64/libqseed3.so
+vendor/lib64/libqservice.so
 vendor/lib64/librcmask.so
 vendor/lib64/libsdedrm.so
 vendor/lib64/libsdm-color.so
@@ -3079,6 +3079,7 @@ system_ext/lib64/vendor.qti.qesdhal@1.0.so
 system_ext/lib64/vendor.qti.qesdhal@1.1.so
 system_ext/lib64/vendor.qti.qesdhal@1.2.so
 vendor/bin/qesdk-manager
+vendor/bin/qesdk-secmanager
 vendor/etc/init/qesdk-manager.rc
 vendor/etc/init/qesdk-secmanager.rc
 vendor/etc/seccomp_policy/qesdk.policy
@@ -3734,6 +3735,7 @@ vendor/etc/thermald-devices.conf
 vendor/app/TimeService/TimeService.apk
 vendor/bin/time_daemon
 vendor/etc/init/init.time_daemon.rc
+vendor/lib64/libdiagjni.so
 vendor/lib64/libtime_genoff.so
 
 # TouchFeature
@@ -3753,6 +3755,7 @@ odm/firmware/aurora_test_limits_S3910P.csv
 odm/firmware/synaptics_spi_aurora.img
 
 # Trusted Execution Environment connector
+vendor/bin/GPTEE_Sample_client
 vendor/lib64/libGPMTEEC_vendor.so
 vendor/lib64/libGPTEE_vendor.so
 vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
