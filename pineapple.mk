@@ -562,7 +562,8 @@ PRODUCT_COPY_FILES += \
 
 # Shims
 PRODUCT_PACKAGES += \
-    libcodec2_shim
+    libcodec2_shim \
+    libhidlbase_shim
 
 # Shipping API level
 BOARD_SHIPPING_API_LEVEL := 34

@@ -76,6 +76,9 @@ function blob_fixup() {
             sed -i "/vp9.decoder/,/<\/MediaCodec>/d" "${2}"
             sed -i "/av1.decoder/,/<\/MediaCodec>/d" "${2}"
             ;;
+        vendor/lib64/vendor.libdpmframework.so)
+            grep -q libhidlbase_shim.so "$2" || "$PATCHELF" --add-needed libhidlbase_shim.so "$2"
+            ;;
         vendor/lib64/libqcodec2_core.so)
             grep -q "libcodec2_shim.so" "${2}" || "${PATCHELF}" --add-needed "libcodec2_shim.so" "${2}"
             ;;
