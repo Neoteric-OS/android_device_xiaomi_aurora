@@ -518,7 +518,8 @@ PRODUCT_PACKAGES += \
 TARGET_COMMON_QTI_COMPONENTS := \
     av \
     perf \
-    telephony
+    telephony \
+    usb
 
 # Radio
 PRODUCT_PACKAGES += \
@@ -590,29 +591,6 @@ PRODUCT_PACKAGES += \
     update_engine \
     update_engine_sideload \
     update_verifier
-
-# USB
-PRODUCT_HAS_GADGET_HAL := true
-
-PRODUCT_PACKAGES += \
-    android.hardware.usb-service.qti \
-    android.hardware.usb.gadget-service.qti
-
-PRODUCT_PACKAGES += \
-    init.qcom.usb.rc \
-    init.qcom.usb.sh \
-    usb_compositions.conf
-
-PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/usb/etc
-
-PRODUCT_PACKAGES += \
-    android.hardware.usb-V1-ndk.vendor \
-    android.hardware.usb.gadget-V1-ndk.vendor \
-    android.hardware.usb.gadget@1.1.vendor
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.usb.accessory.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.accessory.xml \
-    frameworks/native/data/etc/android.hardware.usb.host.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.host.xml
 
 # Vendor service manager
 PRODUCT_PACKAGES += \
