@@ -3836,7 +3836,6 @@ vendor/firmware/vpu33_4v.mbn
 vendor/firmware/vpu33_4v_unsigned.mbn
 
 # Weaver
-vendor/etc/vintf/manifest/android.hardware.weaver-service.nxp.xml
 vendor/lib64/ese_weaver.so
 
 # Widevine DRM
