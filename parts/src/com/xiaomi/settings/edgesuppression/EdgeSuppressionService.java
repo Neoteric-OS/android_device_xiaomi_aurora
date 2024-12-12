@@ -7,7 +7,6 @@
 package com.xiaomi.settings.edgesuppression;
 
 import android.app.Service;
-import android.content.Context;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -28,15 +27,35 @@ public class EdgeSuppressionService extends Service {
         if (Build.SKU.equals("aurora")) {
             if (DEBUG) Log.d(TAG, "Creating service");
             super.onCreate();
-            mEdgeSuppressionManager = EdgeSuppressionManager.getInstance(getApplicationContext());
+
+            // Initialize EdgeSuppressionManager
+            try {
+                mEdgeSuppressionManager = EdgeSuppressionManager.getInstance(getApplicationContext());
+                if (mEdgeSuppressionManager == null) {
+                    Log.e(TAG, "Failed to initialize EdgeSuppressionManager");
+                }
+            } catch (Exception e) {
+                Log.e(TAG, "Exception while initializing EdgeSuppressionManager", e);
+                stopSelf(); // Stop the service if initialization fails
+                return;
+            }
+
+            // Enable related settings activity
             getPackageManager().setComponentEnabledSetting(
                     new ComponentName(this, "com.xiaomi.settings.edgesuppression.EdgeSuppressionSettingsActivity"),
-                    PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
+                    PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
+                    PackageManager.DONT_KILL_APP
+            );
         } else {
             if (DEBUG) Log.d(TAG, "Stopping service, not supported on this device");
+
+            // Disable related settings activity
             getPackageManager().setComponentEnabledSetting(
                     new ComponentName(this, "com.xiaomi.settings.edgesuppression.EdgeSuppressionSettingsActivity"),
-                    PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
+                    PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                    PackageManager.DONT_KILL_APP
+            );
+
             stopSelf();
         }
     }
@@ -44,7 +63,17 @@ public class EdgeSuppressionService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         if (DEBUG) Log.d(TAG, "onStartCommand");
-        mEdgeSuppressionManager.handleEdgeSuppressionChange();
+
+        if (mEdgeSuppressionManager != null) {
+            try {
+                mEdgeSuppressionManager.handleEdgeSuppressionChange();
+            } catch (Exception e) {
+                Log.e(TAG, "Error handling edge suppression change", e);
+            }
+        } else {
+            Log.e(TAG, "EdgeSuppressionManager is null, skipping edge suppression change");
+        }
+
         return START_STICKY;
     }
 
@@ -57,8 +86,18 @@ public class EdgeSuppressionService extends Service {
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
+
         if (DEBUG) Log.d(TAG, "onConfigurationChanged");
-        mEdgeSuppressionManager.handleEdgeSuppressionChange();
+
+        if (mEdgeSuppressionManager != null) {
+            try {
+                mEdgeSuppressionManager.handleEdgeSuppressionChange();
+            } catch (Exception e) {
+                Log.e(TAG, "Error handling configuration change", e);
+            }
+        } else {
+            Log.e(TAG, "EdgeSuppressionManager is null, skipping configuration change handling");
+        }
     }
 
     @Override
