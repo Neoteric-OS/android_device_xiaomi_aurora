@@ -275,7 +275,9 @@ PRODUCT_PACKAGES += \
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.common.thread \
-    android.hardware.biometrics.common.util
+    android.hardware.biometrics.common.util \
+    android.hardware.biometrics.common.thread.vendor \
+    android.hardware.biometrics.common.util.vendor
 
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.common-V2-ndk.vendor \
