@@ -64,9 +64,27 @@ function blob_fixup() {
             ;;
         system/priv-app/MiuiCamera/MiuiCamera.apk)
             tmp_dir="${EXTRACT_TMP_DIR}/MiuiCamera"
-            apktool d -q "$2" -o "$tmp_dir" -f
-            grep -rl "com.miui.gallery" "$tmp_dir" | xargs sed -i 's|"com.miui.gallery"|"com.google.android.apps.photos"|g'
-            apktool b -q "$tmp_dir" -o "$2"
+            mkdir -p "$tmp_dir"
+
+            if [ ! -f "$2" ]; then
+                echo "Error: File $2 does not exist."
+                exit 1
+            fi
+
+            java -jar "${APKTOOL}" d -q "$2" -o "$tmp_dir" -f || {
+                echo "Error running apktool."
+                exit 1
+            }
+
+            if grep -rl "com.miui.gallery" "$tmp_dir"; then
+                grep -rl "com.miui.gallery" "$tmp_dir" | xargs sed -i 's|"com.miui.gallery"|"com.google.android.apps.photos"|g'
+            fi
+
+            java -jar "${APKTOOL}" b -q "$tmp_dir" -o "$2" || {
+                echo "Error rebuilding APK."
+                exit 1
+            }
+
             rm -rf "$tmp_dir"
             ;;
         vendor/bin/hw/vendor.qti.media.c2@1.0-service | vendor/bin/hw/vendor.dolby.media.c2@1.0-service | vendor/bin/hw/vendor.qti.media.c2audio@1.0-service)
