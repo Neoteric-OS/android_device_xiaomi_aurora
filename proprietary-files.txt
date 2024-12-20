@@ -3453,9 +3453,6 @@ vendor/etc/seccomp_policy/sxr@2.0.policy
 vendor/lib64/libsxrservice.so
 
 # Thermal
-vendor/bin/hw/android.hardware.thermal-service.qti
-vendor/etc/init/android.hardware.thermal-service.qti.rc
-vendor/etc/vintf/manifest/android.hardware.thermal-service.qti.xml
 -vendor/lib64/liblmthermallistner.so
 -vendor/lib64/libthermalclient.so
 
