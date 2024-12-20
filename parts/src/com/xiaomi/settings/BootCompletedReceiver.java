@@ -25,6 +25,7 @@ import com.xiaomi.settings.display.ColorModeService;
 import com.xiaomi.settings.display.DcDimmingService;
 import com.xiaomi.settings.edgesuppression.EdgeSuppressionService;
 import com.xiaomi.settings.touch.TouchOrientationService;
+import com.xiaomi.settings.touch.TouchPollingRateService;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
     private static final String TAG = "XiaomiParts";
@@ -81,12 +82,14 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         resolver.registerContentObserver(
                 Settings.Secure.getUriFor(Settings.Secure.DOUBLE_TAP_TO_WAKE), true, observer);
 
-        // Start DcDimmingService, EdgeSuppressionService and TouchOrientationService
+        // Start DcDimmingService, EdgeSuppressionService, TouchOrientationService and TouchPollingRateService
         context.startServiceAsUser(new Intent(context, DcDimmingService.class),
                 UserHandle.CURRENT);
         context.startServiceAsUser(new Intent(context, EdgeSuppressionService.class),
                 UserHandle.CURRENT);
         context.startServiceAsUser(new Intent(context, TouchOrientationService.class),
+                UserHandle.CURRENT);
+        context.startServiceAsUser(new Intent(context, TouchPollingRateService.class),
                 UserHandle.CURRENT);
 
         // Update Tap to Wake status initially
