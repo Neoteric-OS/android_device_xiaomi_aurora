@@ -61,6 +61,11 @@
         </service>
 
         <service
+            android:name=".doze.AodBrightnessService"
+            android:exported="true">
+        </service>
+
+        <service
             android:name=".edgesuppression.EdgeSuppressionService"
             android:exported="true">
         </service>
