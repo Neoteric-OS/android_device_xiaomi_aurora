@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2023 Paranoid Android
+ * Copyright (C) 2025 Neoteric OS
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -16,10 +17,6 @@ import android.database.ContentObserver;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.IBinder;
-import android.os.Looper;
-import android.os.ServiceManager;
-import android.os.SystemProperties;
-import android.os.UserHandle;
 import android.provider.Settings;
 import android.util.Log;
 
@@ -44,6 +41,7 @@ public class TouchPollingRateService extends Service {
         mContentResolver = getContentResolver();
         mScreenStateReceiver = new ScreenStateReceiver();
         mSettingsObserver = new SettingsObserver(mHandler);
+        mSettingsObserver.update();
     }
 
     @Override
@@ -51,13 +49,14 @@ public class TouchPollingRateService extends Service {
         if (DEBUG) Log.d(TAG, "Starting service");
         mScreenStateReceiver.register();
         mSettingsObserver.register();
-        mSettingsObserver.update();
         return START_STICKY;
     }
 
     @Override
     public void onDestroy() {
         if (DEBUG) Log.d(TAG, "Destroying service");
+        unregisterReceiver(mScreenStateReceiver);
+        mContentResolver.unregisterContentObserver(mSettingsObserver);
         super.onDestroy();
     }
 
@@ -69,8 +68,10 @@ public class TouchPollingRateService extends Service {
     private final class ScreenStateReceiver extends BroadcastReceiver {
         public void register() {
             if (DEBUG) Log.d(TAG, "ScreenStateReceiver: register");
-            registerReceiver(mScreenStateReceiver, new IntentFilter(Intent.ACTION_SCREEN_ON));
-            registerReceiver(mScreenStateReceiver, new IntentFilter(Intent.ACTION_SCREEN_OFF));
+            IntentFilter filter = new IntentFilter();
+            filter.addAction(Intent.ACTION_SCREEN_ON);
+            filter.addAction(Intent.ACTION_USER_PRESENT);
+            registerReceiver(this, filter);
         }
 
         @Override
@@ -78,11 +79,11 @@ public class TouchPollingRateService extends Service {
             switch (intent.getAction()) {
                 case Intent.ACTION_SCREEN_ON:
                     if (DEBUG) Log.d(TAG, "Received ACTION_SCREEN_ON");
-                    TfWrapper.setTouchFeature(new TfWrapper.TfParams(0, mIsPollingEnabled ? 1 : 0));
+                    mSettingsObserver.update();
                     break;
-                case Intent.ACTION_SCREEN_OFF:
-                    if (DEBUG) Log.d(TAG, "Received ACTION_SCREEN_OFF");
-                    TfWrapper.setTouchFeature(new TfWrapper.TfParams(0, 0));
+                case Intent.ACTION_USER_PRESENT:
+                    if (DEBUG) Log.d(TAG, "Received ACTION_USER_PRESENT");
+                    mSettingsObserver.update();
                     break;
             }
         }
