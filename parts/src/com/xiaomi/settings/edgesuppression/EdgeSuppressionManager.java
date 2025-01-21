@@ -70,6 +70,8 @@ public class EdgeSuppressionManager {
     }
 
     public int[] handleEdgeSuppressionChange() {
+        // Ensure ITouchFeature is initialized
+        TfWrapper.getTouchFeature();
         int rotation = ((WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getRotation();
         float width = PreferenceManager.getDefaultSharedPreferences(mContext).getFloat("edgesuppression_width_value", 0.8f);
         int[] suppressionRect = getSuppressionRect(rotation, width);
