@@ -27,3 +27,7 @@ vendor.voice.path.for.pcm.voip=true
 # Camera
 ro.com.google.lens.oem_camera_package=com.android.camera
 ro.hardware.camera=xiaomi
+
+# RKPD
+remote_provisioning.enable_rkpd=true
+remote_provisioning.hostname=remoteprovisioning.googleapis.com
