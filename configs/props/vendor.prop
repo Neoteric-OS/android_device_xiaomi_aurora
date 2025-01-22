@@ -342,30 +342,18 @@ ro.crypto.metadata_init_delete_all_keys.enabled=true
 ro.hardware.keystore_desede=true
 
 # Media
-debug.c2.use_dmabufheaps=1
-debug.config.media.video.aie.support=true
-debug.config.media.video.ais.support=true
-debug.config.media.video.frc.support=true
-debug.mdpcomp.logs=0
-debug.media.video.chipset=6
-debug.media.video.frc=false
-debug.media.video.vpp=false
 debug.stagefright.c2inputsurface=-1
 debug.stagefright.ccodec=4
 debug.stagefright.omx_default_rank=0
+media.stagefright.enable-aac=true
+media.stagefright.enable-fma2dp=true
+media.stagefright.enable-http=true
+media.stagefright.enable-player=true
+media.stagefright.enable-qcp=true
+media.stagefright.enable-scan=true
 media.stagefright.thumbnail.prefer_hw_codecs=true
-ro.vendor.media.video.frc.support=true
-ro.vendor.media.video.vpp.support=true
-vendor.media.vpp.aie.cade=100
-vendor.media.vpp.aie.ltm=1
-vendor.media.vpp.aie.ltmacebrih=0
-vendor.media.vpp.aie.ltmacebril=20
-vendor.media.vpp.aie.ltmacestr=37
-vendor.media.vpp.aie.ltmsatgain=55
-vendor.media.vpp.aie.ltmsatoff=55
-vendor.media.vpp.debug.value.use=false
+ro.mediaserver.64b.enable=true
 vendor.mm.enable.qcom_parser=16777215
-vendor.media.omx=0
 
 # Partition source order for Product/Build properties pickup
 ro.product.property_source_order=odm,vendor,product,system_ext,system
