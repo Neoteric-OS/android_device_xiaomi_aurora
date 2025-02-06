@@ -599,3 +599,7 @@ subsystem mem_buf_vm
 
 # Q2SPI UWB device
 /dev/q2spiuwb    0660    uwb    uwb
+
+# Torch control
+/sys/devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-01/c42d000.qcom,spmi:qcom,pm8550@1:qcom,flash_led@ee00/leds/led:torch_0/ brightness 0660 cameraserver camera
+/sys/devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-01/c42d000.qcom,spmi:qcom,pm8550@1:qcom,flash_led@ee00/leds/led:switch_2 brightness 0660 cameraserver camera
