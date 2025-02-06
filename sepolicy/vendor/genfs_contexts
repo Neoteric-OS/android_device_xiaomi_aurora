@@ -11,7 +11,7 @@ genfscon sysfs "/devices/virtual/touch/touch_dev/fod_press_status" u:object_r:sy
 genfscon proc /last_kmsg                                         u:object_r:proc_last_kmsg:s0
 
 # LEDS
-genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-01/c42d000.qcom,spmi:qcom,pm8550@1:qcom,flash_led@ee00/leds/led:torch_0/brightness u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-01/c42d000.qcom,spmi:qcom,pm8550@1:qcom,flash_led@ee00/leds/led:torch_0/brightness u:object_r:sysfs_torch:s0
 genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-01/c42d000.qcom,spmi:qcom,pm8550@1:qcom,flash_led@ee00/leds/led:switch_0/brightness u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-01/c42d000.qcom,spmi:qcom,pm8550@1:qcom,flash_led@ee00/leds/led:torch_3/brightness u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-01/c42d000.qcom,spmi:qcom,pm8550@1:qcom,flash_led@ee00/leds/led:flash_2/brightness u:object_r:sysfs_leds:s0
@@ -20,12 +20,12 @@ genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-01/c42d000.qcom,
 genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-01/c42d000.qcom,spmi:qcom,pm8550@1:qcom,flash_led@ee00/leds/led:flash_0/brightness u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-01/c42d000.qcom,spmi:qcom,pm8550@1:qcom,flash_led@ee00/leds/led:flash_3/brightness u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-01/c42d000.qcom,spmi:qcom,pm8550@1:qcom,flash_led@ee00/leds/led:torch_2/brightness u:object_r:sysfs_leds:s0
-genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-01/c42d000.qcom,spmi:qcom,pm8550@1:qcom,flash_led@ee00/leds/led:switch_2/brightness u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-01/c42d000.qcom,spmi:qcom,pm8550@1:qcom,flash_led@ee00/leds/led:switch_2/brightness u:object_r:sysfs_torch:s0
 genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-01/c42d000.qcom,spmi:qcom,pm8550@1:qcom,flash_led@ee00/leds/led:flash_1/brightness u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-01/c42d000.qcom,spmi:qcom,pm8550@1:qcom,leds@ef00/leds/green/brightness u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-01/c42d000.qcom,spmi:qcom,pm8550@1:qcom,leds@ef00/leds/red/brightness u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-01/c42d000.qcom,spmi:qcom,pm8550@1:qcom,leds@ef00/leds/blue/brightness u:object_r:sysfs_leds:s0
-genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-01/c42d000.qcom,spmi:qcom,pm8550@1:qcom,flash_led@ee00/leds/led:torch_0/max_brightness u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-01/c42d000.qcom,spmi:qcom,pm8550@1:qcom,flash_led@ee00/leds/led:torch_0/max_brightness u:object_r:sysfs_torch:s0
 
 # Memory
 genfscon sysfs /devices/virtual/mi_memory/mi_memory_device/ufshcd0 u:object_r:vendor_sysfs_memory:s0

@@ -11,7 +11,7 @@
 #define TORCH_BRIGHTNESS "brightness"
 #define TORCH_MAX_BRIGHTNESS "max_brightness"
 #define TOGGLE_SWITCH "/sys/devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-01/c42d000.qcom,spmi:qcom,pm8550@1:qcom,flash_led@ee00/leds/led:switch_2/brightness"
-static std::string kTorchLedPath = "/sys/devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-01/c42d000.qcom,spmi:qcom,pm8550@1:qcom,flash_led@ee00/leds/led:torch_0/brightness";
+static std::string kTorchLedPath = "/sys/devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-01/c42d000.qcom,spmi:qcom,pm8550@1:qcom,flash_led@ee00/leds/led:torch_0";
 
 /**
  * Write value to path and close file.
