@@ -5,9 +5,9 @@ type vendor_hal_fingerprint_dtool1_service, hal_service_type, protected_service,
 allow vendor_dtool system_server:binder transfer;
 allow vendor_dtool system_server:binder { call transfer };
 allow vendor_dtool system_server:fd *;
-#allow vendor_dtool vendor_mfp-daemon:binder { call transfer };
-#allow vendor_dtool vendor_mfp-daemon:binder transfer;
-#allow vendor_dtool vendor_mfp-daemon:fd *;
+allow vendor_dtool vendor_mfp-daemon:binder { call transfer };
+allow vendor_dtool vendor_mfp-daemon:binder transfer;
+allow vendor_dtool vendor_mfp-daemon:fd *;
 allow vendor_dtool hidl_base_hwservice:hwservice_manager add;
 allow vendor_dtool vendor_fingerprint_data_file_fpdump:dir { open read remove_name search write };
 allow vendor_dtool vendor_fingerprint_data_file_fpdump:file { getattr open read unlink };

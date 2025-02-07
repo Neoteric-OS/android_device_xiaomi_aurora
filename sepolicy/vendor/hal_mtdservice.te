@@ -1,6 +1,7 @@
 type hal_mtdservice_default, domain;
 type hal_mtdservice_default_exec, exec_type, file_type, vendor_file_type;
 type hal_mtdservice_service, hal_service_type, protected_service, service_manager_type;
+type hal_mtdservice_hwservice, hwservice_manager_type;
 
 hal_server_domain(hal_mtdservice_default, hal_mtdservice)
 allow hal_mtdservice_default hal_secure_element_default:binder transfer;
