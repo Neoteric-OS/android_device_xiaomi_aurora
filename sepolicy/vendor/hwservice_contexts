@@ -26,7 +26,6 @@ com.android.ozoaudio.notify::IOzoNotify                         u:object_r:vendo
 
 # Sensors
 vendor.xiaomi.sensor.citsensorservice::ICitSensorService   u:object_r:vendor_hal_citsensorservice_xiaomi_hwservice:s0
-vendor.xiaomi.sensor.communicate::ISensorCommunicate  u:object_r:vendor_hal_sensorcommunicate_hwservice:s0
 
 # SLA
 vendor.qti.sla.service::ISlaService             u:object_r:hal_slaservice_hwservice:s0

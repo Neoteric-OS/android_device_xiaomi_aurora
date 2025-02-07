@@ -1,6 +1,7 @@
 type hal_tidaservice_default, domain;
 type hal_tidaservice_default_exec, exec_type, file_type, vendor_file_type;
 type hal_tidaservice_service, hal_service_type, protected_service, service_manager_type;
+type hal_tidaservice_hwservice, hwservice_manager_type;
 
 hal_server_domain(hal_tidaservice_default, hal_tidaservice)
 allow hal_tidaservice_client hal_tidaservice_server:binder { call transfer };
