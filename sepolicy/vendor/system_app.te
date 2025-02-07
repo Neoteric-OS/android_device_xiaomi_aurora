@@ -82,6 +82,9 @@ allow system_app touchfeature_device:file { getattr map read };
 get_prop(system_app, vendor_touchfeature_prop)
 hal_client_domain(system_app, hal_touchfeature_xiaomi)
 
+# UDFPS
+allow system_app sysfs_tp_fodstatus:file { open read getattr };
+
 # UFS
 allow system_app ufs_sysfs:file { getattr open read };
 
