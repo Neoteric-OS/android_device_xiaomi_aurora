@@ -24,6 +24,6 @@
 #include "util/CancellationSignal.h"
 #include "util/Util.h"
 
-using namespace ::android::fingerprint;
+using namespace ::android::fingerprint::xiaomi;
 
 namespace aidl::android::hardware::biometrics::fingerprint {}

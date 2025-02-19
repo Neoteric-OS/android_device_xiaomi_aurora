@@ -27,7 +27,7 @@
 #undef LOG_TAG
 #define LOG_TAG "FingerprintHalUdfps"
 
-using namespace ::android::fingerprint;
+using namespace ::android::fingerprint::xiaomi;
 
 namespace aidl::android::hardware::biometrics::fingerprint {
 
