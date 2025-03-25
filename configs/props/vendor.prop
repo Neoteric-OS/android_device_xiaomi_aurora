@@ -296,6 +296,7 @@ vendor.gatekeeper.is_security_level_spu=0
 persist.backup.ntpServer=0.pool.ntp.org
 
 # Graphics
+debug.graphics.game_default_frame_rate.disabled=true
 debug.egl.hw=0
 debug.sf.auto_latch_unsignaled=0
 debug.sf.disable_client_composition_cache=1
