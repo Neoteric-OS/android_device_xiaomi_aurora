@@ -1,4 +1,3 @@
-
 # Copyright (c) 2019-2021, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -79,6 +78,11 @@ on init
     chown system system /sys/devices/platform/soc/1d84000.ufshc/auto_hibern8
     chmod 0660 /sys/devices/platform/soc/1d84000.ufshc/auto_hibern8
     start logd
+    mkdir /dev/cpuctl/general
+    copy_per_line /dev/cpuctl/tasks /dev/cpuctl/general/tasks
+    chown system system /dev/cpuctl/general
+    chown system system /dev/cpuctl/general/tasks
+    chmod 0644 /dev/cpuctl/general/tasks
 
 # MIUI ADD: Performance_BoostFramework
     mkdir /dev/cpuctl/misc
@@ -222,11 +226,29 @@ on post-fs-data
     chmod 0666 /sys/module/metis/parameters/mi_lock_blocked_pid
     restorecon /sys/module/metis/parameters/mi_lock_blocked_pid
 
+    chmod 0666 /sys/module/metis/parameters/stask_prefer_cluster
+    restorecon /sys/module/metis/parameters/stask_prefer_cluster
+    chmod 0666 /sys/module/metis/parameters/render_prefer_cluster
+    restorecon /sys/module/metis/parameters/render_prefer_cluster
+    chmod 0666 /sys/module/metis/parameters/vip_prefer_cluster
+    restorecon /sys/module/metis/parameters/vip_prefer_cluster
+    chmod 0666 /sys/module/metis/parameters/ip_prefer_cluster
+    restorecon /sys/module/metis/parameters/ip_prefer_cluster
+    chmod 0666 /sys/module/metis/parameters/force_forbidden_walt_lb
+    restorecon /sys/module/metis/parameters/force_forbidden_walt_lb
+    chmod 0666 /sys/module/metis/parameters/force_viptask_select_rq
+    restorecon /sys/module/metis/parameters/force_viptask_select_rq
+    chmod 0666 /sys/module/metis/parameters/force_cluster_sched_enable
+    restorecon /sys/module/metis/parameters/force_cluster_sched_enable
+
     mkdir /vendor/data/tombstones 0771 system system
     # add wlan log output path
     mkdir /data/vendor/wlan_logs 0777 root shell
     mkdir /data/vendor/mac_addr 0770 system wifi
     mkdir /mnt/vendor/persist/kiwi_v2 0770 system wifi
+    #enable poweroff log clean
+    setprop persist.sys.offlinelog.poweroff_charger_log clean
+
     # Enable WLAN cold boot calibration
     write /sys/kernel/cnss/fs_ready 1
     chmod 0660 /dev/ir_spi
@@ -272,6 +294,9 @@ on post-fs-data
     chmod 0664 /sys/class/leds/led:switch_3/trigger
     chmod 0664 /sys/class/leds/flashlight/brightness
 
+    #QCC mode configuration
+    setprop vendor.qti.qcc.oper.mode 3
+
     chmod 0662 /dev/miev
     restorecon /dev/miev
 # MIUI ADD: Performance_BoostFramework
@@ -280,8 +305,6 @@ on post-fs-data
 
 on early-boot
     verity_update_state
-    #Enable WLAN SSR recovery
-    write /sys/kernel/cnss/recovery 3
 
 on boot
     write /dev/cpuset/audio-app/cpus 0-1
@@ -333,21 +356,11 @@ on boot
     chown cameraserver cameraserver /sys/class/thermal/thermal_message/torch_real_level
     chown cameraserver cameraserver /sys/class/thermal/thermal_message/flash_state
     chown system system /sys/class/thermal/thermal_message/charger_temp
+    chown system system /sys/class/thermal/power_save/powersave_mode
+    chown system system /sys/class/thermal/power_save/power_level
     chown system system /sys/class/thermal/thermal_message/board_sensor_temp_comp
     chown system system /sys/class/thermal/thermal_message/cpu_nolimit_temp
     #END Thermal_NodeReq
-
-    #MIUI ADD: Memory_CLD
-    #ufscld functions permission
-    chown root system /sys/devices/platform/soc/1d84000.ufshc/ufscld/auto_hibern8_enable
-    chown root system /sys/devices/platform/soc/1d84000.ufshc/ufscld/block_suspend
-    chown root system /sys/devices/platform/soc/1d84000.ufshc/ufscld/cld_operation_status
-    chown root system /sys/devices/platform/soc/1d84000.ufshc/ufscld/debug
-    chown root system /sys/devices/platform/soc/1d84000.ufshc/ufscld/frag_level
-    chown root system /sys/devices/platform/soc/1d84000.ufshc/ufscld/trigger
-    chown root system /sys/devices/platform/soc/1d84000.ufshc/ufscld/trigger_interval
-    chmod 664 /sys/devices/platform/soc/1d84000.ufshc/ufscld/trigger
-    #END Memory_CLD
 
     # mi-misight.rc changes
     mkdir /data/vendor/bsplog 0775 system system
@@ -367,9 +380,22 @@ on property:vendor.display.lcd_density=560
 on property:vendor.display.lcd_density=640
    setprop dalvik.vm.heapgrowthlimit 512m
 
+    #MIUI ADD: Memory_CLD
+    #ufscld functions permission
+    chown root system /sys/devices/platform/soc/1d84000.ufshc/ufscld/auto_hibern8_enable
+    chown root system /sys/devices/platform/soc/1d84000.ufshc/ufscld/block_suspend
+    chown root system /sys/devices/platform/soc/1d84000.ufshc/ufscld/cld_operation_status
+    chown root system /sys/devices/platform/soc/1d84000.ufshc/ufscld/debug
+    chown root system /sys/devices/platform/soc/1d84000.ufshc/ufscld/frag_level
+    chown root system /sys/devices/platform/soc/1d84000.ufshc/ufscld/trigger
+    chown root system /sys/devices/platform/soc/1d84000.ufshc/ufscld/trigger_interval
+    chmod 664 /sys/devices/platform/soc/1d84000.ufshc/ufscld/trigger
+    #END Memory_CLD
+
 on init && property:ro.boot.mode=charger
     wait_for_prop vendor.all.modules.ready 1
     mount_all /vendor/etc/charger_fw_fstab.qti --early
+    start vendor.pd_mapper
     wait /sys/kernel/boot_adsp/boot
     write /sys/kernel/boot_adsp/boot 1
 
