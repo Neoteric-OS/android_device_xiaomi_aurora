@@ -2476,11 +2476,6 @@ vendor/gpu/kbc/unified_kbcs_32.bin
 vendor/gpu/kbc/unified_kbcs_64.bin
 vendor/gpu/kbc/unified_ksqs.bin
 
-# Identity service
-vendor/etc/init/android.hardware.identity-service-qti.rc
-vendor/etc/vintf/manifest/manifest_identity_credential.xml
-vendor/lib64/libqtiidentitycredential.so
-
 # IMS
 vendor/bin/ims-dataservice-daemon
 vendor/bin/ims_rtp_daemon
@@ -3318,7 +3313,6 @@ vendor/etc/sensors/config/qsh_ble.json
 vendor/etc/sensors/hals.conf
 vendor/etc/sensors/sns_reg_config
 vendor/etc/vintf/manifest/vendor.qti.hardware.sensorscalibrate.xml
-vendor/lib64/hw/sensors.dynamic_sensor_hal.so
 vendor/lib64/libqsh.so
 vendor/lib64/libsensor_calibration.so
 vendor/lib64/libsensorcal.so
