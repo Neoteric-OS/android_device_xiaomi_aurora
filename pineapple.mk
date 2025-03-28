@@ -264,6 +264,9 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.common-V3-ndk.vendor \
     android.hardware.biometrics.fingerprint-V3-ndk.vendor
 
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint-service.xiaomi-8650
+
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
