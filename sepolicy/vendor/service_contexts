@@ -18,7 +18,6 @@ com.fingerprints.extension3.IFingerprintNavigation/default              u:object
 com.fingerprints.extension3.IFingerprintSensorTest/default              u:object_r:vendor_hal_fingerprint_service_xiaomi:s0
 vendor.xiaomi.hardware.fingerprintextension.IXiaomiFingerprint/default  u:object_r:vendor_hal_fingerprint_service_xiaomi:s0
 vendor.xiaomi.hardware.fx.tunnel.IMiFxTunnel/default                    u:object_r:vendor_hal_fingerprint_service_xiaomi:s0
-vendor.xiaomi.hardware.dtool1.IDtool/default                            u:object_r:vendor_hal_fingerprint_dtool1_service:s0
 
 # Micharge
 vendor.xiaomi.hardware.micharge.IMiCharge/default   u:object_r:vendor_hal_micharge_xiaomi_service:s0

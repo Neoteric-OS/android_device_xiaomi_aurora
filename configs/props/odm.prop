@@ -30,15 +30,8 @@ sys.displayfeature.entry.enable=true
 vendor.wv.oemcrypto.debug.enable_prov40=true
 
 # Fingerprint
-persist.vendor.sys.fp.expolevel=0x88
-persist.vendor.sys.fp.fod.location.X_Y=597,2406
-persist.vendor.sys.fp.fod.size.width_height=246,246
-ro.hardware.fp.fod.location=low
-ro.hardware.fp.fod.lowlight.brightness.threshold=411
-ro.hardware.fp.fod.lowlight.lux.threshold=3
-ro.hardware.fp.fod.touch.ctl.version=2.0
-ro.hardware.fp.fod=true
-ro.hardware.fp.mievent=true
+persist.vendor.fingerprint.type=udfps
+persist.vendor.fingerprint.sensor_location=722:2526:123
 
 # Marketname
 ro.product.marketname=Xiaomi 14 Ultra

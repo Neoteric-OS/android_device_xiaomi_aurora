@@ -21,9 +21,6 @@ hal_client_domain(system_server, hal_dms)
 
 # Fingerprint
 allow system_server vendor_hal_fingerprint_hwservice_xiaomi:hwservice_manager { add find };
-allow system_server vendor_dtool:binder { call transfer };
-allow system_server vendor_dtool:binder transfer;
-allow system_server vendor_dtool:fd *;
 get_prop(system_server, vendor_fp_prop)
 
 # last_kmsg
