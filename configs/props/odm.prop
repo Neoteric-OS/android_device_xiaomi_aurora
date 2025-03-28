@@ -32,6 +32,7 @@ vendor.wv.oemcrypto.debug.enable_prov40=true
 # Fingerprint
 persist.vendor.fingerprint.type=udfps
 persist.vendor.fingerprint.sensor_location=722:2526:123
+ro.hardware.fingerprint=goodix_fod
 
 # Marketname
 ro.product.marketname=Xiaomi 14 Ultra
