@@ -3467,36 +3467,9 @@ odm/firmware/aurora_test_limits_S3910P.csv
 odm/firmware/synaptics_spi_aurora.img
 
 # Trusted Execution Environment connector
-vendor/bin/GPTEE_Sample_client
 vendor/lib64/libGPMTEEC_vendor.so
 vendor/lib64/libGPTEE_vendor.so
 vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
-
-# Trusted User Interface
-vendor/bin/hw/vendor.qti.hardware.trustedui-aidl-service-qti
-vendor/bin/trusteduilistener
-vendor/etc/init/trusteduilistener.rc
-vendor/etc/init/vendor.qti.hardware.trustedui-aidl-service-qti.rc
-vendor/etc/vintf/manifest/vendor.qti.hardware.trustedui-aidl-service.xml
-vendor/lib64/libTouchInputVM.so
-vendor/lib64/libTrustedInput.so
-vendor/lib64/libTrustedInputAIDL.so
-vendor/lib64/libTrustedInputTZ.so
-vendor/lib64/libTrustedInputUtils.so
-vendor/lib64/libTrustedUI.so
-vendor/lib64/libTrustedUIAIDL.so
-vendor/lib64/libTrustedUITZ.so
-vendor/lib64/libTrustedUIVM.so
-vendor/lib64/libTxPwrJni.so
-vendor/lib64/libcpion.so
-vendor/lib64/libloadtrusteduiapp.so
-vendor/lib64/libsi.so
-vendor/lib64/libsilkyscrolls.so
-vendor/lib64/libtaautoload.so
-vendor/lib64/vendor.qti.hardware.trustedui-V1-ndk.so
-vendor/lib64/vendor.qti.hardware.trustedui@1.0.so
-vendor/lib64/vendor.qti.hardware.trustedui@1.1.so
-vendor/lib64/vendor.qti.hardware.trustedui@1.2.so
 
 # Trustzone
 vendor/app/TrustZoneAccessService/TrustZoneAccessService.apk
