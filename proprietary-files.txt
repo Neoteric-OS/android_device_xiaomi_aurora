@@ -2064,7 +2064,6 @@ vendor/lib64/vendor.qti.hardware.capabilityconfigstore@1.0.so
 # Connection Security
 vendor/app/ConnectionSecurityService/ConnectionSecurityService.apk
 vendor/bin/ssgqmigd
-vendor/bin/ssgqmigd64
 vendor/bin/ssgtzd
 vendor/etc/init/ssgtzd.rc
 vendor/etc/ssg/tz_whitelist.json
@@ -2696,19 +2695,6 @@ vendor/bin/hw/vendor.xiaomi.hardware.micharge-service
 vendor/etc/init/vendor.xiaomi.hardware.micharge-service.rc
 vendor/etc/vintf/manifest/vendor.xiaomi.hardware.micharge.xml
 vendor/lib64/vendor.xiaomi.hardware.micharge-V2-ndk.so
-
-# MMI
-vendor/bin/hw/vendor.qti.hardware.factory-service
-vendor/bin/hw/vendor.qti.hardware.factory@1.0-service
-vendor/bin/mmid
-vendor/etc/init/vendor.qti.hardware.factory-service.rc
-vendor/etc/init/vendor.qti.hardware.factory@1.0-service.rc
-vendor/etc/permissions/android.hardware.light.xml
-vendor/etc/permissions/vendor.qti.hardware.factory.xml
-vendor/etc/vintf/manifest/vendor.qti.hardware.factory.ifactory.xml
-vendor/lib64/vendor.qti.hardware.factory-V1-ndk.so
-vendor/lib64/vendor.qti.hardware.factory@1.0.so
-vendor/lib64/vendor.qti.hardware.factory@1.1.so
 
 # ML
 vendor/lib64/MLPD_0.pickle
