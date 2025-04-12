@@ -96,7 +96,7 @@ function blob_fixup() {
         vendor/etc/init/hw/init.qcom.rc)
             sed -i '/interface vendor\.qti\.hardware\.wigig\.netperftuner@1\.0::INetPerfTuner default/d' "${2}"
             ;;
-        vendor/etc/seccomp_policy/atfwd@2.0.policy | vendor/etc/seccomp_policy/wfdhdcphalservice.policy | vendor/etc/seccomp_policy/qsap_sensors.policy | vendor/etc/seccomp_policy/gnss@2.0-qsap-location.policy | vendor/etc/seccomp_policy/qesdk.policy | vendor/etc/seccomp_policy/qesdksec.policy)
+        vendor/etc/seccomp_policy/atfwd@2.0.policy | vendor/etc/seccomp_policy/wfdhdcphalservice.policy | vendor/etc/seccomp_policy/qsap_sensors.policy | vendor/etc/seccomp_policy/qesdk.policy | vendor/etc/seccomp_policy/qesdksec.policy)
             [ "$2" = "" ] && return 0
             [ -n "$(tail -c 1 "${2}")" ] && echo >> "${2}"
             grep -q "gettid: 1" "${2}" || echo "gettid: 1" >> "${2}"
@@ -104,6 +104,13 @@ function blob_fixup() {
         vendor/etc/seccomp_policy/c2audio.vendor.ext-arm64.policy)
             [ "$2" = "" ] && return 0
             grep -q "setsockopt: 1" "${2}" || echo "setsockopt: 1" >> "${2}"
+            ;;
+        vendor/etc/seccomp_policy/gnss@2.0-qsap-location.policy)
+            [ "$2" = "" ] && return 0
+            [ -n "$(tail -c 1 "${2}")" ] && echo >> "${2}"
+            grep -q "gettid: 1" "${2}" || echo "gettid: 1" >> "${2}"
+            grep -q "sched_get_priority_min: 1" "${2}" || echo "sched_get_priority_min: 1" >> "${2}"
+            grep -q "sched_get_priority_max: 1" "${2}" || echo "sched_get_priority_max: 1" >> "${2}"
             ;;
         vendor/lib64/vendor.libdpmframework.so)
             grep -q libhidlbase_shim.so "$2" || "$PATCHELF" --add-needed libhidlbase_shim.so "$2"
