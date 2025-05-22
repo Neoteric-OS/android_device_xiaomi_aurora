@@ -21,8 +21,10 @@ on boot
 
     chown system system /sys/class/power_supply/battery/input_suspend
     chown system system /sys/class/qcom-battery/input_suspend
+    chown system system /sys/class/qcom-battery/night_charging
     chmod 0660 /sys/class/power_supply/battery/input_suspend
     chmod 0660 /sys/class/qcom-battery/input_suspend
+    chmod 0660 /sys/class/qcom-battery/night_charging
 
 # Migrate tasks again in case kernel threads are created during boot
 on property:sys.boot_completed=1
