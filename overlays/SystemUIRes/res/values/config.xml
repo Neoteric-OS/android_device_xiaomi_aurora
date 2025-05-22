@@ -33,4 +33,7 @@
 
     <!-- Location on the screen of the center of the fingerprint sensor. -->
     <dimen name="physical_fingerprint_sensor_center_screen_location_y">2490px</dimen>
+
+    <!-- Color of the UDFPS pressed view -->
+    <color name="config_udfpsColor">#00FFFFFF</color>
 </resources>
