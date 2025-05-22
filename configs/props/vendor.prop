@@ -270,7 +270,6 @@ ro.vendor.beluga.s=0x900
 ro.vendor.beluga.t=0x240
 ro.vendor.bcbc.enable=true
 ro.vendor.colorpick_adjust=true
-ro.vendor.displayfeature.dump=true
 vendor.display.use_layer_ext=0
 
 # DPM
