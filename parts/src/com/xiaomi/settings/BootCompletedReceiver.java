@@ -27,6 +27,7 @@ import com.xiaomi.settings.doze.AodBrightnessService;
 import com.xiaomi.settings.edgesuppression.EdgeSuppressionService;
 import com.xiaomi.settings.touch.TouchOrientationService;
 import com.xiaomi.settings.touch.TouchPollingRateService;
+import com.xiaomi.settings.volume.VolumeListenerService;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
     private static final String TAG = "XiaomiParts";
@@ -94,6 +95,8 @@ public class BootCompletedReceiver extends BroadcastReceiver {
                 UserHandle.CURRENT);
         context.startServiceAsUser(new Intent(context, TouchPollingRateService.class),
                 UserHandle.CURRENT);
+        // Start VolumeListenerService on boot
+        context.startService(new Intent(context, VolumeListenerService.class));
 
         // Update Tap to Wake status initially
         updateTapToWakeStatus(context);
