@@ -163,7 +163,6 @@ odm/etc/audio/misound_res_spk_power_sva.bin
 odm/etc/audio/misound_res_spk_power_video.bin
 odm/etc/audio/misoundsa_spk_config.bin
 odm/etc/audio/misoundsa_spk_config_tt.bin
-odm/etc/audio/silent-3sec.wav
 odm/lib64/libaudioroute_ext.so
 odm/lib64/libcrussp.so
 vendor/etc/models/acd/environment.eai
@@ -171,6 +170,7 @@ vendor/etc/models/acd/event.eai
 vendor/etc/models/acd/music.eai
 vendor/etc/models/acd/speech.eai
 vendor/etc/audio_cloud_control_white_list.xml
+vendor/etc/misound_asc_model.tflite
 vendor/lib64/hw/audio.primary.pineapple.so
 vendor/lib64/libVoiceSdk.so
 vendor/lib64/lib_misound_asc.so
