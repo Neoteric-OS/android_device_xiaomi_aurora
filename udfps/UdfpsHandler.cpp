@@ -45,7 +45,7 @@ static void set(const std::string& path, const T& value) {
 
 }  // anonymous namespace
 
-class XiaomiSM8650UdfpsHander : public UdfpsHandler {
+class XiaomiSM8650UdfpsHandler : public UdfpsHandler {
   public:
     void init(fingerprint_device_t* device) {
         mDevice = device;
@@ -109,7 +109,7 @@ class XiaomiSM8650UdfpsHander : public UdfpsHandler {
 };
 
 static UdfpsHandler* create() {
-    return new XiaomiSM8650UdfpsHander();
+    return new XiaomiSM8650UdfpsHandler();
 }
 
 static void destroy(UdfpsHandler* handler) {
