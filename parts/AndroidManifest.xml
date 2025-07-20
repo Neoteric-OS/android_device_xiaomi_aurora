@@ -15,7 +15,6 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
-    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 
     <application
         android:label="@string/device_settings_app_name"
@@ -90,10 +89,6 @@
         <service
             android:name=".touch.TouchPollingRateService"
             android:exported="true">
-        </service>
-
-        <service
-            android:name=".volume.VolumeListenerService">
         </service>
 
     </application>

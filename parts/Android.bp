@@ -23,7 +23,6 @@ android_app {
     ],
     required: [
         "privapp_whitelist_com.xiaomi.settings.xml",
-        "config-com.xiaomi.dspvolume",
     ],
 }
 
@@ -31,12 +30,5 @@ prebuilt_etc {
     name: "privapp_whitelist_com.xiaomi.settings.xml",
     src: "permissions/privapp_whitelist_com.xiaomi.settings.xml",
     sub_dir: "permissions",
-    system_ext_specific: true,
-}
-
-prebuilt_etc {
-    name: "config-com.xiaomi.dspvolume",
-    src: "configs/config-com.xiaomi.dspvolume.xml",
-    sub_dir: "sysconfig",
     system_ext_specific: true,
 }
