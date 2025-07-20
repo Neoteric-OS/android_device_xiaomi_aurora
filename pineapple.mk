@@ -492,11 +492,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcurl.vendor \
     libjsoncpp.vendor \
-    libqti_vndfwk_detect.vendor \
-    libqti_vndfwk_detect_vendor \
-    libsqlite.vendor \
-    libvndfwk_detect_jni.qti.vendor \
-    libvndfwk_detect_jni.qti_vendor
+    libsqlite.vendor
 
 # QTI Components
 TARGET_COMMON_QTI_COMPONENTS := \
