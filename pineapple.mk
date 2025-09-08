@@ -559,7 +559,8 @@ PRODUCT_PACKAGES += \
     libbinder_shim.vendor \
     libcodec2_shim \
     libhidlbase_shim \
-    lib-mediac2
+    lib-mediac2 \
+    libstagefright_foundation-v33
 
 # Shipping API level
 BOARD_SHIPPING_API_LEVEL := 34

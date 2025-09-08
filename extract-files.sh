@@ -129,6 +129,12 @@ function blob_fixup() {
         vendor/lib64/libqcc_sdk.so | vendor/lib64/libqms_xiaomi.so | vendor/lib64/libqms_client.so | vendor/bin/qcc-vendor | vendor/bin/xtra-daemon | vendor/bin/qms | vendor/bin/cnd | vendor/lib64/libcne.so)
             "${PATCHELF}" --add-needed "libbinder_shim.so" "${2}"
             ;;
+        vendor/lib64/libdlbdsservice.so | vendor/lib64/libdlbpreg.so | vendor/lib64/libdlbdsservice.so | vendor/lib64/libswspatializer_ext.so | vendor/lib64/soundfx/libdlbvol.so | vendor/lib64/soundfx/libhwdap.so | vendor/lib64/soundfx/libswspatializer.so)
+            "${PATCHELF}" --replace-needed "libstagefright_foundation.so" "libstagefright_foundation-v33.so" "${2}"
+            ;;
+        vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service)
+            grep -q "libstagefright_foundation-v33.so" "${2}" || "${PATCHELF}" --add-needed "libstagefright_foundation-v33.so" "${2}"
+            ;;
     esac
 }
 
