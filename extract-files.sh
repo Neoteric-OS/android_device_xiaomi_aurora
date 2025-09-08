@@ -112,6 +112,9 @@ function blob_fixup() {
             grep -q "sched_get_priority_min: 1" "${2}" || echo "sched_get_priority_min: 1" >> "${2}"
             grep -q "sched_get_priority_max: 1" "${2}" || echo "sched_get_priority_max: 1" >> "${2}"
             ;;
+        odm/lib64/libaudioroute_ext.so | vendor/lib64/libar-pal.so)
+            "${PATCHELF}" --replace-needed "libaudioroute.so" "libaudioroute-v34.so" "${2}"
+            ;;
         vendor/lib64/vendor.libdpmframework.so)
             grep -q libhidlbase_shim.so "$2" || "$PATCHELF" --add-needed libhidlbase_shim.so "$2"
             ;;
