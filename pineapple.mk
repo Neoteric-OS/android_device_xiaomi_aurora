@@ -556,6 +556,7 @@ PRODUCT_COPY_FILES += \
 # Shims
 PRODUCT_PACKAGES += \
     libaudioroute-v34 \
+    libbinder_shim.vendor \
     libcodec2_shim \
     libhidlbase_shim \
     lib-mediac2

@@ -116,7 +116,8 @@ function blob_fixup() {
             "${PATCHELF}" --replace-needed "libaudioroute.so" "libaudioroute-v34.so" "${2}"
             ;;
         vendor/lib64/vendor.libdpmframework.so)
-            grep -q libhidlbase_shim.so "$2" || "$PATCHELF" --add-needed libhidlbase_shim.so "$2"
+            "${PATCHELF}" --add-needed "libhidlbase_shim.so" "$2"
+            "${PATCHELF}" --add-needed "libbinder_shim.so" "${2}"
             ;;
         vendor/lib64/libqcodec2_core.so)
             grep -q "libcodec2_shim.so" "${2}" || "${PATCHELF}" --add-needed "libcodec2_shim.so" "${2}"
@@ -124,6 +125,9 @@ function blob_fixup() {
         vendor/etc/init/vendor.xiaomi.hardware.vibratorfeature.service.rc)
             sed -i "s/\/odm\/bin\//\/vendor\/bin\//g" "${2}"
             sed -i "s/\/odm\/etc\//\/vendor\/etc\//g" "${2}"
+            ;;
+        vendor/lib64/libqcc_sdk.so | vendor/lib64/libqms_xiaomi.so | vendor/lib64/libqms_client.so | vendor/bin/qcc-vendor | vendor/bin/xtra-daemon | vendor/bin/qms | vendor/bin/cnd | vendor/lib64/libcne.so)
+            "${PATCHELF}" --add-needed "libbinder_shim.so" "${2}"
             ;;
     esac
 }
