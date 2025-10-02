@@ -493,7 +493,8 @@ TARGET_COMMON_QTI_COMPONENTS := \
     perf \
     telephony \
     usb \
-    wfd
+    wfd \
+    wlan
 
 TARGET_FWK_SUPPORTS_FULL_VALUEADDS := true
 TARGET_USE_AIDL_QTI_BT_AUDIO := true
@@ -596,27 +597,18 @@ PRODUCT_COPY_FILES += \
 
 # WiFi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi-service \
-    hostapd \
-    hostapd_cli \
     libcld80211 \
     libkeystore-engine-wifi-hidl \
     libkeystore-wifi-hidl \
     libpasn \
     libwifi-hal \
     libwifi-hal-ctrl \
-    libwifi-hal-qcom \
     libwpa_client \
-    wpa_cli \
-    wpa_supplicant \
-    wpa_supplicant.conf
+    wpa_cli
 
 PRODUCT_PACKAGES += \
     android.hardware.wifi-V1-ndk.vendor \
-    android.hardware.wifi.supplicant-V1-ndk.vendor \
-    android.hardware.wifi.supplicant-V2-ndk.vendor \
-    android.hardware.wifi.hostapd-V1-ndk.vendor \
-    vendor.qti.hardware.wifi.supplicant-V1-ndk.vendor
+    android.hardware.wifi.supplicant-V2-ndk.vendor
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.aware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.aware.xml \
