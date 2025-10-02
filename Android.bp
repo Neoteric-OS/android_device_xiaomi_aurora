@@ -44,3 +44,17 @@ install_symlink {
     installed_location: "rfs/msm/mpss/readonly/firmware",
     symlink_target: "/vendor/modem_firmware",
 }
+
+prebuilt_hidl_interfaces {
+    name: "hidl_bgservice_interface",
+    interfaces: [
+        "vendor.xiaomi.hardware.bgservice@1.0::IBGService",
+    ],
+}
+
+prebuilt_hidl_interfaces {
+    name: "hidl_quickcamera_interface",
+    interfaces: [
+        "vendor.xiaomi.hardware.quickcamera@1.0::IQuickCameraService",
+    ],
+}
