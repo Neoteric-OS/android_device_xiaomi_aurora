@@ -552,6 +552,7 @@ PRODUCT_PACKAGES += \
     libcodec2_shim \
     libhidlbase_shim \
     lib-mediac2 \
+    libprocessgroup_shim \
     libstagefright_foundation-v33
 
 # Shipping API level
