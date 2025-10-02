@@ -2558,17 +2558,10 @@ vendor/lib64/libkeymaster_messages.so
 vendor/lib64/libqtikeymint.so
 
 # Keymint NXP
-vendor/bin/hw/android.hardware.security.keymint-service.strongbox-nxp
-vendor/etc/init/android.hardware.security.keymint-service.strongbox-nxp.rc
-vendor/etc/permissions/android.hardware.hardware_keystore.jc-strongbox-keymint3-nxp.xml
-vendor/etc/vintf/manifest/android.hardware.security.keymint3-service.strongbox-nxp.xml
-vendor/etc/vintf/manifest/android.hardware.security.sharedsecret3-service.strongbox-nxp.xml
 vendor/etc/hal_uuid_map_aurora.xml
 vendor/etc/hal_uuid_map_aurorain.xml
 vendor/etc/hal_uuid_map_aurorapro.xml
 vendor/etc/hal_uuid_map_config.xml
-vendor/lib64/libjc_keymint_nxp.so
-vendor/lib64/libjc_keymint_transport_nxp.so
 
 # Limits
 vendor/bin/hw/vendor.qti.hardware.limits@1.2-service
@@ -3214,7 +3207,6 @@ vendor/bin/hw/android.hardware.secure_element-service.qti
 vendor/etc/init/android.hardware.secure_element-service.qti.rc
 vendor/etc/permissions/com.android.se.xml
 vendor/etc/vintf/manifest/android.hardware.secure_element.xml
-vendor/etc/vintf/manifest/secure_element-service.xml
 vendor/lib64/hw/libEseUtils.so
 vendor/lib64/libGPQeSE.so
 vendor/lib64/libvui_dmgr_client.so
@@ -3749,9 +3741,6 @@ vendor/firmware/vpu30_2v.mbn
 vendor/firmware/vpu30_2v_unsigned.mbn
 vendor/firmware/vpu33_4v.mbn
 vendor/firmware/vpu33_4v_unsigned.mbn
-
-# Weaver
-vendor/lib64/ese_weaver.so
 
 # Widevine DRM
 odm/lib64/libwvkeybox.so

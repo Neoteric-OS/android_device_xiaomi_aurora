@@ -24,4 +24,5 @@
     <bool name="config_wifi_background_scan_support">true</bool>
     <bool name="config_wifi_framework_enable_quick_connect">true</bool>
     <bool name="config_wifi_softap_acs_supported">true</bool>
+    <bool name="config_wifi_softap_ieee80211ac_supported">true</bool>
 </resources>
