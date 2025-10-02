@@ -120,6 +120,7 @@ function blob_fixup() {
             ;;
         vendor/lib64/hw/camera.xiaomi.so)
             "${PATCHELF}" --add-needed "libprocessgroup_shim.so" "$2"
+            "${PATCHELF}" --replace-needed "libui.so" "libui-v34.so" "${2}"
             ;;
         vendor/lib64/vendor.libdpmframework.so)
             "${PATCHELF}" --add-needed "libhidlbase_shim.so" "$2"
