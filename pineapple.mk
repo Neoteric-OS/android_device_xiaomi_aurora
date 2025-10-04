@@ -588,9 +588,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vibratorfeature-wrapper
 
-PRODUCT_PACKAGES += \
-    android.hardware.vibrator-V1-ndk_platform.vendor
-
 # Verified boot
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml
