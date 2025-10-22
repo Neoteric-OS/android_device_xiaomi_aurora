@@ -987,4 +987,7 @@
     -->
     <bool name="config_bg_current_drain_auto_restrict_abusive_apps">true</bool>
 
+    <!-- Type of the tap sensor. Empty if tap is not supported. -->
+    <string name="config_dozeTapSensorType" translatable="false">co.aospa.sensor.single_tap</string>
+
 </resources>

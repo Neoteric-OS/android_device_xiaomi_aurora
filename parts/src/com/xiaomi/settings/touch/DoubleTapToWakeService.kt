@@ -27,7 +27,7 @@ class DoubleTapToWakeService : Service() {
         object : ContentObserver(Handler(Looper.getMainLooper())) {
             override fun onChange(selfChange: Boolean) {
                 super.onChange(selfChange)
-                updateTapToWake(contentResolver)
+                updateWakeModes(contentResolver)
             }
         }
 
@@ -58,7 +58,7 @@ class DoubleTapToWakeService : Service() {
 
     private fun initialize() {
         registerObserverIfNeeded(contentResolver)
-        updateTapToWake(contentResolver)
+        updateWakeModes(contentResolver)
     }
 
     private fun registerObserverIfNeeded(resolver: ContentResolver) {
@@ -69,29 +69,54 @@ class DoubleTapToWakeService : Service() {
                 true,
                 settingsObserver
             )
+            resolver.registerContentObserver(
+                Settings.Secure.getUriFor(Settings.Secure.DOZE_TAP_SCREEN_GESTURE),
+                true,
+                settingsObserver
+            )
             isObserverRegistered = true
         }
     }
 
-    private fun updateTapToWake(resolver: ContentResolver) {
+    private fun updateWakeModes(resolver: ContentResolver) {
+        updateWakeMode(
+            resolver = resolver,
+            secureKey = Settings.Secure.DOUBLE_TAP_TO_WAKE,
+            mode = DOUBLE_TAP_TO_WAKE_MODE,
+            label = "Double Tap to Wake"
+        )
+        updateWakeMode(
+            resolver = resolver,
+            secureKey = Settings.Secure.DOZE_TAP_SCREEN_GESTURE,
+            mode = SINGLE_TAP_TO_WAKE_MODE,
+            label = "Single Tap to Wake"
+        )
+    }
+
+    private fun updateWakeMode(
+        resolver: ContentResolver,
+        secureKey: String,
+        mode: Int,
+        label: String
+    ) {
         runCatching {
             val enabled = Settings.Secure.getInt(
                 resolver,
-                Settings.Secure.DOUBLE_TAP_TO_WAKE,
+                secureKey,
                 0
             ) == 1
             TouchFeatureWrapper.setTouchMode(
-                DOUBLE_TAP_TO_WAKE_MODE,
+                mode,
                 if (enabled) 1 else 0
             )
             if (DEBUG) {
                 Log.i(
                     TAG,
-                    "Tap to Wake set to ${if (enabled) "enabled" else "disabled"}"
+                    "$label set to ${if (enabled) "enabled" else "disabled"}"
                 )
             }
         }.onFailure { e ->
-            Log.e(TAG, "Failed to update Tap to Wake mode", e)
+            Log.e(TAG, "Failed to update $label mode", e)
         }
     }
 
@@ -99,6 +124,7 @@ class DoubleTapToWakeService : Service() {
         private const val TAG = "DoubleTapToWakeService"
         private const val DEBUG = true
         private const val DOUBLE_TAP_TO_WAKE_MODE = 14
+        private const val SINGLE_TAP_TO_WAKE_MODE = 11
 
         fun startService(context: Context) {
             context.startServiceAsUser(
