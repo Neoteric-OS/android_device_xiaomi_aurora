@@ -138,11 +138,12 @@ TARGET_NO_BOOTLOADER := true
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.frameworks.cameraservice.service-V1-ndk \
-    android.frameworks.cameraservice.device-V1-ndk \
     android.hardware.camera.common-V1-ndk.vendor \
+    android.hardware.camera.device-V1-ndk.vendor \
     android.hardware.camera.device-V2-ndk.vendor \
+    android.hardware.camera.metadata-V1-ndk.vendor \
     android.hardware.camera.metadata-V2-ndk.vendor \
+    android.hardware.camera.provider-V1-ndk.vendor \
     android.hardware.camera.provider-V2-ndk.vendor \
     vendor.qti.hardware.camera.aon-V1-ndk.vendor \
     vendor.qti.hardware.camera.offlinecamera-V1-ndk.vendor \
@@ -227,6 +228,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.config-V8-ndk.vendor \
     vendor.qti.hardware.display.config-V9-ndk.vendor \
     vendor.qti.hardware.display.config-V10-ndk.vendor \
+    vendor.qti.hardware.display.config-V11-ndk.vendor \
     vendor.qti.hardware.display.demura-V1-ndk.vendor \
     vendor.qti.hardware.display.postproc-V1-ndk.vendor
 
@@ -291,11 +293,7 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss-V3-ndk.vendor
 
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml
-
-# GPS
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml
+    frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/android.hardware.location.gps.xml
 
 # Health
 PRODUCT_PACKAGES += \

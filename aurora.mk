@@ -18,8 +18,8 @@ PRODUCT_MODEL := 24031PN0DC
 PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="aurora_global-user 14 UKQ1.231003.002 V816.0.15.0.UNAEUXM release-keys" \
-    BuildFingerprint=Xiaomi/aurora_global/aurora:14/UKQ1.231003.002/V816.0.15.0.UNAEUXM:user/release-keys \
+    BuildDesc="aurora_global-user 15 AQ3A.240627.003 OS2.0.102.0.VNAEUXM release-keys" \
+    BuildFingerprint=Xiaomi/aurora_global/aurora:15/AQ3A.240627.003/OS2.0.102.0.VNAEUXM:user/release-keys \
     DeviceName=aurora \
     DeviceProduct=aurora \
     SystemDevice=aurora \

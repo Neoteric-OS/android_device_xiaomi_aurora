@@ -96,11 +96,6 @@ function blob_fixup() {
         vendor/etc/init/hw/init.qcom.rc)
             sed -i '/interface vendor\.qti\.hardware\.wigig\.netperftuner@1\.0::INetPerfTuner default/d' "${2}"
             ;;
-        vendor/etc/seccomp_policy/atfwd@2.0.policy | vendor/etc/seccomp_policy/wfdhdcphalservice.policy | vendor/etc/seccomp_policy/qsap_sensors.policy | vendor/etc/seccomp_policy/qesdk.policy | vendor/etc/seccomp_policy/qesdksec.policy)
-            [ "$2" = "" ] && return 0
-            [ -n "$(tail -c 1 "${2}")" ] && echo >> "${2}"
-            grep -q "gettid: 1" "${2}" || echo "gettid: 1" >> "${2}"
-            ;;
         vendor/etc/seccomp_policy/c2audio.vendor.ext-arm64.policy)
             [ "$2" = "" ] && return 0
             grep -q "setsockopt: 1" "${2}" || echo "setsockopt: 1" >> "${2}"
@@ -108,17 +103,16 @@ function blob_fixup() {
         vendor/etc/seccomp_policy/gnss@2.0-qsap-location.policy)
             [ "$2" = "" ] && return 0
             [ -n "$(tail -c 1 "${2}")" ] && echo >> "${2}"
-            grep -q "gettid: 1" "${2}" || echo "gettid: 1" >> "${2}"
             grep -q "sched_get_priority_min: 1" "${2}" || echo "sched_get_priority_min: 1" >> "${2}"
             grep -q "sched_get_priority_max: 1" "${2}" || echo "sched_get_priority_max: 1" >> "${2}"
             ;;
         odm/lib64/libaudioroute_ext.so | vendor/lib64/libar-pal.so)
             "${PATCHELF}" --replace-needed "libaudioroute.so" "libaudioroute-v34.so" "${2}"
             ;;
-        vendor/lib64/hw/camera.qcom.so | vendor/lib64/hw/com.qti.chi.override.so | vendor/lib64/libchifeature2.so | vendor/lib64/libcameraopt.so | vendor/lib64/libcamxcommonutils.so | vendor/lib64/libmialgoengine.so)
+        odm/lib64/hw/camera.qcom.so | odm/lib64/hw/com.qti.chi.override.so | odm/lib64/libchifeature2.so | vendor/lib64/libcameraopt.so | odm/lib64/libcamxcommonutils.so | odm/lib64/libmialgoengine.so)
             "${PATCHELF}" --add-needed "libprocessgroup_shim.so" "$2"
             ;;
-        vendor/lib64/hw/camera.xiaomi.so)
+        odm/lib64/hw/camera.xiaomi.so)
             "${PATCHELF}" --add-needed "libprocessgroup_shim.so" "$2"
             "${PATCHELF}" --replace-needed "libui.so" "libui-v34.so" "${2}"
             ;;

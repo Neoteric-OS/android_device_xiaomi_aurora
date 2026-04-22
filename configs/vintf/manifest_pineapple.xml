@@ -1,6 +1,9 @@
 <!--
     Input:
-        device/xiaomi/mivendor/manifest_cliffs.xml
+        device/xiaomi/mivendor/manifest_pineapple.xml
+        vendor/xiaomi/proprietary/slm/port/src/manifest.xml
+        vendor/xiaomi/proprietary/miwillp/port/src/manifest.xml
+        vendor/xiaomi/proprietary/minet/port/src/manifest.xml
 -->
 <manifest version="7.0" type="device" target-level="8">
     <hal format="hidl">
@@ -22,19 +25,6 @@
         <name>android.hardware.gatekeeper</name>
         <fqname>IGatekeeper/default</fqname>
     </hal>
-    <hal format="aidl">
-        <name>android.hardware.nfc</name>
-        <fqname>INfc/default</fqname>
-    </hal>
-    <hal format="aidl">
-        <name>android.hardware.secure_element</name>
-        <fqname>ISecureElement/eSE1</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>com.qualcomm.qti.dpm.api</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.0::IdpmQmi/dpmQmiService</fqname>
-    </hal>
     <hal format="hidl">
         <name>com.qualcomm.qti.imscmservice</name>
         <transport>hwbinder</transport>
@@ -44,15 +34,6 @@
         <name>com.qualcomm.qti.uceservice</name>
         <transport>hwbinder</transport>
         <fqname>@2.3::IUceService/com.qualcomm.qti.uceservice</fqname>
-    </hal>
-    <hal format="aidl">
-        <name>vendor.nxp.nxpnfc_aidl</name>
-        <fqname>INxpNfc/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.qti.hardware.alarm</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.0::IAlarm/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.qti.hardware.bluetooth_audio</name>
@@ -85,28 +66,20 @@
         <fqname>@1.0::IDspService/dspservice</fqname>
     </hal>
     <hal format="hidl">
+        <name>vendor.qti.hardware.factory</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.1::IFactory/default</fqname>
+    </hal>
+    <hal format="hidl">
         <name>vendor.qti.hardware.fm</name>
         <transport>hwbinder</transport>
         <fqname>@1.0::IFmHci/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.qti.hardware.radio.internal.deviceinfo</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.0::IDeviceInfo/deviceinfo</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.qti.hardware.secureprocessor.device</name>
         <transport>hwbinder</transport>
         <fqname>@1.0::ISecureProcessor/qti-tee</fqname>
         <fqname>@1.0::ISecureProcessor/qti-tvm</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.qti.hardware.trustedui</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.1::ITrustedInput/default</fqname>
-        <fqname>@1.1::ITrustedInput/qtee-vm</fqname>
-        <fqname>@1.2::ITrustedUI/default</fqname>
-        <fqname>@1.2::ITrustedUI/qtee-vm</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.qti.hardware.wifi.wifilearner</name>
