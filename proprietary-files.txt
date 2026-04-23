@@ -249,7 +249,6 @@ vendor/etc/audio/sku_pineapple/resourcemanager_pineapple_qrd.xml
 vendor/etc/audio/sku_pineapple/resourcemanager_pineapple_qrd_sku2.xml
 vendor/etc/card-defs.xml
 vendor/etc/kvh2xml.xml
-vendor/etc/usecaseKvManager.xml
 
 # Audio (Dolby)
 odm/etc/dolby/dax-tiantong-spatializer.xml
