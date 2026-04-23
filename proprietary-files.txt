@@ -188,6 +188,7 @@ vendor/etc/models/acd/speech.eai
 vendor/etc/audio_cloud_control_white_list.xml
 vendor/etc/misound_asc_model.tflite
 vendor/lib64/hw/audio.primary.pineapple.so
+vendor/lib64/android.hardware.audio.common@7.1-util.so
 vendor/lib64/libVoiceSdk.so
 vendor/lib64/lib_misound_asc.so
 vendor/lib64/libadm.so
