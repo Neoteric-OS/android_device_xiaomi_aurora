@@ -819,9 +819,6 @@
     <string name="config_emergency_apn" />
     <string name="config_optionalPackageVerifierName">seemp.service</string>
 
-    <!-- Support decoding of GSM 8 bit encoded SMS-->
-    <bool translatable="false" name="config_sms_decode_gsm_8bit_data">true</bool>
-
     <!-- The default journal mode to use use when Write-Ahead Logging is not active.
          Choices are: OFF, DELETE, TRUNCATE, PERSIST and MEMORY.
          PERSIST may improve performance by reducing how often journal blocks are
