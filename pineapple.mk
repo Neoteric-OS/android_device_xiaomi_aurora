@@ -552,7 +552,7 @@ PRODUCT_PACKAGES += \
     libhidlbase_shim \
     lib-mediac2 \
     libprocessgroup_shim \
-    libstagefright_foundation-v33 \
+    libstagefright_foundation-v33.vendor \
     libui-v34
 
 # Shipping API level
