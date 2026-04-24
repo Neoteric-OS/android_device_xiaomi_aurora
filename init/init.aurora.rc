@@ -37,7 +37,10 @@ on property:vendor.post_boot.parsed=1
     # Setup runtime cpus
     write /dev/cpuset/background/cpus 0-1
     write /dev/cpuset/restricted/cpus 0-3
-    write /dev/cpuset/foreground/cpus 0-6
+    write /dev/cpuset/foreground/cpus 0-4
+    write /dev/cpuset/display/cpus 0-6
+    write /dev/cpuset/system-background/cpus 0-1
+    write /dev/cpuset/top-app/cpus 0-7
 
     # IRQ Tuning
     # IRQ 115: msm_drm0
