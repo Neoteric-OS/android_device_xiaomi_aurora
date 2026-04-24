@@ -2004,7 +2004,6 @@ odm/firmware/glove_model.tflite
 odm/lib64/libSNPE.so:system/lib64/libSNPE.so
 odm/lib64/libmialgo_ai_vision.so:system/lib64/libmialgo_ai_vision.so
 -product/overlay/MiuiCameraOverlayLeicaed/MiuiCameraOverlayLeicaed.apk
--product/priv-app/MiuiCamera/MiuiCamera.apk:system/priv-app/MiuiCamera/MiuiCamera.apk;OVERRIDES=Snap,Camera2,GoogleCameraGo,Aperture
 system/etc/public.libraries-xiaomi.txt
 system/lib64/android.hardware.camera.common@1.0.so
 system/lib64/libhidltransport.so
@@ -2017,6 +2016,9 @@ system_ext/lib64/vendor.xiaomi.hardware.campostproc@1.0.so:system/lib64/vendor.x
 vendor/lib64/libcdsprpc.so:system/lib64/libcdsprpc.so
 vendor/lib64/libvmmem.so:system/lib64/libvmmem.so
 vendor/lib64/vendor.qti.hardware.dsp@1.0.so:system/lib64/vendor.qti.hardware.dsp@1.0.so
+
+# MIUI Camera - from HyperOS 1.0.15
+-product/priv-app/MiuiCamera/MiuiCamera.apk:system/priv-app/MiuiCamera/MiuiCamera.apk;OVERRIDES=Snap,Camera2,GoogleCameraGo,Aperture
 
 # Cacert
 vendor/app/CACertService/CACertService.apk
