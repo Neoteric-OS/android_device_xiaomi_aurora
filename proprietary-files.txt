@@ -787,7 +787,7 @@ odm/lib64/libcamera_scene.so
 odm/lib64/libcamerapostproc.so
 odm/lib64/libcamlog.so
 odm/lib64/libcamxcommonutils.so
-odm/lib64/libcamxexternalformatutils.so
+odm/lib64/libcamxexternalformatutils.so;SYMLINK=vendor/lib64/libcamxexternalformatutils.so
 odm/lib64/libcamxfdengine.so
 odm/lib64/libcamxhwnodecontext.so
 odm/lib64/libcamxifestriping.so
@@ -2584,7 +2584,7 @@ vendor/app/com.qualcomm.qti.gpudrivers.pineapple.api34/com.qualcomm.qti.gpudrive
 vendor/lib64/egl/libEGL_adreno.so;SYMLINK=vendor/lib64/libEGL_adreno.so
 vendor/lib64/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib64/libGLESv2_adreno.so
 vendor/lib64/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib64/libq3dtools_adreno.so
-vendor/lib64/egl/eglSubDriverAndroid.so
+vendor/lib64/egl/eglSubDriverAndroid.so;SYMLINK=odm/lib64/egl/eglSubDriverAndroid.so
 vendor/lib64/egl/libEGL_angle.so
 vendor/lib64/egl/libGLESv1_CM_adreno.so
 vendor/lib64/egl/libGLESv1_CM_angle.so
