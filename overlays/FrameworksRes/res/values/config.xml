@@ -984,4 +984,10 @@
     -->
     <bool name="config_bg_current_drain_auto_restrict_abusive_apps">true</bool>
 
+    <!-- Whether devices suports in-display fingerprint when screen is off -->
+    <bool name="config_screen_off_udfps_enabled">true</bool>
+
+    <!-- Type of the udfps long press sensor. Empty if long press is not supported. -->
+    <string name="config_dozeUdfpsLongPressSensorType" translatable="false">co.aospa.sensor.udfps</string>
+
 </resources>

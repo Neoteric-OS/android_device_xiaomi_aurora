@@ -136,6 +136,9 @@ function blob_fixup() {
         vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service)
             grep -q "libstagefright_foundation-v33.so" "${2}" || "${PATCHELF}" --add-needed "libstagefright_foundation-v33.so" "${2}"
             ;;
+        vendor/etc/sensors/hals.conf)
+            sed -i '$a sensors.xiaomi.so' "${2}"
+            ;;
     esac
 }
 

@@ -522,7 +522,8 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors-service.xiaomi-multihal
+    android.hardware.sensors-service.xiaomi-multihal \
+    sensors.xiaomi
 
 PRODUCT_PACKAGES += \
     android.hardware.sensors-V2-ndk.vendor
