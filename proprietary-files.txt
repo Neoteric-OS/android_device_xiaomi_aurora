@@ -550,9 +550,8 @@ odm/lib64/camera/plugins/com.xiaomi.plugin.watermark.so
 odm/lib64/camera/plugins/com.xiaomi.plugin.watermark.so
 odm/lib64/camera/plugins/com.xiaomi.plugin.wideldc.so
 odm/lib64/camera/plugins/com.xiaomi.plugin.wideldc.so
-odm/lib64/camera/aon_front_1.pb
-odm/lib64/camera/bitmlconfig.bin
-odm/lib64/camera/bitmlconfig.bin
+odm/lib64/camera/aon_front_1.pb;SYMLINK=vendor/lib64/camera/aon_front_1.pb
+odm/lib64/camera/bitmlconfig.bin;SYMLINK=vendor/lib64/camera/bitmlconfig.bin
 odm/lib64/camera/camxfl115indices.bin
 odm/lib64/camera/camxfl115indices.bin
 odm/lib64/camera/camxfl300v1indices.bin
