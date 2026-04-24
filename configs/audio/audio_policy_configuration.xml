@@ -103,7 +103,7 @@ SPDX-License-Identifier: BSD-3-Clause-Clear
                 </mixPort>
                 <mixPort name="hifi_playback" role="source" />
                 <mixPort name="spatial output" role="source" flags="AUDIO_OUTPUT_FLAG_SPATIALIZER">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                    <profile name="" format="AUDIO_FORMAT_PCM_24_BIT_PACKED"
                              samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
                 </mixPort>
                 <mixPort name="compress_passthrough" role="source"
@@ -191,9 +191,14 @@ SPDX-License-Identifier: BSD-3-Clause-Clear
                              channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
                 </mixPort>
 
-                <mixPort name="primary input" role="sink" maxOpenCount="2" maxActiveCount="2">
+                <mixPort name="primary input" role="sink" maxOpenCount="3" maxActiveCount="3">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000 96000"
+                             channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO AUDIO_CHANNEL_IN_FRONT_BACK AUDIO_CHANNEL_INDEX_MASK_3 AUDIO_CHANNEL_INDEX_MASK_4"/>
+                </mixPort>
+                <mixPort name="hotword input" role="sink" flags="AUDIO_INPUT_FLAG_HW_HOTWORD">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000"
                              channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO AUDIO_CHANNEL_IN_FRONT_BACK AUDIO_CHANNEL_INDEX_MASK_3 AUDIO_CHANNEL_INDEX_MASK_4"/>
                 </mixPort>
                 <mixPort name="voip record" role="sink" maxOpenCount="1" maxActiveCount="1"
@@ -398,13 +403,6 @@ SPDX-License-Identifier: BSD-3-Clause-Clear
                 <devicePort tagName="Telephony Rx" type="AUDIO_DEVICE_IN_TELEPHONY_RX" role="source">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="8000 16000 48000" channelMasks="AUDIO_CHANNEL_IN_MONO"/>
-                    <gains>
-                        <gain name="gain_1" mode="AUDIO_GAIN_MODE_JOINT"
-                              minValueMB="-8400"
-                              maxValueMB="4000"
-                              defaultValueMB="0"
-                              stepValueMB="100"/>
-                    </gains>
                 </devicePort>
                 <devicePort tagName="USB Device In" type="AUDIO_DEVICE_IN_USB_DEVICE" role="source">
                 </devicePort>
@@ -463,15 +461,15 @@ SPDX-License-Identifier: BSD-3-Clause-Clear
                 <route type="mix" sink="record_24"
                        sources="Built-In Mic,Built-In Back Mic,Wired Headset Mic,BLE In"/>
                 <route type="mix" sink="mmap_no_irq_in"
-                       sources="Built-In Mic,Built-In Back Mic,Wired Headset Mic,USB Device In,USB Headset In"/>
+                       sources="Built-In Mic,Built-In Back Mic,Wired Headset Mic,USB Device In,USB Headset In,Wired Headset Mic"/>
                 <route type="mix" sink="BT A2DP Out"
                        sources="primary output,deep_buffer,direct_pcm,compressed_offload,voip_rx,mmap_no_irq_out,spatial output"/>
                 <route type="mix" sink="BT A2DP Headphones"
                        sources="primary output,deep_buffer,direct_pcm,compressed_offload,voip_rx,mmap_no_irq_out,spatial output"/>
                 <route type="mix" sink="BT A2DP Speaker"
-                       sources="primary output,deep_buffer,direct_pcm,compressed_offload,voip_rx,mmap_no_irq_out"/>
+                       sources="primary output,deep_buffer,direct_pcm,compressed_offload,voip_rx,mmap_no_irq_out,spatial output"/>
                 <route type="mix" sink="BT BLE Speaker"
-                       sources="primary output,raw,mmap_no_irq_out,deep_buffer,direct_pcm,compressed_offload,voip_rx,mmap_no_irq_out"/>
+                       sources="primary output,raw,mmap_no_irq_out,deep_buffer,direct_pcm,compressed_offload,voip_rx,mmap_no_irq_out,spatial output"/>
                 <route type="mix" sink="BT BLE Broadcast"
                        sources="primary output,deep_buffer,direct_pcm,compressed_offload"/>
                 <route type="mix" sink="hifi_input" sources="USB Device In,USB Headset In" />
