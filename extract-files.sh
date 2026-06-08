@@ -92,6 +92,12 @@ function blob_fixup() {
             ;;
         vendor/etc/audio/sku_pineapple/audio_effects.xml)
             sed -i 's|<library name="misoundfx" path="libmisoundfx.so"/>|<library name="misoundfx" path="libmisoundfx_ext.so"/>|' "${2}"
+            sed -i '/<effect name="aec" library="audio_pre_processing" uuid="0f8d0d2a-59e5-45fe-b6e4-248c8a799109"\/>/d; /<effect name="ns" library="audio_pre_processing" uuid="1d97bb0b-9e2f-4403-9ae3-58c2554306f8"\/>/d' "${2}"
+            sed -i '/^[[:space:]]*<preprocess>/,/^[[:space:]]*<\/preprocess>/c\    <!-- Disable hardware AEC/NS for VoIP. WebRTC apps can use software processing instead. -->' "${2}"
+            ;;
+        vendor/etc/audio/sku_pineapple/audio_effects.conf)
+            sed -i '/^# Added aec, ns effects for voice_communication/,/^}/c\# Hardware AEC/NS is disabled for VoIP so WebRTC apps can use software processing.' "${2}"
+            sed -i '/^[[:space:]]*aec {/,/^[[:space:]]*}/d; /^[[:space:]]*ns {/,/^[[:space:]]*}/d' "${2}"
             ;;
         vendor/etc/init/hw/init.qcom.rc)
             sed -i '/interface vendor\.qti\.hardware\.wigig\.netperftuner@1\.0::INetPerfTuner default/d' "${2}"
