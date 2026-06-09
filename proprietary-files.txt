@@ -3049,12 +3049,6 @@ vendor/lib64/libssd.so
 vendor/lib64/vendor.qti.hardware.qseecom-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.qseecom@1.0.so
 
-# QSPA
-vendor/bin/vendor.qti.qspa-service
-vendor/etc/init/vendor.qti.qspa-service.rc
-vendor/etc/vintf/manifest/vendor.qti.qspa-service.xml
-vendor/lib64/vendor.qti.hardware.qspa-V1-ndk.so
-
 # QTI
 vendor/bin/init.qti.write.sh
 vendor/bin/qtigetprop

@@ -478,6 +478,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.powershare-service
 
+# QSPA
+PRODUCT_PACKAGES += \
+    vendor.qti.qspa-service
+
 # QMI
 PRODUCT_PACKAGES += \
     libcurl.vendor \
