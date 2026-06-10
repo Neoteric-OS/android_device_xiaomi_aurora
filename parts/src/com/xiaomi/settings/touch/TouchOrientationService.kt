@@ -10,9 +10,11 @@ import android.app.Service
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
+import android.hardware.display.DisplayManager
 import android.os.IBinder
 import android.os.UserHandle
 import android.util.Log
+import android.view.Display
 
 /**
  * This service relays the current device orientation to the touchscreen. This automatically
@@ -53,7 +55,9 @@ class TouchOrientationService : Service() {
     override fun onBind(intent: Intent?): IBinder? = null
 
     private fun updateOrientation() {
-        rotation = display.rotation
+        val displayManager = getSystemService(Context.DISPLAY_SERVICE) as DisplayManager
+        val defaultDisplay = displayManager.getDisplay(Display.DEFAULT_DISPLAY) ?: return
+        rotation = defaultDisplay.rotation
     }
 
     companion object {

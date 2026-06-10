@@ -16,6 +16,7 @@ import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.hardware.display.AmbientDisplayConfiguration
+import android.hardware.display.DisplayManager
 import android.os.IBinder
 import android.os.UserHandle
 import android.provider.Settings
@@ -74,7 +75,8 @@ class AodBrightnessService : Service() {
                 }
 
                 Intent.ACTION_DISPLAY_STATE_CHANGED -> {
-                    displayState = display?.state ?: displayState
+                    val displayManager = getSystemService(Context.DISPLAY_SERVICE) as DisplayManager
+                    displayState = displayManager.getDisplay(Display.DEFAULT_DISPLAY)?.state ?: displayState
                     updateDozeBrightness()
                 }
             }
