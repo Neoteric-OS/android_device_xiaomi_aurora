@@ -9,6 +9,7 @@ allow system_server sound_device:chr_file rw_file_perms;
 allow system_server hal_camera:binder transfer;
 allow system_server hal_camera:binder { call transfer };
 allow system_server hal_camera:fd *;
+get_prop(system_server, camera2_extensions_prop)
 
 # Displayfeature
 allow system_server vendor_displayfeature:binder { call transfer };

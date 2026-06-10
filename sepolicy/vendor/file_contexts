@@ -1,33 +1,6 @@
-# Audio
-/dev/xlog                                 u:object_r:sound_device:s0
-/dev/socket/audio_hw_socket               u:object_r:audio_socket:s0
-/dev/socket/audio_us_socket_0             u:object_r:audio_socket:s0
-/dev/socket/audio_us_socket_1             u:object_r:audio_socket:s0
-/sys/devices/platform/soc/[a-z0-9]+.i2c/i2c-+[0-9]/[0-9]+-00+[a-z0-9]+[a-z0-9]/f0_value  u:object_r:sysfs_f0_value:s0
-
-# Battery secret
-/(vendor|system/vendor)/bin/batterysecret u:object_r:batterysecret_exec:s0
-
 # Camera
-/data/vendor/perfspy(/.*)?                                                    u:object_r:vendor_camera_data_file:s0
-/dev/stmvl53l5                                                                u:object_r:stmvl53l5_device:s0
-/mnt/vendor/persist/camera(/.*)?                                              u:object_r:camera_persist_file:s0
-/persist/camera(/.*)?                                                         u:object_r:camera_persist_file:s0
-/vendor/bin/camera_cal                                                        u:object_r:DualCameraCal_exec:s0
-
-# Display
-/sys/class/backlight(/.*)?                                                    u:object_r:vendor_sysfs_graphics:s0
-
-# Displayfeature
-/dev/mi_display/disp_feature u:object_r:vendor_displayfeature_device:s0
-/sys/devices/virtual/mi_display/disp_feature/disp-DSI-+[0-1](/.*)? u:object_r:vendor_sysfs_displayfeature:s0
-/(vendor|system/vendor)/bin/displayfeature u:object_r:vendor_displayfeature_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hardware\.displayfeature_aidl-service u:object_r:vendor_hal_displayfeature_xiaomi_default_exec:s0
-
-# Dolby
-/data/vendor/dolby(/.*)?                                                               u:object_r:vendor_data_file:s0
-/vendor/bin/hw/vendor\.dolby\.media\.c2@1\.0-service                                   u:object_r:mediacodec_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.dolby\.hardware\.dms@2\.0-service               u:object_r:hal_dms_default_exec:s0
+/(|odm|vendor/odm)/bin/hw/vendor\.qti\.camera\.provider-service_64 u:object_r:hal_camera_default_exec:s0
+/dev/camlog        u:object_r:camlog_device:s0
 
 # EID
 /(vendor|system/vendor)/bin/hw/vendor\.rongcard\.eid@1\.0-service                      u:object_r:vendor_hal_eid_rc_exec:s0
@@ -41,28 +14,15 @@
 /sys/devices/virtual/touch/tp_dev/fod_status u:object_r:sysfs_tp_fodstatus:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint-service\.xiaomi              u:object_r:hal_fingerprint_default_exec:s0
 
-# HAL
-/(vendor|system/vendor)/bin/hw/android\.hardware\.ir@1\.0-service\.xiaomi              u:object_r:hal_ir_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.health-service\.xiaomi               u:object_r:hal_health_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.vibrator\.service\.xiaomi        u:object_r:hal_vibrator_default_exec:s0
-
-# IR
-/dev/ir_spi                               u:object_r:ir_spi_device:s0
+# GNSS
+/(odm|vendor)/bin/hw/android\.hardware\.gnss-aidl-service-qti                                 u:object_r:vendor_hal_gnss_qti_exec:s0
 
 # MiCharge
 /(vendor|system/vendor)/bin/hw/vendor.xiaomi.hardware.micharge-service     u:object_r:vendor_hal_micharge_xiaomi_default_exec:s0
 
-# Mlipay
-/(odm|vendor/odm|vendor|system/vendor)/bin/fidoca        u:object_r:hal_mfidoca_default_exec:s0
-/(odm|vendor/odm|vendor|system/vendor)/bin/mlipayd      u:object_r:hal_mlipay_default_exec:s0
-/(odm|vendor/odm|vendor|system/vendor)/bin/mtd          u:object_r:hal_mtdservice_default_exec:s0
-/(odm|vendor/odm|vendor|system/vendor)/bin/tidad        u:object_r:hal_tidaservice_default_exec:s0
-
 # Modem
-/data/vendor/modem(/.*)?                                u:object_r:vendor_modem_data_file:s0
-
-# Ril
-/dev/smd8                                         u:object_r:vendor_radio_smd_device:s0
+/system/vendor/bin/loc_launcher u:object_r:vendor_location_exec:s0
+/vendor/bin/qrtr-lookup u:object_r:vendor_qrtr_exec:s0
 
 # Same-process HAL files and their dependencies
 /(vendor|odm|odm/mount/camera)/lib/rfsa/adsp/libcalculator_skel\.so                 u:object_r:same_process_hal_file:s0
@@ -139,61 +99,18 @@
 /(vendor|odm)/lib(64)?/libxml2_vendor\.so                               u:object_r:same_process_hal_file:s0
 /(vendor|odm)/lib(64)?/lib_denoiser3\.so                                u:object_r:same_process_hal_file:s0
 /(vendor)/lib(64)?/libubwcp\.so                                         u:object_r:same_process_hal_file:s0
+/odm/lib(64)?/libcamxexternalformatutils\.so                    u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libsdmextension\.so                                  u:object_r:same_process_hal_file:s0
 /(vendor)/lib(64)?/libc++\.so                                           u:object_r:same_process_hal_file:s0 
-
-# Sensors
-/sys/bus/iio/devices                               u:object_r:vendor_sysfs_iio:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.sensors-service\.xiaomi-multihal     u:object_r:hal_sensors_default_exec:s0
-/(odm|vendor/odm|vendor|system/vendor)/bin/hw/vendor.xiaomi.sensor.citsensorservice.aidl u:object_r:vendor_hal_citsensorservice_xiaomi_default_exec:s0
 
 # SLA
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.sla\.service\@1\.0-service u:object_r:hal_slaservice_qti_exec:s0
 
-# Touchfeature
-/data/vendor/touch(/.*)?                                    u:object_r:vendor_data_touchreport_file:s0
-/dev/xiaomi-touch                                           u:object_r:touchfeature_device:s0
-/sys/devices/virtual/touch/touch_dev/abnormal_event         u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/clicktouch_raw         u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/ear_sensor             u:object_r:sysfs_tp_virtual_prox:s0
-/sys/devices/virtual/touch/touch_dev/ear_sensor_data        u:object_r:sysfs_tp_virtual_prox:s0
-/sys/devices/virtual/touch/touch_dev/enable_touch_delta     u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/enable_touch_raw       u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/force_calibration      u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/hold_sensor            u:object_r:sysfs_tp_virtual_prox:s0
-/sys/devices/virtual/touch/touch_dev/palm_sensor            u:object_r:sysfs_tp_virtual_prox:s0
-/sys/devices/virtual/touch/touch_dev/resolution_factor      u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/rx_num                 u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/suspend_state          u:object_r:sysfs_touch_suspend:s0
-/sys/devices/virtual/touch/touch_dev/touch_doze_analysis    u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/touch_ic_buffer        u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/touch_sensor           u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/touch_sensor_ctrl      u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/touch_thp_(.*)         u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/tx_num                 u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/update_rawdata         u:object_r:sysfs_touch_hostprocess:s0
-/(vendor|odm)/etc/init.panel_info.sh                        u:object_r:vendor_touch_init_shell_exec:s0
-/(vendor|system/vendor|odm|vendor/odm)/bin/ear_sensor       u:object_r:touchreport_exec:s0
-/(vendor|system/vendor|odm|vendor/odm)/bin/touch_delta      u:object_r:touchreport_exec:s0
-/(vendor|system/vendor|odm|vendor/odm)/bin/touch_raw        u:object_r:touchreport_exec:s0
-/(vendor|system/vendor|odm|vendor/odm)/bin/touch_report     u:object_r:touchreport_exec:s0
-/(vendor|system/vendor|odm|vendor/odm)/bin/toucheventcheck  u:object_r:tpevent_exec:s0
-/(vendor|system/vendor|odm|vendor/odm)/bin/touchsensor      u:object_r:touchreport_exec:s0
-/(odm|vendor/odm|vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hw\.touchfeature-service   u:object_r:hal_touchfeature_xiaomi_default_exec:s0
+# NFC
+/(odm|vendor/odm|vendor|system/vendor)/bin/hw/android\.hardware\.nqnfc-service\.nxp u:object_r:hal_nfc_default_exec:s0
 
-# UFS
-/sys/block/sda/device/block/sda/size u:object_r:ufs_sysfs:s0
-/sys/class/block/sda/device/rev u:object_r:ufs_sysfs:s0
-/sys/class/mi_memory/mi_memory_device/ddr/ddr_vendor u:object_r:ufs_sysfs:s0
-/sys/class/mi_memory/mi_memory_device/ufshcd0/dump_device_desc u:object_r:ufs_sysfs:s0
-/sys/class/mi_memory/mi_memory_device/ufshcd0/dump_health_desc u:object_r:ufs_sysfs:s0
-/sys/class/mi_memory/mi_memory_device/ufshcd0/dump_string_desc_serial u:object_r:ufs_sysfs:s0
-/sys/devices/platform/soc/4804000.ufshc/host0/target0:0:0/0:0:0:0/block/sda/size u:object_r:ufs_sysfs:s0
-/sys/devices/platform/soc/4804000.ufshc/host0/target0:0:0/0:0:0:0/rev u:object_r:ufs_sysfs:s0
-/sys/devices/platform/soc/4804000.ufshc/host0/target0:0:0/0:0:0:0/vendor u:object_r:ufs_sysfs:s0
-/sys/devices/virtual/mi_memory/mi_memory_device/ddr/ddr_vendor u:object_r:ufs_sysfs:s0
-/sys/devices/virtual/mi_memory/mi_memory_device/ufshcd0/dump_device_desc u:object_r:ufs_sysfs:s0
-/sys/devices/virtual/mi_memory/mi_memory_device/ufshcd0/dump_health_desc u:object_r:ufs_sysfs:s0
-/sys/devices/virtual/mi_memory/mi_memory_device/ufshcd0/dump_string_desc_serial u:object_r:ufs_sysfs:s0
+# Touchfeature
+/(odm|vendor/odm|vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hw\.touchfeature-service   u:object_r:hal_touchfeature_xiaomi_default_exec:s0
 
 # Vibrator
 /(odm|vendor/odm)/bin/hw/vibratorfeature-wrapper u:object_r:hal_vibrator_default_exec:s0
@@ -203,7 +120,3 @@
 # Wifi
 /data/vendor/mac_addr(/.*)? u:object_r:vendor_mac_vendor_data_file:s0
 /vendor/bin/nv_mac u:object_r:vendor_wcnss_service_exec:s0
-
-# Xiaomi thermal daemon
-/(vendor|system/vendor)/bin/mi_thermald     u:object_r:mi_thermald_exec:s0
-/data/vendor/thermal(/.*)?                  u:object_r:vendor_thermal_data_file:s0

@@ -17,7 +17,6 @@ allow system_app camlog_device:chr_file { getattr ioctl open read watch watch_re
 allow system_app hal_camera_default:binder { call transfer };
 allow system_app hal_camera_default:binder transfer;
 allow system_app hal_camera_default:fd *;
-allow system_app hal_quickcamera_service:service_manager find;
 allow system_app hal_quickcamera:binder { call transfer };
 allow system_app hal_quickcamera:binder transfer;
 allow system_app hal_quickcamera:fd *;

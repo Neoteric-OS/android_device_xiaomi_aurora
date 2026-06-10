@@ -5,3 +5,5 @@ allow mediaserver vendor_hal_ozonotify:fd *;
 allow mediaserver vendor_hal_ozonotify_default:binder call;
 
 allow mediaserver sound_device:chr_file rw_file_perms;
+
+get_prop(mediaserver, vendor_display_prop)

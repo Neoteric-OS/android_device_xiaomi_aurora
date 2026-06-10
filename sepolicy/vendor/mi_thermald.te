@@ -1,6 +1,4 @@
 # Define mi_thermald domain
-type mi_thermald, domain, mlstrustedsubject;
-type mi_thermald_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(mi_thermald)
 
 allow mi_thermald init:unix_stream_socket connectto;

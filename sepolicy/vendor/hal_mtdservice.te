@@ -1,8 +1,3 @@
-type hal_mtdservice_default, domain;
-type hal_mtdservice_default_exec, exec_type, file_type, vendor_file_type;
-type hal_mtdservice_service, hal_service_type, protected_service, service_manager_type;
-type hal_mtdservice_hwservice, hwservice_manager_type;
-
 hal_server_domain(hal_mtdservice_default, hal_mtdservice)
 allow hal_mtdservice_default hal_secure_element_default:binder transfer;
 allow hal_mtdservice_default hal_mlipay_default:binder { call transfer };
@@ -25,11 +20,6 @@ allow hal_mtdservice_default hal_mfidoca_service:service_manager find;
 allow hal_mtdservice_default platform_app:binder transfer;
 allow hal_mtdservice_default system_app:binder transfer;
 allow hal_mtdservice_default self:qipcrtr_socket { read create getattr write setopt };
-#allow hal_mtdservice_default ta_data_file:file create_file_perms;
-#allow hal_mtdservice_default ta_data_file:dir rw_dir_perms;
-#allow hal_mtdservice_default vendor_hal_tui_comm_hwservice:hwservice_manager find;
-#allow hal_mtdservice_default vendor_hal_tui_comm_hwservice:binder { call transfer };
-#allow hal_mtdservice_default vendor_hal_tui_comm_qti:binder { call transfer };
 allow hal_mtdservice_default sysfs:dir { open read };
 allow hal_mtdservice_default sysfs:file { open read write };
 allow hal_mtdservice_default vendor_qce_device:chr_file rw_file_perms;
@@ -50,7 +40,6 @@ allow hal_mtdservice_client hal_mtdservice_service:service_manager find;
 allow hal_mtdservice_server hal_mtdservice_client:binder transfer;
 allow hal_mtdservice_server hal_mtdservice_client:binder { call transfer };
 allow hal_mtdservice_server hal_mtdservice_client:fd *;
-type_transition hal_mtdservice mnt_vendor_file:dir vendor_persist_drm_file "fdsd";
 init_daemon_domain(hal_mtdservice_default)
 get_prop(hal_mtdservice_default, vendor_system_prop)
 get_prop(hal_mtdservice_default, vendor_cpuid_prop)

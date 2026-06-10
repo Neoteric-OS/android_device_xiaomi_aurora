@@ -7,6 +7,8 @@ allow hal_audio_default audio_socket:sock_file rw_file_perms;
 allow hal_audio_default sound_device:chr_file rw_file_perms;
 allow hal_audio_default sysfs:file rw_file_perms;
 allow hal_audio_default sysfs_f0_value:file rw_file_perms;
+allow hal_audio_default vendor_sysfs_vibrator:dir search;
+allow hal_audio_default vendor_sysfs_vibrator:file r_file_perms;
 allow hal_audio_default vendor_hal_ozonotify_hwservice:hwservice_manager find;
 allow hal_audio_default vendor_hal_ozonotify_service:service_manager find;
 allow hal_audio_default vendor_hal_ozonotify:binder { call transfer };

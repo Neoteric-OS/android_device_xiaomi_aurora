@@ -24,5 +24,3 @@ allow touchreport self:tcp_socket { create getattr getopt read setopt write };
 allow touchreport self:udp_socket { create getattr getopt read setopt write };
 init_daemon_domain(touchreport)
 set_prop(touchreport, vendor_touch_hostprocess_prop)
-type touchreport, domain;
-type touchreport_exec, exec_type, file_type, vendor_file_type;

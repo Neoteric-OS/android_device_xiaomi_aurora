@@ -14,7 +14,6 @@ allow platform_app app_data_file:file execute;
 allow platform_app hal_camera_default:binder { call transfer };
 allow platform_app hal_camera_default:binder transfer;
 allow platform_app hal_camera_default:fd *;
-allow platform_app hal_quickcamera_service:service_manager find;
 allow platform_app hal_quickcamera:binder { call transfer };
 allow platform_app hal_quickcamera:binder transfer;
 allow platform_app hal_quickcamera:fd *;
@@ -75,3 +74,6 @@ hal_client_domain(platform_app, vendor_hal_soter);
 # Touchfeature
 allow platform_app hal_touchfeature_xiaomi_service:service_manager find;
 binder_call(platform_app, hal_touchfeature_xiaomi_default)
+
+# XiaomiParts AOD/FOD state reads.
+allow platform_app sysfs_tp_fodstatus:file r_file_perms;

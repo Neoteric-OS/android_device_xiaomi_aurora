@@ -1,5 +1,3 @@
-type vendor_displaycount, domain;
-type vendor_displaycount_exec, exec_type, file_type, vendor_file_type;
 
 allow vendor_displaycount sysfs:file { open read write };
 allow vendor_displaycount vendor_display_vendor_data_file:dir create_dir_perms;
