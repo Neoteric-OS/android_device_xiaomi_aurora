@@ -48,6 +48,8 @@ r_dir_file(hal_camera_default, vendor_persist_sensors_file)
 r_dir_file(hal_camera_default, domain)
 
 get_prop(hal_camera_default, exported_system_prop)
+# Allow the MiAlgo/MAW framework to read the SoC id
+get_prop(hal_camera_default, vendor_soc_id_prop)
 set_prop(hal_camera, vendor_camera_sensor_prop)
 set_prop(hal_camera_default, vendor_camera_p3enable_prop)
 set_prop(hal_camera_default, log_prop)
