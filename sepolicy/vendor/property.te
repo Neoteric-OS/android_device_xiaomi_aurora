@@ -4,6 +4,7 @@ vendor_restricted_prop(vendor_fp_info_prop)
 
 # NFC
 vendor_public_prop(vendor_nfc_mi_prop)
+vendor_public_prop(vendor_nfc_prop)
 
 # Mlipay
 vendor_public_prop(vendor_cpuid_prop)
