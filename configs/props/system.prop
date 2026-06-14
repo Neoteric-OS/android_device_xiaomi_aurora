@@ -4,6 +4,8 @@ persist.vendor.camera.privapp.list=com.android.camera
 ro.hardware.camera=xiaomi
 ro.miui.build.region=global
 ro.miui.notch=1
+ro.miui.ui.version.name=V816
+ro.miui.ui.version.code=816
 ro.product.mod_device=aurora_global
 vendor.camera.aux.packagelist=com.android.camera,org.codeaurora.snapcam
 
