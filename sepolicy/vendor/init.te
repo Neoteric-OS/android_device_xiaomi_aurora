@@ -41,3 +41,6 @@ allow init self:qipcrtr_socket { create getattr setopt write read };
 
 # Vibrator
 allow init vendor_sysfs_vibrator:file create_file_perms;
+
+# Allow camera provider writepid to /sys/kernel/reserve_pool/pid.
+allow init sysfs_camera_reserve_pool:file w_file_perms;

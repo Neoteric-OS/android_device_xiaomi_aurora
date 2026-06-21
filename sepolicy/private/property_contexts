@@ -1,6 +1,7 @@
 # Audio
 
 # Camera
+persist.sys.camera.allow_ultraraw_dng_size u:object_r:exported_camera_prop:s0
 
 # Fingerprint
 

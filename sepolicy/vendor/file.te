@@ -11,3 +11,5 @@ type proc_mv, fs_type, proc_type;
 # Wifi
 type vendor_mac_vendor_data_file, data_file_type, file_type, mlstrustedobject;
 
+# Camera
+type sysfs_camera_reserve_pool, fs_type, sysfs_type;

@@ -2,6 +2,7 @@
 genfscon sysfs "/class/qcom-battery" u:object_r:vendor_sysfs_qcom_battery:s0
 
 # Camera
+genfscon sysfs /kernel/reserve_pool/pid u:object_r:sysfs_camera_reserve_pool:s0
 genfscon proc /mv u:object_r:proc_mv:s0
 
 # Display
