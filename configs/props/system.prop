@@ -1,5 +1,6 @@
 # Camera
 persist.vendor.camera.maxRAWSizes=19
+persist.sys.camera.allow_ultraraw_dng_size=true
 persist.vendor.camera.privapp.list=com.android.camera
 ro.hardware.camera=xiaomi
 ro.miui.build.region=global
