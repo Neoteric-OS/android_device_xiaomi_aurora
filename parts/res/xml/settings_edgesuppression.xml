@@ -6,6 +6,7 @@
 -->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:title="@string/edgesuppression_name">
 
     <com.android.settingslib.widget.MainSwitchPreference
@@ -13,10 +14,15 @@
         android:key="edgesuppression_enable"
         android:title="@string/edgesuppression_enable_name" />
 
+    <!-- Value is the suppressed edge width in touch-panel pixels; range matches
+         custom_suppression in the stock edge_suppression_config.xml. -->
     <SeekBarPreference
-        android:key="edgesuppression_width"
+        android:defaultValue="50"
         android:dependency="edgesuppression_enable"
-        android:defaultValue="60"
-        android:max="80" />
+        android:key="edgesuppression_width"
+        android:max="80"
+        android:title="@string/edgesuppression_width_name"
+        app:min="10"
+        app:showSeekBarValue="true" />
 
 </PreferenceScreen>

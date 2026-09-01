@@ -51,10 +51,10 @@ class EdgeSuppressionSettingsFragment :
 
         addPreferencesFromResource(R.xml.settings_edgesuppression)
 
-        switchBar = findPreference("edgesuppression_enable") as? MainSwitchPreference
+        switchBar = findPreference(EdgeSuppressionManager.KEY_ENABLE) as? MainSwitchPreference
         switchBar?.addOnSwitchChangeListener(this)
 
-        widthPreference = findPreference("edgesuppression_width") as? SeekBarPreference
+        widthPreference = findPreference(EdgeSuppressionManager.KEY_WIDTH) as? SeekBarPreference
         widthPreference?.apply {
             setUpdatesContinuously(true)
             onPreferenceChangeListener = this@EdgeSuppressionSettingsFragment
@@ -65,29 +65,25 @@ class EdgeSuppressionSettingsFragment :
     }
 
     override fun onPreferenceChange(preference: Preference, newValue: Any): Boolean {
-        val value = (newValue.toString().toFloat() + 20f) / 100f
-        updateEdgeSuppression(value)
+        updateEdgeSuppression(newValue.toString().toInt())
         return true
     }
 
     override fun onCheckedChanged(buttonView: CompoundButton, isChecked: Boolean) {
-        val storedWidth = sharedPreferences.getInt("edgesuppression_width", 60)
-        val value = if (isChecked) (storedWidth + 20f) / 100f else 0f
-        updateEdgeSuppression(value)
+        updateEdgeSuppression(if (isChecked) storedWidth() else 0)
     }
 
-    private fun updateEdgeSuppression(value: Float) {
-        val suppressionSize = edgeSuppressionManager.getSuppressionSize(false, value)
-        leftLayoutParams.width = suppressionSize
-        rightLayoutParams.width = suppressionSize
+    private fun storedWidth(): Int = sharedPreferences.getInt(
+        EdgeSuppressionManager.KEY_WIDTH, EdgeSuppressionManager.DEFAULT_CONDITION_SIZE)
+
+    /** [conditionSize] is a raw panel-pixel width, so it doubles as the preview width. */
+    private fun updateEdgeSuppression(conditionSize: Int) {
+        leftLayoutParams.width = conditionSize
+        rightLayoutParams.width = conditionSize
         leftView?.layoutParams = leftLayoutParams
         rightView?.layoutParams = rightLayoutParams
 
-        sharedPreferences.edit()
-            .putFloat("edgesuppression_width_value", value)
-            .apply()
-
-        edgeSuppressionManager.handleEdgeSuppressionChange()
+        edgeSuppressionManager.handleEdgeSuppressionChange(conditionSize)
     }
 
     private fun setupEdgeSuppressionPreview(enabled: Boolean) {
@@ -97,9 +93,7 @@ class EdgeSuppressionSettingsFragment :
         leftView = View(context)
         rightView = View(context)
 
-        val storedWidth = sharedPreferences.getInt("edgesuppression_width", 60)
-        val widthValue = if (enabled) (storedWidth + 20f) / 100f else 0f
-        val suppressionSize = edgeSuppressionManager.getSuppressionSize(false, widthValue)
+        val suppressionSize = if (enabled) storedWidth() else 0
 
         val windowManager = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
         val metrics = DisplayMetrics()

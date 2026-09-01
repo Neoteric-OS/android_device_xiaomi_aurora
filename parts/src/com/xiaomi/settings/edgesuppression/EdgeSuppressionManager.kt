@@ -25,8 +25,6 @@ class EdgeSuppressionManager private constructor(context: Context) {
     private var index = 0
     private val screenHeight: Int
     private val screenWidth: Int
-    @Suppress("unused")
-    private val absoluteLevel: IntArray
     private val corner: IntArray
 
     private enum class Mode(val index: Int) {
@@ -42,7 +40,6 @@ class EdgeSuppressionManager private constructor(context: Context) {
         screenWidth = min(metrics.widthPixels, metrics.heightPixels) - 1
         screenHeight = max(metrics.widthPixels, metrics.heightPixels) - 1
 
-        absoluteLevel = appContext.resources.getIntArray(R.array.edge_suppresson_absolute)
         corner = appContext.resources.getIntArray(R.array.edge_suppresson_corner)
         val rectSize = appContext.resources.getInteger(R.integer.edge_suppresson_rect_size)
         val sendSize = appContext.resources.getInteger(R.integer.edge_suppresson_send_size)
@@ -50,24 +47,24 @@ class EdgeSuppressionManager private constructor(context: Context) {
         sendArray = IntArray(sendSize)
     }
 
-    fun handleEdgeSuppressionChange(): IntArray {
+    fun handleEdgeSuppressionChange(
+        conditionSize: Int = getConditionSize(appContext)
+    ): IntArray {
         val windowManager = appContext.getSystemService(Context.WINDOW_SERVICE) as WindowManager
         val rotation = windowManager.defaultDisplay.rotation
-        val width = PreferenceManager.getDefaultSharedPreferences(appContext)
-            .getFloat("edgesuppression_width_value", 0.8f)
-        val suppressionRect = getSuppressionRect(rotation, width)
+        val suppressionRect = getSuppressionRect(rotation, conditionSize)
         TouchFeatureWrapper.setEdgeMode(MODE_EDGE_SUPPRESSION, suppressionRect)
         return suppressionRect
     }
 
-    private fun getSuppressionRect(rotation: Int, width: Float): IntArray {
+    private fun getSuppressionRect(rotation: Int, conditionSize: Int): IntArray {
         resetSendArray()
         if (rotation == 1 || rotation == 3) {
-            setRectPointForHorizontal(getSuppressionSize(true, width), Mode.ABSOLUTE.index)
-            setRectPointForHorizontal(getSuppressionSize(false, width), Mode.CONDITION.index)
+            setRectPointForHorizontal(ABSOLUTE_SIZE, Mode.ABSOLUTE.index)
+            setRectPointForHorizontal(conditionSize, Mode.CONDITION.index)
         } else {
-            setRectPointForPortrait(getSuppressionSize(true, width), Mode.ABSOLUTE.index)
-            setRectPointForPortrait(getSuppressionSize(false, width), Mode.CONDITION.index)
+            setRectPointForPortrait(ABSOLUTE_SIZE, Mode.ABSOLUTE.index)
+            setRectPointForPortrait(conditionSize, Mode.CONDITION.index)
         }
         setCornerRectPoint(rotation)
         compileSendArray()
@@ -200,10 +197,6 @@ class EdgeSuppressionManager private constructor(context: Context) {
         }
     }
 
-    fun getSuppressionSize(absolute: Boolean, width: Float): Int {
-        return (width * if (absolute) 10 else 50).toInt()
-    }
-
     private fun setRectValue(
         suppressionRect: SuppressionRect,
         t: Int,
@@ -243,6 +236,26 @@ class EdgeSuppressionManager private constructor(context: Context) {
         @Suppress("unused")
         private val DEBUG = Log.isLoggable(TAG, Log.DEBUG)
         private const val MODE_EDGE_SUPPRESSION = 15
+
+        // Sizes are raw touch-panel pixels, mirroring the stock
+        // edge_suppression_config.xml shipped in framework-ext-res (android.miui):
+        // custom_suppression allows conditionSize 10..80 and absoluteSize 0..1,
+        // and every stock profile but strong_suppression uses absoluteSize=0.
+        private const val ABSOLUTE_SIZE = 0
+        const val DEFAULT_CONDITION_SIZE = 50
+
+        const val KEY_ENABLE = "edgesuppression_enable"
+        const val KEY_WIDTH = "edgesuppression_width"
+
+        /** Suppression width in px, or 0 when the user has it switched off. */
+        fun getConditionSize(context: Context): Int {
+            val prefs = PreferenceManager.getDefaultSharedPreferences(context)
+            return if (prefs.getBoolean(KEY_ENABLE, false)) {
+                prefs.getInt(KEY_WIDTH, DEFAULT_CONDITION_SIZE)
+            } else {
+                0
+            }
+        }
 
         @Volatile
         private var instance: EdgeSuppressionManager? = null

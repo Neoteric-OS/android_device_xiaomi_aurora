@@ -61,7 +61,8 @@ object TouchFeatureWrapper {
                     return
                 }
         if (DEBUG) Log.d(TAG, "setEdgeMode: mode=$mode length=${values.size}")
-        runCatching { touchFeature.setEdgeMode(TOUCH_ID_DEFAULT, mode, values, values.size) }
+        runCatching { touchFeature.setEdgeMode(TOUCH_ID_DEFAULT, mode, values.size, values) }
+            .onSuccess { ret -> if (ret != 0) Log.e(TAG, "setEdgeMode rejected, ret=$ret") }
             .onFailure { e -> Log.e(TAG, "setEdgeMode failed!", e) }
     }
 }
