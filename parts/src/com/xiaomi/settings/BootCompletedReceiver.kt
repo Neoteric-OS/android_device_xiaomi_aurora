@@ -15,7 +15,6 @@ import android.util.Log
 import android.view.Display
 import android.view.Display.HdrCapabilities
 import com.xiaomi.settings.display.ColorModeService
-import com.xiaomi.settings.display.DcDimmingService
 import com.xiaomi.settings.doze.AodBrightnessService
 import com.xiaomi.settings.edgesuppression.EdgeSuppressionService
 import com.xiaomi.settings.touch.DoubleTapToWakeService
@@ -52,7 +51,6 @@ class BootCompletedReceiver : BroadcastReceiver() {
         }
 
         context.startServiceAsUser(Intent(context, AodBrightnessService::class.java), UserHandle.CURRENT)
-        context.startServiceAsUser(Intent(context, DcDimmingService::class.java), UserHandle.CURRENT)
         context.startServiceAsUser(Intent(context, EdgeSuppressionService::class.java), UserHandle.CURRENT)
         context.startServiceAsUser(Intent(context, TouchOrientationService::class.java), UserHandle.CURRENT)
         context.startServiceAsUser(Intent(context, TouchPollingRateService::class.java), UserHandle.CURRENT)
