@@ -1,5 +1,5 @@
 # Audio
-allow vendor_hal_perf_default hal_audio_default:dir { search };
+r_dir_file(vendor_hal_perf_default, hal_audio_default)
 
 # Camera
 allow vendor_hal_perf_default hal_camera_default:dir r_dir_perms;
@@ -24,6 +24,9 @@ allow vendor_hal_perf_default hal_graphics_composer_default:file r_file_perms;
 # Power
 allow vendor_hal_perf_default hal_power_default:dir r_dir_perms;
 allow vendor_hal_perf_default hal_power_default:file r_file_perms;
+
+# Shsusrd
+r_dir_file(vendor_hal_perf_default, vendor_shsusrd)
 
 # Thermal
 allow vendor_hal_perf_default vendor_thermal_data_file:dir { read search watch };

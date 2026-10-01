@@ -24,8 +24,6 @@ allow vendor_hal_citsensorservice_xiaomi_default vendor_sysfs_displayfeature:dir
 allow vendor_hal_citsensorservice_xiaomi_default vendor_sysfs_displayfeature:file { getattr open read };
 allow vendor_hal_citsensorservice_xiaomi_default vendor_displayfeature_device:chr_file { ioctl open read write };
 allow vendor_hal_citsensorservice_xiaomi_default vendor_hal_display_config_hwservice:hwservice_manager find;
-allow vendor_hal_citsensorservice_xiaomi_default vendor_hal_display_config_hwservice:binder { call transfer };
-allow vendor_hal_citsensorservice_xiaomi_default vendor_hal_display_config_hwservice:fd *;
 allow vendor_hal_citsensorservice_xiaomi_default hal_graphics_mapper_hwservice:hwservice_manager find;
 allow vendor_hal_citsensorservice_xiaomi_default hal_graphics_composer:binder { call transfer };
 allow vendor_hal_citsensorservice_xiaomi_default hal_graphics_composer:fd *;

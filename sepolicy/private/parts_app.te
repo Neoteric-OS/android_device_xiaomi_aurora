@@ -44,5 +44,4 @@ allow parts_app sysfs_tp_fodstatus:file r_file_perms;
 
 hal_client_domain(parts_app, hal_touchfeature_xiaomi)
 binder_call(parts_app, hal_touchfeature_xiaomi)
-binder_call(parts_app, default_android_hwservice)
 binder_call(parts_app, gpuservice)

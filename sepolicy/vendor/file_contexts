@@ -120,3 +120,6 @@
 # Wifi
 /data/vendor/mac_addr(/.*)? u:object_r:vendor_mac_vendor_data_file:s0
 /vendor/bin/nv_mac u:object_r:vendor_wcnss_service_exec:s0
+
+# MiSys
+/vendor/bin/hypsys_vendor                                        u:object_r:hal_misys_default_exec:s0

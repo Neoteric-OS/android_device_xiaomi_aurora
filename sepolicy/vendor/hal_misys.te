@@ -2,9 +2,13 @@ add_hwservice(hal_misys_server, hal_misys_hwservice)
 binder_call(hal_misys_client, hal_misys_server)
 hal_server_domain(hal_misys_default, hal_misys)
 hal_client_domain(hal_misys_default, hal_allocator)
+binder_use(hal_misys_default)
 hwbinder_use(hal_misys_default)
 init_daemon_domain(hal_misys_default)
+get_prop(hal_misys_default, vendor_camera_sensor_prop)
 set_prop(hal_misys_default, vendor_system_prop)
+dontaudit hal_misys_default boot_status_prop:file r_file_perms;
+dontaudit hal_misys_default device:chr_file rw_file_perms;
 
 allow hal_misys_default camera_persist_file:dir create_dir_perms;
 allow hal_misys_default camera_persist_file:file create_file_perms;
@@ -29,6 +33,7 @@ allow hal_misys_default system_app:binder transfer;
 allow hal_misys_default hal_allocator_server:binder call;
 allow hal_misys_default hal_allocator_server:fd *;
 allow hal_misys_default proc_meminfo:file read;
+allow hal_misys_default kmsg_device:chr_file r_file_perms;
 allow hal_misys_default block_device:dir r_dir_perms;
 allow hal_misys_default super_block_device:blk_file r_file_perms;
 allow hal_misys_client hal_misys_server:binder { call transfer };

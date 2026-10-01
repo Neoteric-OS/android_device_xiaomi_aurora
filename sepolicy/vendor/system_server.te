@@ -68,3 +68,7 @@ allow system_server touchfeature_device:chr_file rw_file_perms;
 allow system_server touchfeature_device:file { getattr map read };
 get_prop(system_server, vendor_touchfeature_prop)
 hal_client_domain(system_server, hal_touchfeature_xiaomi)
+
+# SnapdragonServices (no HAL on this platform, libtrigger-handler polls it)
+type vendor_hal_snapx_service, service_manager_type;
+dontaudit system_server vendor_hal_snapx_service:service_manager find;
