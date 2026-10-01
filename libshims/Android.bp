@@ -3,3 +3,4 @@ cc_library_shared {
     srcs: ["lib-mediac2.cpp"],
     vendor: true,
 }
+

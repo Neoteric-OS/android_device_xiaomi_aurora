@@ -1,10 +1,8 @@
-# All unpinned blobs below are extracted from aurora OS2.0.207.0.VNAMIXM
+# All unpinned blobs below are extracted from aurora OS3.0.306.0.WNACNXM
 
 # ACDB
 odm/etc/acdbdata/Forte/Forte_acdb_cal.acdb:odm/etc/acdbdata/pineapple_mtp/Forte_acdb_cal.acdb
 odm/etc/acdbdata/Forte/Forte_workspaceFileXml.qwsp:odm/etc/acdbdata/pineapple_mtp/Forte_workspaceFileXml.qwsp
-vendor/etc/acdbdata/IDP_UPD/IDP_UPD_acdb_cal.acdb
-vendor/etc/acdbdata/IDP_UPD/IDP_UPD_workspaceFileXml.qwsp
 vendor/etc/acdbdata/ffv_models/ffv__5.0.1_0.1__3.0.0_0.0__eai_2.10_enpu3.pmd
 vendor/etc/acdbdata/ffv_models/ffv__5.0.1_0.1__eai_2.10_enpu3.pmd
 vendor/etc/acdbdata/ffv_models/ffv__6.2.5_0.1__eai_3.4__enpu_v4.pmd
@@ -25,48 +23,13 @@ vendor/etc/acdbdata/haptics_data/texture_tick.pcm
 vendor/etc/acdbdata/haptics_data/thud.pcm
 vendor/etc/acdbdata/haptics_data/tick.pcm
 vendor/etc/acdbdata/nn_ns_models/fai__11.0.1.0_1.0__3.0.0_0.0__3.1.1_0.0__3.2.0_0.0__eai_3.4_enpuv4.pmd
-vendor/etc/acdbdata/nn_ns_models/fai__2.0.0_0.1__3.0.0_0.0__3.1.0_0.0__3.2.0_0.0__eai_2.7_enpu3.pmd
-vendor/etc/acdbdata/nn_ns_models/fai__2.0.0_0.1__3.0.0_0.0__eai_1.36_enpu2.pmd
-vendor/etc/acdbdata/nn_ns_models/fai__2.3.0_0.1__3.0.0_0.0__eai_1.10.pmd
-vendor/etc/acdbdata/nn_ns_models/fai__2.3.0_0.1__3.0.0_0.0__eai_1.36_enpu2_comp.pmd
-vendor/etc/acdbdata/nn_ns_models/fai__2.6.3_0.0__3.0.0_0.0__3.1.1.0_0.0__3.2.0_0.0__eai_2.7_enpu_v3.pmd
-vendor/etc/acdbdata/nn_ns_models/fai__2.6.3_0.0__3.0.0_0.0__3.1.1_0.0__3.2.0_0.1__eai_3.0_enpuv4.pmd
-vendor/etc/acdbdata/nn_ns_models/fai__2.6.5_0.0__3.0.0_0.0__3.1.0_0.0__3.2.0_0.0__eai_2.10_enpuv3.pmd
-vendor/etc/acdbdata/nn_ns_models/fai__2.7.20_0.0__3.0.0_0.0__3.1.2_0.0__3.2.0_0.1__eai_3.4_enpuv4.pmd
-vendor/etc/acdbdata/nn_ns_models/fai__2.7.20_0.0__3.0.0_0.0__eai_1.36_enpu2.pmd
-vendor/etc/acdbdata/nn_ns_models/fai__2.7.20_0.0__3.0.0_0.0__eai_3.4_enpuv4.pmd
-vendor/etc/acdbdata/nn_ns_models/fai__2.7.2_0.0__3.0.0_0.0__3.1.1_0.0__3.2.0_0.1__eai_3.4_enpuv4.pmd
-vendor/etc/acdbdata/nn_ns_models/fai__2.7.2_0.0__3.0.0_0.0__eai_1.36_enpu2.pmd
-vendor/etc/acdbdata/nn_ns_models/fai__2.7.5_0.0__3.0.0_0.0__3.1.1.0_0.0__3.2.0_0.0__eai_2.7_enpu_v3.pmd
-vendor/etc/acdbdata/nn_ns_models/fai__2.7.5_0.0__3.0.0_0.0__3.1.1_0.0__3.2.0_0.1__eai_3.0_enpuv4.pmd
-vendor/etc/acdbdata/nn_ns_models/fai__2.7.6_0.0__3.0.0_0.0__3.1.1_0.0__3.2.0_0.1__eai_3.4_enpuv4.pmd
-vendor/etc/acdbdata/nn_ns_models/fai__2.7.7_0.0__3.0.0_0.0__3.1.1_0.0__3.2.0_0.1__eai_3.4_enpuv4.pmd
-vendor/etc/acdbdata/nn_ns_models/fai__2.7.8_0.0__3.0.0_0.0__3.1.0_0.0__3.2.0_0.0__eai_2.10_enpuv3.pmd
-vendor/etc/acdbdata/nn_ns_models/fai__2.7.8_0.0__3.0.0_0.0__3.1.1_0.0__3.2.0_0.1__eai_3.0_enpuv4.pmd
-vendor/etc/acdbdata/nn_ns_models/fai__2.9.0_1.0__3.0.0_0.0__3.1.1_0.0__3.2.0_0.1__eai_3.4_enpuv4.pmd
-vendor/etc/acdbdata/nn_ns_models/fai__2.9.2_0.0__3.0.0_0.0__3.1.1_0.0__3.2.0_0.1__eai_3.4_enpuv4.pmd
-vendor/etc/acdbdata/nn_ns_models/fai__2.9.2_1.0__3.0.0_0.0__3.1.1_0.0__3.2.0_0.0__eai_3.4_enpuv4.pmd
+vendor/etc/acdbdata/nn_ns_models/fai__11.0.1.6_1.0__3.0.0_0.0__3.1.1_0.0__3.2.0_0.0__eai_3.4_enpuv4.pmd
 vendor/etc/acdbdata/nn_ns_models/fai__4.6.3_0.0__3.0.0_0.0__3.1.1_0.0__3.2.0_0.1__eai_3.4_enpuv4.pmd
 vendor/etc/acdbdata/nn_ns_models/fai__4.8.14_1.0__3.0.0_0.0__3.1.1_0.0__3.2.0_0.1__eai_3.4_enpuv4.pmd
 vendor/etc/acdbdata/nn_ns_models/fai__4.8.14_1.0__3.0.0_0.0__3.1.2_0.0__3.2.0_0.1__11.0.1.4_1.0__eai_3.4_enpuv4.pmd
-vendor/etc/acdbdata/nn_ns_models/fai__4.8.2_0.0__3.0.0_0.0__3.1.1.0_0.0__3.2.0_0.0__eai_2.7_enpu_v3.pmd
-vendor/etc/acdbdata/nn_ns_models/fai__4.8.3_0.0__3.0.0_0.0__3.1.0_0.0__3.2.0_0.0__eai_2.10_enpuv3.pmd
-vendor/etc/acdbdata/nn_ns_models/fai__4.8.4_0.0__3.0.0_0.0__3.1.1_0.0__3.2.0_0.1__eai_3.0_enpuv4.pmd
-vendor/etc/acdbdata/nn_ns_models/fai__4.8.4_0.0__3.0.0_0.0__3.1.1_0.0__3.2.0_0.1__eai_3.4_enpuv4.pmd
-vendor/etc/acdbdata/nn_ns_models/fai__8.0.2_0.0__3.0.0_0.0__3.1.1_0.0__3.2.0_0.1__eai_3.4_enpuv4.pmd
 vendor/etc/acdbdata/nn_vad_models/fai__3.0.0_0.0__eai_1.36_enpu2.pmd
 vendor/etc/acdbdata/nn_vad_models/fai__3.0.0_0.0__eai_2.10_enpuv3.pmd
 vendor/etc/acdbdata/nn_vad_models/fai__3.0.0_0.0__eai_3.4_enpuv4.pmd
-vendor/etc/acdbdata/pineapple_aim/AIM_acdb_cal.acdb
-vendor/etc/acdbdata/pineapple_aim/AIM_workspaceFileXml.qwsp
-vendor/etc/acdbdata/pineapple_cdp/CDP_acdb_cal.acdb
-vendor/etc/acdbdata/pineapple_cdp/CDP_workspaceFileXml.qwsp
-vendor/etc/acdbdata/pineapple_mtp/MTP_acdb_cal.acdb
-vendor/etc/acdbdata/pineapple_mtp/MTP_workspaceFileXml.qwsp
-vendor/etc/acdbdata/pineapple_qrd/QRD_acdb_cal.acdb
-vendor/etc/acdbdata/pineapple_qrd/QRD_workspaceFileXml.qwsp
-vendor/etc/acdbdata/pineapple_qrd_sku2/QRD_pineapple_sku2_acdb_cal.acdb
-vendor/etc/acdbdata/pineapple_qrd_sku2/QRD_pineapple_sku2_workspaceFileXml.qwsp
 
 # ADSP
 vendor/bin/adsprpcd
@@ -139,11 +102,11 @@ vendor/lib64/rfs/dsp/libvpp_svc_skel.so
 vendor/lib64/rfs/dsp/libvpp_vqa_networks.so
 vendor/lib64/rfs/dsp/libvpt_action_recognition.so
 vendor/lib64/rfs/dsp/libworker_pool.so
-vendor/lib64/se_algo/libQnnHtp.so
-vendor/lib64/se_algo/libQnnHtpNetRunExtensions.so
-vendor/lib64/se_algo/libQnnHtpV75Skel.so
-vendor/lib64/se_algo/libQnnHtpV75Stub.so
-vendor/lib64/se_algo/libQnnSystem.so
+odm/lib64/se_algo/libQnnHtp.so
+odm/lib64/se_algo/libQnnHtpNetRunExtensions.so
+odm/lib64/se_algo/libQnnHtpV75Skel.so
+odm/lib64/se_algo/libQnnHtpV75Stub.so
+odm/lib64/se_algo/libQnnSystem.so
 vendor/lib64/libos.so
 vendor/lib64/libsynx.so
 vendor/lib64/libthreadutils.so
@@ -193,10 +156,10 @@ vendor/lib64/lib_misound_asc.so
 vendor/lib64/libadm.so
 vendor/lib64/libar-acdb.so
 vendor/lib64/libar-gpr.so
--vendor/lib64/libar-gsl.so
+vendor/lib64/libar-gsl.so
 -vendor/lib64/libar-pal.so
 vendor/lib64/libarmemlog.so
--vendor/lib64/libats.so
+vendor/lib64/libats.so
 vendor/lib64/libaudio_log_utils.so
 vendor/lib64/libaudiocloudctrl.so
 vendor/lib64/libaudiofeaturestats.so
@@ -208,7 +171,7 @@ vendor/lib64/libcustomva_intf.so
 vendor/lib64/libdlbpreg.so
 vendor/lib64/libkaraokepal.so
 vendor/lib64/liblx-ar_util.so
--vendor/lib64/liblx-osal.so
+vendor/lib64/liblx-osal.so
 vendor/lib64/libmcs.so
 vendor/lib64/libmis6.so
 vendor/lib64/libmisfpsop.so
@@ -224,6 +187,7 @@ vendor/lib64/libtensorflowlite_c.so
 vendor/lib64/libxlog.so
 -vendor/lib64/vendor.qti.hardware.pal@1.0-impl.so
 vendor/lib64/vendor.qti.voiceprint@1.0.so
+odm/lib64/vendor.xiaomi.hardware.mediaeventgatherservice-V1-ndk.so
 
 # Audio (Config)
 odm/etc/audio/sku_pineapple/adsp_sleep_monitor.conf
@@ -311,6 +275,7 @@ vendor/lib64/libmisoundsa_fx.so
 
 # AV Enhancements
 system_ext/lib64/libavenhancements.so
+system_ext/lib64/libmediastub.so
 
 # Batterysecret
 vendor/bin/batterysecret
@@ -648,7 +613,7 @@ odm/lib64/libITT.so
 odm/lib64/libIntelligentFocus.so
 odm/lib64/libMiMotion.so
 odm/lib64/libMiStereoFactoryCalibAnalyzeBin_qual.so
-odm/lib64/libMiVideoFilter.so
+system_ext/lib64/libMiVideoFilter.so:odm/lib64/libMiVideoFilter.so
 odm/lib64/libPlatformValidatorShared.so
 odm/lib64/libSNPE.so
 odm/lib64/libSnpeDspV66Stub.so
@@ -808,7 +773,6 @@ odm/lib64/libqllengine.so
 odm/lib64/libqsegnet.so
 odm/lib64/libqshcamera.so
 odm/lib64/librawnrv2_shared.so
-odm/lib64/librendercore.so
 odm/lib64/librfs_warp.so
 odm/lib64/libsfeShiftExtrapolation.so
 odm/lib64/libshadowhook.so
@@ -866,8 +830,8 @@ vendor/lib64/libmifaceempty.so
 vendor/lib64/libmilut.so
 vendor/lib64/liboemaids_vendor.so
 vendor/lib64/libopencl_loader.so
-vendor/lib64/libopencv_core_se.so
-vendor/lib64/libopencv_imgproc_se.so
+odm/lib64/libopencv_core_se.so
+odm/lib64/libopencv_imgproc_se.so
 vendor/lib64/libpolygon.so
 vendor/lib64/libqcodec2_mocklutfilter.so
 vendor/lib64/libqdMetaData.so
@@ -895,6 +859,19 @@ vendor/lib64/vendor.qti.hardware.camera.postproc@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.aon-V1-ndk.so
 vendor/lib64/vendor.xiaomi.hardware.quickcamera-V1-ndk.so
 vendor/lib64/vendor.xiaomi.hardware.seccam-V1-ndk.so
+odm/lib64/camera/components/com.qti.node.pixman.so
+odm/lib64/camera/plugins/com.xiaomi.plugin.heifedit.so
+odm/lib64/camera/plugins/com.xiaomi.plugin.yuv2Heic.so
+odm/lib64/com.xiaomi.camdfx.so
+odm/lib64/libMiPhotoFilter.so
+odm/lib64/libcameraheif.so
+odm/lib64/libcom.xiaomi.ionutils.so
+odm/lib64/libheichal.so
+vendor/lib64/vendor.xiaomi.hardware.camera.injection-V1-ndk.so
+vendor/lib64/vendor.xiaomi.hardware.camera.injection-client.so
+vendor/lib64/vendor.xiaomi.hardware.camera.injection-service.so
+vendor/lib64/vendor.xiaomi.hardware.camera.synthetic-V1-ndk.so
+vendor/lib64/vendor.xiaomi.hardware.camera.synthetic-impl.so
 
 # Camera configs
 odm/etc/camera/VideoNight4K/ellv.bin
@@ -1517,8 +1494,6 @@ odm/etc/camera/videofilter/161_KP160.png
 odm/etc/camera/videofilter/162_Natural.png
 odm/etc/camera/xiaomi/watermark/MiSans-Demibold.ttf
 odm/etc/camera/xiaomi/watermark/MiSans-Medium.ttf
-odm/etc/camera/xiaomi/watermark/Roboto-Bold.ttf
-odm/etc/camera/xiaomi/watermark/Roboto-Medium.ttf
 odm/etc/camera/xiaomi/watermark/ic_cv_film_logo.png
 odm/etc/camera/xiaomi/watermark/ic_cv_film_logo_white.png
 odm/etc/camera/xiaomi/watermark/ic_cv_logo.png
@@ -1696,7 +1671,6 @@ odm/etc/camera/aivsModel_20D4BB1D
 odm/etc/camera/aivsModel_298FD264
 odm/etc/camera/aivsModel_4E21CABB
 odm/etc/camera/aivsModel_57749835
-odm/etc/camera/aivsModel_6684B07C
 odm/etc/camera/aivsModel_6C06C006
 odm/etc/camera/aivsModel_726E1AA4
 odm/etc/camera/aivsModel_8D84710A
@@ -1868,6 +1842,14 @@ odm/etc/video_thumbnail_lut.png
 vendor/etc/camera/cameraopt_perf.json
 vendor/etc/camera/cameraopt_vendor.json
 vendor/etc/external_camera_config.xml
+odm/etc/camera/cameradfx_config.json
+odm/etc/camera/xiaomi/EcoInfoDynamic.json
+odm/etc/camera/xiaomi/watermark/MiSans-Regular.ttf
+odm/etc/camera/xiaomi/watermark/MiSansArabicVF.ttf
+odm/etc/camera/xiaomi/watermark/MiSansTibetanVF.ttf
+odm/etc/camera/xiaomi/watermark/Noto-COLRv1-emojicompat.ttf
+odm/etc/camera/xiaomi/watermark/Oxanium-Medium.ttf
+odm/vendor/etc/videobox.json
 
 # Camera firmware
 odm/firmware/CAMERA_ICP.b00
@@ -1910,7 +1892,6 @@ odm/firmware/glove_model.tflite
 # Camera (MIUI)
 odm/lib64/libSNPE.so:system/lib64/libSNPE.so
 odm/lib64/libmialgo_ai_vision.so:system/lib64/libmialgo_ai_vision.so
--product/overlay/MiuiCameraOverlayLeicaed/MiuiCameraOverlayLeicaed.apk
 system/etc/public.libraries-xiaomi.txt
 system/lib64/android.hardware.camera.common@1.0.so
 system/lib64/libhidltransport.so
@@ -1953,6 +1934,7 @@ odm/etc/init/vendor.xiaomi.sensor.citsensorservice.aidl.rc
 odm/etc/vintf/manifest/vendor.xiaomi.sensor.citsensorservice.aidl.xml
 odm/etc/cit_param_config.json
 vendor/lib64/vendor.xiaomi.sensor.citsensorservice-V1-ndk.so
+vendor/lib64/xiaomi.system.hypsys.common-V1-ndk.so
 
 # CNE
 vendor/app/CneApp/CneApp.apk;REQUIRED=CneApp.libvndfwk_detect_jni.qti_symlink
@@ -2043,8 +2025,8 @@ vendor/etc/eva/itof/tuning_params_sensor_type_1.json
 vendor/lib64/libFace3DTA.so
 vendor/lib64/libFace3D_hlos.so
 vendor/lib64/libQ6MSFR_manager_stub.so
-vendor/lib64/libSEGModel.so
-vendor/lib64/libSEGModelPriv.so
+odm/lib64/libSEGModel.so
+odm/lib64/libSEGModelPriv.so
 vendor/lib64/libeva_util.so
 vendor/lib64/libface3d_dev.so
 vendor/lib64/libfastcvdsp_stub.so
@@ -2112,7 +2094,6 @@ vendor/etc/init/ssgtzd.rc
 vendor/etc/ssg/tz_whitelist.json
 
 # Context Hub
-odm/etc/init/android.hardware.contexthub-service.qmi.rc
 vendor/bin/hw/android.hardware.contexthub-service.qmi
 vendor/etc/chre/preloaded_nanoapps.json
 
@@ -2194,6 +2175,7 @@ vendor/lib64/libdisplayfeature.so
 vendor/lib64/libdisplayfeatureservice.so
 vendor/lib64/vendor.xiaomi.hardware.displayfeature@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.displayfeature_aidl-V2-ndk.so
+vendor/lib64/libtflite.so
 
 # Displayfeature (configs)
 odm/etc/disp0/mdss_dsi_n1_42_02_0a_dsc_cmd/clstc/ClstcLut0.txt
@@ -2240,31 +2222,19 @@ odm/etc/disp0/mdss_dsi_n1_42_02_0a_dsc_cmd/mi_gc_2.txt
 odm/etc/disp0/mdss_dsi_n1_42_02_0a_dsc_cmd/mi_gc_3.txt
 odm/etc/display/qdcm_calib_data_xiaomi_42_02_0a_cmd_mode_dsc_dsi_panel.json
 odm/etc/mdss_dsi_n1_42_02_0a_dsc_cmd_mi.xml
-vendor/etc/display/3dlut-pt-onnx-ptq-htp-fp16.dlc
 vendor/etc/display/DPU1010.xml
 vendor/etc/display/DPU1020.xml
 vendor/etc/display/DPU10__.xml
 vendor/etc/display/DPU870.xml
 vendor/etc/display/DPU9__.xml
-vendor/etc/display/LUT.txt
-vendor/etc/display/LUT0.txt
-vendor/etc/display/LUT1.txt
-vendor/etc/display/LUT2.txt
 vendor/etc/display/advanced_sf_offsets.xml
 vendor/etc/display/perf_hint_threshold.xml
-vendor/etc/display/sm8650_sr_1x_y1280x720.dlc
-vendor/etc/display/sm8650_sr_1x_y720x1280.dlc
-vendor/etc/display/sm8650_sr_2x_y1280x720.dlc
-vendor/etc/display/sm8650_sr_2x_y544x960.dlc
-vendor/etc/display/sm8650_sr_2x_y720x1280.dlc
-vendor/etc/display/sm8650_sr_2x_y960x544.dlc
-vendor/etc/display/sm8650_sr_3x_y368x640.dlc
-vendor/etc/display/sm8650_sr_3x_y640x368.dlc
 vendor/etc/display/thermallevel_to_fps.xml
 vendor/etc/snapdragon_color_libs_config.xml
 vendor/etc/spr_cfg_xiaomi_n11u_42_02_0a_cmd_mode_dsc_dsi_panel.xml
 vendor/etc/spr_cfg_xiaomi_n3_42_0d_0a_cmd_mode_dsc_dsi_panel.xml
 vendor/etc/spr_cfg_xiaomi_o11_42_02_0a_cmd_mode_dsc_dsi_panel.xml
+vendor/etc/spr_cfg_xiaomi_o11_42_02_0b_cmd_mode_dsc_dsi_panel.xml
 
 # Display Gralloc
 vendor/lib64/libgralloccore.so
@@ -2403,7 +2373,7 @@ vendor/lib64/hw/libqtigatekeeper.so
 # GNSS
 odm/bin/hw/android.hardware.gnss-aidl-service-qti
 odm/etc/init/android.hardware.gnss-aidl-service-qti.rc
-odm/etc/vintf/manifest/android.hardware.gnss-aidl-service-qti.xml
+odm/etc/vintf/manifest/gnss-default.xml:odm/etc/vintf/manifest/android.hardware.gnss-aidl-service-qti.xml
 odm/etc/vintf/manifest/vendor.qti.gnss-service.xml
 odm/etc/izat_device.conf
 odm/lib64/android.hardware.gnss-aidl-impl-qti.so
@@ -2419,7 +2389,6 @@ vendor/bin/xtwifi-client
 vendor/etc/init/loc-launcher.rc
 vendor/etc/seccomp_policy/gnss@2.0-base.policy
 vendor/etc/seccomp_policy/gnss@2.0-edgnss-daemon.policy
-vendor/etc/seccomp_policy/gnss@2.0-qsap-location.policy
 vendor/etc/seccomp_policy/gnss@2.0-xtra-daemon.policy
 vendor/etc/seccomp_policy/gnss@2.0-xtwifi-client.policy
 vendor/etc/apdr.conf
@@ -2513,9 +2482,6 @@ vendor/gpu/kbc/unified_kbcs_64.bin
 vendor/gpu/kbc/unified_ksqs.bin
 
 # Hotword enrollment
-product/etc/permissions/privapp-permissions-google-audio-system.xml:product/etc/permissions/privapp-permissions-hotword.xml
-product/priv-app/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND.apk
-product/priv-app/HotwordEnrollmentYGoogleHEXAGON_WIDEBAND/HotwordEnrollmentYGoogleHEXAGON_WIDEBAND.apk
 system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
 system_ext/framework/com.android.hotwordenrollment.common.util.jar
 
@@ -2737,6 +2703,14 @@ vendor/etc/init/vendor.xiaomi.hardware.micharge-service.rc
 vendor/etc/vintf/manifest/vendor.xiaomi.hardware.micharge.xml
 vendor/lib64/vendor.xiaomi.hardware.micharge-V2-ndk.so
 
+# MiSys
+vendor/bin/hypsys_vendor
+vendor/etc/init/hypsys_vendor.rc
+vendor/etc/vintf/manifest/vendor.xiaomi.hardware.misys.common.xml
+vendor/lib64/vendor.xiaomi.hardware.blackbox-V1-ndk.so
+vendor/lib64/vendor.xiaomi.hardware.misys.common-V3-ndk.so
+vendor/lib64/vendor.xiaomi.hardware.misys.core-V1-ndk.so
+
 # ML
 odm/lib64/MLPD_0.pickle
 odm/lib64/MLPD_1.pickle
@@ -2799,7 +2773,7 @@ odm/lib64/libQnnSystem.so
 # NFC
 odm/bin/hw/android.hardware.nqnfc-service.nxp
 odm/etc/init/nfc-service-nxp.rc
-odm/etc/vintf/manifest/manifest_nfc_ese.xml
+odm/etc/vintf/manifest/manifest_nxp_nfc_ese.xml
 odm/etc/libnfc-nci.conf
 odm/etc/libnfc-nxp.conf
 odm/etc/libnfc-nxp_RF.conf
@@ -2947,7 +2921,7 @@ odm/firmware/s701e_bl_1st.bin
 odm/firmware/water_check.tflite
 
 # QESDK
-system_ext/app/QesdkSysService/QesdkSysService.apk
+system_ext/app/FrameworksUtilsSysService/FrameworksUtilsSysService.apk
 system_ext/etc/vintf/manifest/vendor.qti.qesdsys.service.xml
 system_ext/lib64/libqesdk_ndk_platform.qti.so
 system_ext/lib64/vendor.qti.qesdhal@1.0.so
@@ -3009,11 +2983,9 @@ vendor/lib64/libxiaomi_qmi.so
 
 # QSAP
 vendor/bin/qsap_dcfd
-vendor/bin/qsap_location
 vendor/bin/qsap_qapeservice
 vendor/bin/qsap_sensors
 vendor/etc/init/dcfd.rc
-vendor/etc/init/vendor.qsap.location.rc
 vendor/etc/init/vendor.qsap.qapeservice.rc
 vendor/etc/init/vendor.qsap.sensors.rc
 vendor/etc/seccomp_policy/qsap_dcfd.policy
@@ -3271,6 +3243,7 @@ vendor/etc/permissions/com.android.se.xml
 vendor/etc/vintf/manifest/android.hardware.secure_element.xml
 vendor/lib64/hw/libEseUtils.so
 vendor/lib64/libGPQeSE.so
+vendor/lib64/libstnfc-streset.so
 vendor/lib64/libvui_dmgr_client.so
 
 # Secure Processor
@@ -3405,7 +3378,7 @@ vendor/lib64/vendor.qti.sla.service@1.0-impl.so
 vendor/lib64/vendor.qti.sla.service@1.0.so
 
 # Soter
-mi_ext/product/app/SoterService/SoterService.apk:product/app/SoterService/SoterService.apk
+product/app/SoterService/SoterService.apk
 vendor/bin/hw/vendor.qti.hardware.soter-service
 vendor/bin/SoterProvisioningTool
 vendor/bin/vendor.qti.hardware.soter-provision
@@ -3762,7 +3735,6 @@ vendor/etc/init/vmmgr.rc
 vendor/etc/vmmgr.conf
 
 # VPP
-system_ext/lib64/vendor.qti.hardware.qconfig-V3-ndk.so
 vendor/bin/hw/qconfigservice
 vendor/bin/vppservice
 vendor/etc/configstore/vpp.configstore.xml
@@ -3786,12 +3758,6 @@ vendor/lib64/vendor.qti.hardware.vpp@1.2.so
 vendor/lib64/vendor.qti.hardware.vpp@1.3.so
 
 # VPU firmware
-odm/firmware/vpu20_2v.mbn
-odm/firmware/vpu20_2v_unsigned.mbn
-odm/firmware/vpu20_4v.mbn
-odm/firmware/vpu20_4v_unsigned.mbn
-odm/firmware/vpu30_2v.mbn
-odm/firmware/vpu30_2v_unsigned.mbn
 odm/firmware/vpu33_4v.mbn
 odm/firmware/vpu33_4v_unsigned.mbn
 
@@ -3863,3 +3829,6 @@ odm/bin/hw/vendor.xiaomi.sensor.tofsensorservice.aidl
 odm/etc/init/vendor.xiaomi.sensor.tofsensorservice.aidl.rc
 odm/etc/vintf/manifest/vendor.xiaomi.sensor.tofsensorservice.aidl.xml
 odm/lib64/vendor.xiaomi.sensor.tofsensorservice-V1-ndk.so
+
+# Misc
+vendor/lib64/libqcodec2_rffilter.so

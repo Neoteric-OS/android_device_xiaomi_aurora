@@ -447,7 +447,7 @@ PRODUCT_COPY_FILES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    CarrierConfig \
+    CarrierConfigOverlay \
     FrameworksRes \
     MiuiCameraOverlay \
     SettingsRes \
@@ -553,12 +553,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libaudioroute-v34 \
     libbinder_shim.vendor \
-    libcodec2_shim \
+    libbase_shim \
     libhidlbase_shim \
     lib-mediac2 \
     libprocessgroup_shim \
-    libstagefright_foundation-v33.vendor \
-    libui-v34
+    libstagefright_foundation-v33.vendor
+
+PRODUCT_PACKAGES += \
+    libstagefright_foundation.vendor \
+    libxml2.vendor
 
 # Shipping API level
 BOARD_SHIPPING_API_LEVEL := 34

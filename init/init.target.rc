@@ -66,9 +66,6 @@ import /vendor/etc/init/hw/init.mi_udfps.rc
 import /vendor/etc/init/hw/init.mi_thermald.rc
 import /vendor/etc/init/init.aurora.rc
 
-on property:sys.boot_completed=1
-    chmod 0640 /sys/fs/selinux/enforce
-
 on early-init
     write /proc/sys/kernel/printk_devkmsg ratelimited
     export MEMTAG_OPTIONS off
@@ -116,8 +113,6 @@ on fs
     mount vfat /dev/block/bootdevice/by-name/logfs /dev/logfs noatime umask=006,uid=1000,gid=1000
     mount ext4 /dev/block/bootdevice/by-name/rescue /mnt/rescue noatime
     restorecon_recursive /mnt/rescue
-    # add Audio_DataWhale
-    chmod 0666 /dev/xlog
 
 on post-fs
     #Execute virtualization manager
@@ -202,6 +197,10 @@ on post-fs-data
     restorecon /dev/metis
     chmod 0666 /sys/module/metis/parameters/mi_viptask
     restorecon /sys/module/metis/parameters/mi_viptask
+    chmod 0666 /sys/module/metis/parameters/mi_viptask_balance
+    restorecon /sys/module/metis/parameters/mi_viptask_balance
+    chmod 0666 /sys/module/metis/parameters/metis_schlat_enable
+    restorecon /sys/module/metis/parameters/metis_schlat_enable
     chmod 0666 /sys/module/metis/parameters/mi_boost_duration
     restorecon /sys/module/metis/parameters/mi_boost_duration
     chmod 0666 /sys/class/thermal/thermal_message/boost
@@ -224,6 +223,21 @@ on post-fs-data
     restorecon /sys/module/metis/parameters/del_mi_viptask_sched_lit_core
     chmod 0666 /sys/module/metis/parameters/is_break_enable
     restorecon /sys/module/metis/parameters/is_break_enable
+    chmod 0666 /sys/module/metis/parameters/cold_start_app_tgid
+    restorecon /sys/module/metis/parameters/cold_start_app_tgid
+    chmod 0666 /sys/module/metis/parameters/metis_wakeup_enable
+    restorecon /sys/module/metis/parameters/metis_wakeup_enable
+    chmod 0666 /sys/module/metis/parameters/metis_wakeup_task
+    restorecon /sys/module/metis/parameters/metis_wakeup_task
+    chmod 0666 /sys/module/metis/parameters/protect_cs
+    restorecon /sys/module/metis/parameters/protect_cs
+    chmod 0666 /sys/module/metis/parameters/trace_motion_event
+    restorecon /sys/module/metis/parameters/trace_motion_event
+    chown root system /sys/module/metis/parameters/trace_motion_event
+    chmod 0666 /sys/module/metis/parameters/common_persist_vip_task
+    restorecon /sys/module/metis/parameters/common_persist_vip_task
+    chmod 0666 /sys/module/metis/parameters/clear_persist_vip_task
+    restorecon /sys/module/metis/parameters/clear_persist_vip_task
 
     chmod 0666 /dev/metis_link
     restorecon /dev/metis_link
@@ -244,6 +258,25 @@ on post-fs-data
     restorecon /sys/module/metis/parameters/force_viptask_select_rq
     chmod 0666 /sys/module/metis/parameters/force_cluster_sched_enable
     restorecon /sys/module/metis/parameters/force_cluster_sched_enable
+
+    chmod 0666 /sys/module/speed_touch/parameters/speed_touch_enable
+    restorecon /sys/module/speed_touch/parameters/speed_touch_enable
+    chown root system /sys/module/speed_touch/parameters/speed_touch_enable
+    chmod 0666 /sys/module/speed_touch/parameters/cur_layer_name
+    restorecon /sys/module/speed_touch/parameters/cur_layer_name
+    chown root system /sys/module/speed_touch/parameters/cur_layer_name
+    chmod 0666 /sys/module/speed_touch/parameters/sf_available_buffer_size
+    restorecon /sys/module/speed_touch/parameters/sf_available_buffer_size
+    chown root system /sys/module/speed_touch/parameters/sf_available_buffer_size
+    chmod 0666 /sys/module/speed_touch/parameters/track_vsync_signal
+    restorecon /sys/module/speed_touch/parameters/track_vsync_signal
+    chown root system /sys/module/speed_touch/parameters/track_vsync_signal
+    chmod 0666 /sys/module/speed_touch/parameters/vsync_period
+    restorecon /sys/module/speed_touch/parameters/vsync_period
+    chown root system /sys/module/speed_touch/parameters/vsync_period
+    chmod 0666 /sys/module/metis/parameters/speed_touch_enable
+    restorecon /sys/module/metis/parameters/speed_touch_enable
+    chown root system /sys/module/metis/parameters/speed_touch_enable
 
     mkdir /vendor/data/tombstones 0771 system system
     # add wlan log output path
@@ -303,6 +336,10 @@ on post-fs-data
 
     chmod 0662 /dev/miev
     restorecon /dev/miev
+
+    chmod 0666 /dev/mi_sw_sync
+    restorecon /dev/mi_sw_sync
+
 # MIUI ADD: Performance_BoostFramework
     chown system system /sys/module/perf_helper/mimd/mimdtrigger
 # END Performance_BoostFramework
@@ -337,6 +374,8 @@ on boot
     chmod 0664 /sys/class/mi_display/disp-DSI-0/mipi_rw
     chown system system /sys/class/mi_display/disp-DSI-0/panel_info
     chmod 0444 /sys/class/mi_display/disp-DSI-0/panel_info
+    chown system system /sys/class/mi_display/disp-DSI-0/panel_build_id
+    chmod 0444 /sys/class/mi_display/disp-DSI-0/panel_build_id
     chown system system /sys/class/mi_display/disp-DSI-0/wp_info
     chmod 0444 /sys/class/mi_display/disp-DSI-0/wp_info
     chown system system /sys/class/mi_display/disp-DSI-0/dynamic_fps
@@ -383,6 +422,19 @@ on property:vendor.display.lcd_density=560
 
 on property:vendor.display.lcd_density=640
    setprop dalvik.vm.heapgrowthlimit 512m
+
+    # MIUI ADD: Power_UnionPowerCore
+    chown root system /sys/unionpower/frame_jank
+    chown root system /sys/module/unionpower/parameters/FRAME_MONITOR_ENABLE
+    chown root system /sys/module/unionpower/parameters/JANK_LIMIT
+    chown root system /sys/module/unionpower/parameters/NICE_MORE_LIMIT
+    chown root system /sys/module/unionpower/parameters/VSYNC_GAP
+    chmod 0664 /sys/unionpower/frame_jank
+    chmod 0664 /sys/module/unionpower/parameters/FRAME_MONITOR_ENABLE
+    chmod 0664 /sys/module/unionpower/parameters/JANK_LIMIT
+    chmod 0664 /sys/module/unionpower/parameters/NICE_MORE_LIMIT
+    chmod 0664 /sys/module/unionpower/parameters/VSYNC_GAP
+    # END Power_UnionPowerCore
 
     #MIUI ADD: Memory_CLD
     #ufscld functions permission

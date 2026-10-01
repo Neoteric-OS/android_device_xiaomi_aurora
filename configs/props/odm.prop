@@ -3,6 +3,8 @@ bluetooth.device.default_name=Xiaomi 14 Ultra
 
 # Display
 ro.vendor.touchfeature.type=183
+ro.vendor.display.switch_resolution.support=1
+vendor.display.force_lm_to_fb_config=1
 
 # Displayfeature
 persist.vendor.dc_backlight.enable=false

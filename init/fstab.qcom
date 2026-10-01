@@ -63,6 +63,8 @@ overlay                                                 /product/etc/precust_the
 overlay                                                 /product/etc/preferred-apps overlay ro,lowerdir=/mnt/vendor/mi_ext/product/etc/preferred-apps:/product/etc/preferred-apps check,nofail
 overlay                                                 /product/etc/security       overlay ro,lowerdir=/mnt/vendor/mi_ext/product/etc/security:/product/etc/security check,nofail
 overlay                                                 /system_ext/etc/permissions overlay ro,lowerdir=/mnt/vendor/mi_ext/system_ext/etc/permissions:/system_ext/etc/permissions check,nofail
+overlay                                                 /vendor/lib/rfsa/adsp       overlay ro,lowerdir=/odm/mount/camera/lib/rfsa/adsp/:/vendor/lib/rfsa/adsp check,nofail
+overlay                                                 /vendor/lib64/rfs/dsp       overlay ro,lowerdir=/odm/mount/camera/lib64/rfs/dsp/:/vendor/lib64/rfs/dsp check,nofail
 vendor                                                  /vendor                erofs   ro                                                   wait,slotselect,avb=vbmeta,logical,first_stage_mount
 vendor_dlkm                                             /vendor_dlkm           erofs   ro                                                   wait,slotselect,avb=vbmeta,logical,first_stage_mount
 system_dlkm                                             /system_dlkm           erofs   ro                                                   wait,slotselect,avb=vbmeta,logical,first_stage_mount
