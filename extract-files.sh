@@ -81,16 +81,21 @@ function blob_fixup() {
         odm/lib64/libaudioroute_ext.so | vendor/lib64/libar-pal.so)
             "${PATCHELF}" --replace-needed "libaudioroute.so" "libaudioroute-v34.so" "${2}"
             ;;
+        vendor/etc/seccomp_policy/qsap_qapeservice.policy)
+            [ "$2" = "" ] && return 0
+            [ -n "$(tail -c 1 "${2}")" ] && echo >> "${2}"
+            grep -q "^lseek: 1" "${2}" || echo "lseek: 1" >> "${2}"
+            ;;
+        vendor/lib64/libprotobuf-cpp-full-21.7.so)
+            [ "$(od -An -tx1 -j 1338440 -N4 "${2}" | tr -d ' \n')" = "00020037" ] &&
+                printf '\x10\x00\x00\x14' | dd of="${2}" bs=1 seek=1338440 conv=notrunc status=none
+            ;;
         odm/lib64/hw/camera.qcom.so | odm/lib64/libcamxcommonutils.so | vendor/lib64/libcameraopt.so)
             "${PATCHELF}" --add-needed "libprocessgroup_shim.so" "$2"
             ;;
         vendor/lib64/vendor.libdpmframework.so)
             "${PATCHELF}" --add-needed "libhidlbase_shim.so" "$2"
             "${PATCHELF}" --add-needed "libbinder_shim.so" "${2}"
-            ;;
-        odm/bin/hw/vendor.xiaomi.sensor.citsensorservice.aidl)
-            sed -i "s/AServiceManager_waitForService/AServiceManager_waitForSvcNull/" "${2}"
-            "${PATCHELF}" --add-needed "libcitsensor_shim.so" "${2}"
             ;;
         vendor/bin/pnscr-sst)
             "${PATCHELF}" --add-needed "libbase_shim.so" "${2}"
