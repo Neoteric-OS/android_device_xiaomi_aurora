@@ -123,6 +123,8 @@ on late-fs
     mount_all /vendor/etc/fstab.qcom --late
 
 on post-fs-data
+    # ipacm needs this for its pid file
+    mkdir /data/vendor/ipa 0770 radio radio
     chmod 0666 /dev/migt
     restorecon /dev/migt
     chmod 0777 /sys/module/migt/parameters/migt_freq
