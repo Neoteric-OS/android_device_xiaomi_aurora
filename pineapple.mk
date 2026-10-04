@@ -175,6 +175,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/sysconfig/miuicamera-hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/miuicamera-hiddenapi-package-whitelist.xml
 
+# Keylayout
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/keylayout/synaptics_tcm_touch.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/synaptics_tcm_touch.kl
+
 # Cas
 PRODUCT_PACKAGES += \
     android.hardware.cas-V1-ndk.vendor

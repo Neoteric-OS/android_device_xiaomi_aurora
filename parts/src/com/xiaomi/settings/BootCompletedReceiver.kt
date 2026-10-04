@@ -18,6 +18,7 @@ import com.xiaomi.settings.display.ColorModeService
 import com.xiaomi.settings.doze.AodBrightnessService
 import com.xiaomi.settings.edgesuppression.EdgeSuppressionService
 import com.xiaomi.settings.touch.DoubleTapToWakeService
+import com.xiaomi.settings.touch.TapToWakeService
 import com.xiaomi.settings.touch.SoFodTouchService
 import com.xiaomi.settings.touch.TouchOrientationService
 import com.xiaomi.settings.touch.TouchPollingRateService
@@ -56,6 +57,7 @@ class BootCompletedReceiver : BroadcastReceiver() {
         context.startServiceAsUser(Intent(context, TouchPollingRateService::class.java), UserHandle.CURRENT)
         context.startServiceAsUser(Intent(context, DoubleTapToWakeService::class.java), UserHandle.CURRENT)
         context.startServiceAsUser(Intent(context, SoFodTouchService::class.java), UserHandle.CURRENT)
+        context.startServiceAsUser(Intent(context, TapToWakeService::class.java), UserHandle.CURRENT)
     }
 
     private fun onBootCompleted(context: Context) {

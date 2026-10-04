@@ -30,7 +30,6 @@ class SoFodTouchService : Service() {
 
     private fun enableSoFodModes() {
         TouchFeatureWrapper.setTouchMode(TOUCH_FOD_ENABLE, 1)
-        TouchFeatureWrapper.setTouchMode(TOUCH_AOD_ENABLE, 1)
         TouchFeatureWrapper.setTouchMode(TOUCH_FODICON_ENABLE, 1)
     }
 
@@ -39,7 +38,6 @@ class SoFodTouchService : Service() {
         private const val DEBUG = true
 
         private const val TOUCH_FOD_ENABLE = 10
-        private const val TOUCH_AOD_ENABLE = 11
         private const val TOUCH_FODICON_ENABLE = 16
 
         fun startService(context: Context) {
