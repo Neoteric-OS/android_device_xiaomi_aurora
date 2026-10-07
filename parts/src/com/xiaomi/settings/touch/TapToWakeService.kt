@@ -18,7 +18,7 @@ import android.os.Looper
 import android.provider.Settings
 import android.util.Log
 
-// The touch driver reports single taps as KEY_GOTO while TOUCH_AOD_ENABLE is set.
+// The touch driver reports single taps as KEY_GOTO while TOUCH_AOD_ENABLE or TOUCH_FODICON_ENABLE is set.
 class TapToWakeService : Service() {
 
     private var registered = false
@@ -69,12 +69,15 @@ class TapToWakeService : Service() {
     private fun updateTapMode() {
         val enabled =
             Settings.Secure.getInt(contentResolver, Settings.Secure.DOZE_TAP_SCREEN_GESTURE, 0) != 0
-        TouchFeatureWrapper.setTouchMode(TOUCH_AOD_ENABLE, if (enabled) 1 else 0)
+        val value = if (enabled) 1 else 0
+        TouchFeatureWrapper.setTouchMode(TOUCH_AOD_ENABLE, value)
+        TouchFeatureWrapper.setTouchMode(TOUCH_FODICON_ENABLE, value)
     }
 
     companion object {
         private const val TAG = "TapToWakeService"
         private const val DEBUG = true
         private const val TOUCH_AOD_ENABLE = 11
+        private const val TOUCH_FODICON_ENABLE = 16
     }
 }
