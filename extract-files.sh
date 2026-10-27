@@ -81,7 +81,7 @@ function blob_fixup() {
         odm/lib64/libaudioroute_ext.so | vendor/lib64/libar-pal.so)
             "${PATCHELF}" --replace-needed "libaudioroute.so" "libaudioroute-v34.so" "${2}"
             ;;
-        vendor/etc/seccomp_policy/qsap_qapeservice.policy)
+        vendor/etc/seccomp_policy/atfwd@2.0.policy | vendor/etc/seccomp_policy/qsap_qapeservice.policy | vendor/etc/seccomp_policy/qesdksec.policy)
             [ "$2" = "" ] && return 0
             [ -n "$(tail -c 1 "${2}")" ] && echo >> "${2}"
             grep -q "^lseek: 1" "${2}" || echo "lseek: 1" >> "${2}"
