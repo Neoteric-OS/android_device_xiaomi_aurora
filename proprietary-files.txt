@@ -3406,6 +3406,7 @@ vendor/etc/init/init_thermal-engine-v2.rc
 odm/etc/setting.xml
 odm/etc/thermal-4k.conf
 odm/etc/thermal-arvr.conf
+odm/etc/thermal-boost.conf
 odm/etc/thermal-camera.conf
 odm/etc/thermal-cclassvideo.conf
 odm/etc/thermal-cgame.conf
@@ -3451,6 +3452,7 @@ odm/etc/thermal-sphone.conf
 odm/etc/thermal-tgame.conf
 odm/etc/thermal-video.conf
 odm/etc/thermal-videochat.conf
+odm/etc/thermalbreakboostconfig.xml
 vendor/etc/thermal-engine.conf
 vendor/etc/thermal-map.conf
 vendor/etc/thermald-devices.conf

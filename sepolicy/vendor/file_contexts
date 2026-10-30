@@ -123,3 +123,6 @@
 
 # MiSys
 /vendor/bin/hypsys_vendor                                        u:object_r:hal_misys_default_exec:s0
+
+# Partitions
+/dev/block/platform/soc/1d84000.ufshc/by-name/super_ext             u:object_r:super_block_device:s0

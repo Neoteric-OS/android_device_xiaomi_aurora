@@ -1,6 +1,9 @@
 # Bluetooth
 bluetooth.device.default_name=Xiaomi 14 Ultra
 
+# Camera
+ro.product.camera.livephoto.support=3
+
 # Display
 ro.vendor.touchfeature.type=183
 ro.vendor.display.switch_resolution.support=1

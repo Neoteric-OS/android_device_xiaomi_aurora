@@ -2,8 +2,7 @@ allow hal_fingerprint_default vendor_fingerprint_data_file:dir create_dir_perms;
 allow hal_fingerprint_default vendor_fingerprint_data_file:file create_file_perms;
 allow hal_fingerprint_default vendor_fingerprint_data_file_fpdump:dir create_dir_perms;
 allow hal_fingerprint_default vendor_fingerprint_data_file_fpdump:file create_file_perms;
-allow hal_fingerprint_default vendor_hal_perf_hwservice:hwservice_manager find;
-allow hal_fingerprint_default vendor_hal_perf_default:binder call;
+hal_client_domain(hal_fingerprint_default, vendor_hal_perf)
 allow hal_fingerprint_default platform_app:binder { call transfer };
 allow hal_fingerprint_default platform_app:binder transfer;
 allow hal_fingerprint_default platform_app:fd *;
