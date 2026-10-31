@@ -1,5 +1,3 @@
-typeattribute platform_app system_executes_vendor_violators;
-
 # Audio
 allow platform_app vendor_audio_data_file:dir write;
 allow platform_app vendor_audio_data_file:dir { add_name search };
@@ -40,9 +38,6 @@ get_prop(platform_app, vendor_camera_p3enable_prop)
 get_prop(platform_app, vendor_camera_prop)
 get_prop(platform_app, vendor_display_prop)
 get_prop(platform_app, vendor_panel_info_prop)
-hal_client_domain(platform_app, hal_misys)
-hal_client_domain(platform_app, vendor_hal_camerapostproc_xiaomi)
-hal_client_domain(platform_app, hal_quickcamera)
 
 # Displayfeature
 allow platform_app vendor_hal_displayfeature_xiaomi_service:service_manager find;
@@ -50,15 +45,11 @@ allow platform_app vendor_hal_displayfeature_xiaomi_default:binder call;
 allow platform_app vendor_hal_displayfeature_xiaomi_hwservice:hwservice_manager find;
 get_prop(platform_app, vendor_displayfeature_prop)
 
-# Dolby
-hal_client_domain(platform_app, hal_dms)
-
 # Misys
 allow platform_app hal_misys_hwservice:hwservice_manager find;
 allow platform_app hal_misys_default:binder call;
 
 # Mlipay
-hal_client_domain(platform_app, hal_mlipay)
 allow platform_app hal_mfidoca_service:service_manager find;
 allow platform_app hal_mfidoca_default:binder call;
 allow platform_app hal_mlipay_service:service_manager find;
@@ -67,9 +58,6 @@ allow platform_app hal_mtdservice_default:binder { call transfer };
 allow platform_app hal_mtdservice_default:fd *;
 allow platform_app hal_tidaservice_default:binder { call transfer };
 allow platform_app hal_tidaservice_default:fd *;
-
-# Soter
-hal_client_domain(platform_app, vendor_hal_soter);
 
 # Touchfeature
 allow platform_app hal_touchfeature_xiaomi_service:service_manager find;
