@@ -111,7 +111,7 @@ include $(DEVICE_PATH)/kernel/kernel-platform.mk
 # Lineage Health
 TARGET_HEALTH_CHARGING_CONTROL_CHARGING_ENABLED  := 0
 TARGET_HEALTH_CHARGING_CONTROL_CHARGING_DISABLED  := 1
-TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH := /sys/class/qcom-battery/night_charging
+TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH := /sys/class/power_supply/battery/input_suspend
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
